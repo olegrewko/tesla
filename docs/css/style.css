@@ -15,8 +15,8 @@ body {
     height: 100vh;
     position: absolute;
     z-index: 1;
-    max-width: 1200px;
-    min-height: 800px;
+    /* max-width: 1200px; */
+    /* min-height: 800px; */
     left: 0;
     right: 0;
     top: 0;
@@ -35,8 +35,8 @@ background: rgba(0, 0, 0, 0.3);
 
 }
 .slider-top {
-    max-width: 1200px;
-    max-height: 800px;
+    /* max-width: 1200px; */
+    /* max-height: 800px; */
     z-index: 0;
 }
 .header-top {
@@ -165,7 +165,7 @@ margin-top: 100px;
    
 }
 .menu.active {
-    /* height: 100vh; */
+   
     background: #000;
     position: absolute;
     top: 0;
