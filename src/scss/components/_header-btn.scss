@@ -1,0 +1,48 @@
+.header-btn {
+display: inline-flex;
+align-items: center;
+padding: 20px 24px;
+width: 237px;
+border-right: 1px solid gainsboro;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+text-transform: uppercase;
+color: black;
+transition: all 0.3s ease-in-out;
+gap: 12px;
+&:focus-visible {
+outline: 1px dashed currentColor;
+}
+@include hover {
+color: goldenrod;
+}
+&:active {
+color: olive;
+}
+&__icon {
+  display: block;
+  object-fit: cover;
+stroke: currentColor;
+width: 16px;
+height: 10px;
+}
+
+&__angle {
+ margin-left: auto;
+  display: block;
+  object-fit: cover;
+fill: currentColor;
+width: 16px;
+height: 16px;
+}
+
+&__search {
+  display: block;
+  object-fit: cover;
+stroke: currentColor;
+width: 16px;
+height: 16px;
+}
+
+}

@@ -1,0 +1,18 @@
+// базовые подключения
+@import "./vendor/normalize";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/stepper";
+@import "./components/mini-cart-product";
+@import "./components/mini-cart";
+@import "./components/btn";
+@import "./components/header-search";
+@import "./components/header-btn";
+@import "./components/nav";
+@import "./components/header";
+@import "./components/search-result";
+@import "./components/search-result-product";
