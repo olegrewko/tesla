@@ -1,6 +1,7 @@
-.header-btn {
+.header__btn {
 display: inline-flex;
 align-items: center;
+justify-content: space-between;
 padding: 20px 24px;
 width: 237px;
 border-right: 1px solid gainsboro;
@@ -21,11 +22,20 @@ outline: 1px dashed currentColor;
 color: goldenrod;
 
 }
+&__angle {
+ margin-left: auto;
+  display: block;
+  object-fit: cover;
+fill: currentColor;
+width: 16px;
+height: 16px;
+transition: rotate 0.3s;
+}
 &:active {
 color: olive;
 }
 &--active {
-.header-btn__angle {
+.header__btn__angle {
    rotate: 180deg;
 }
 }
@@ -37,15 +47,6 @@ width: 16px;
 height: 10px;
 }
 
-&__angle {
- margin-left: auto;
-  display: block;
-  object-fit: cover;
-fill: currentColor;
-width: 16px;
-height: 16px;
-transition: rotate 0.3s;
-}
 
 &__search {
   display: block;
