@@ -5,6 +5,7 @@
 }
 
 .page {
+// overflow-x: hidden;
   height: 100%;
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
@@ -12,7 +13,7 @@
 }
 
 .page__body {
- overflow-x: hidden;
+//  overflow-x: hidden;
   margin: 0;
   min-width: 360px;
   min-height: 100%;
@@ -110,10 +111,10 @@ object-fit: cover;
   position: relative;
 }
 .overlay  {
-  z-index: 100;
+  z-index: 1000;
 position: fixed;
 inset: 0;
-background: rgba(26, 26, 26, 0.7);
+background: rgba(26, 26, 26, 0.8);
 visibility: hidden;
 opacity: 0;
 transition: all 0.3s;
@@ -121,4 +122,13 @@ transition: all 0.3s;
 opacity: 1;
 visibility: visible;
 }
+}
+.simplebar-track.simplebar-vertical {
+background: maroon;
+width: 4px;
+right: 4px;
+}
+.simplebar-scrollbar::before {
+background: maroon;
+opacity: 1;
 }

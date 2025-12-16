@@ -46,7 +46,7 @@
 // updateValue(input.value);
 // });
 // }
-__webpack_require__.r(__webpack_exports__);
+// __webpack_require__.r(__webpack_exports__);
 
 // Оберните код в DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       };
 
-      const updateValue = newValue => {
+      const updateValue = (newValue) => {
         let num = parseInt(newValue);
         if (isNaN(num)) num = 1;
         if (num < 1) num = 1;

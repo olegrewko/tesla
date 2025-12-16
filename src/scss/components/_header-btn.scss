@@ -11,14 +11,23 @@ text-transform: uppercase;
 color: black;
 transition: all 0.3s ease-in-out;
 gap: 12px;
+&:focus {
+outline: none;
+}
 &:focus-visible {
 outline: 1px dashed currentColor;
 }
 @include hover {
 color: goldenrod;
+
 }
 &:active {
 color: olive;
+}
+&--active {
+.header-btn__angle {
+   rotate: 180deg;
+}
 }
 &__icon {
   display: block;
@@ -35,6 +44,7 @@ height: 10px;
 fill: currentColor;
 width: 16px;
 height: 16px;
+transition: rotate 0.3s;
 }
 
 &__search {

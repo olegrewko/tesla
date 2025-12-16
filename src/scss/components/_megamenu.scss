@@ -1,0 +1,180 @@
+.megamenu {
+position: absolute;
+left: 0;
+top: var(--header-height);
+z-index: 250;
+height: calc(100vh - var(--header-height));
+// opacity: 0;
+// visibility: hidden;
+display: flex;
+transition: all 0.3s ease-in-out;
+max-width: 1400px;
+width: 100%;
+background: #fff;
+.simplebar-vertical {
+margin-top: 8px;
+margin-bottom: 8px;
+}
+&__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  // border-right: 1px solid gainsboro;
+  padding: 16px 15px;
+width: 474px;
+height: 100%;
+background: #faf8f8;
+.simplebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+}
+&__content{
+ margin-top: 40px;
+max-width: calc(100% - 474px);
+width: 100%;
+height: 100%;
+background: #fff;
+}
+&__block {
+  // width: 260px;
+  // height: 260px;
+  gap: 10px;
+background: #faf8f8;
+}
+ &__list {
+  margin-top: 40px;
+ display: flex;
+ flex-direction: column;
+//  gap: 8px;
+ }
+&__btn {
+width: 100%;
+padding: 8px 24px;
+text-align: left;
+font-family: 'Rubik';
+font-weight: 400;
+color: var(--color-primary);
+font-size: 16px;
+
+line-height: 140%;
+letter-spacing: 0%;
+transition: all 0.3s;
+&--active {
+background: #fff;
+}
+
+}
+&__items {
+  padding: 24px;
+
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 4px;
+ @media (max-width:1200px) {
+grid-template-columns: repeat(2, 1fr);
+ }
+ @media (max-width:800px) {
+grid-template-columns: repeat(1, 1fr);
+
+}
+// &__block {
+//  display: grid;
+//  grid-template-columns: repeat(3, 1fr);
+//  gap: 4px;
+//  @media (max-width:1200px) {
+// grid-template-columns: repeat(2, 1fr);
+//  }
+//  @media (max-width:800px) {
+// grid-template-columns: repeat(1, 1fr);
+// }
+// // &__title{
+// //   margin-bottom: 12px;
+// // margin: 0;
+// // font-family: 'Rubik';
+// // font-weight: 600;
+// // font-style: normal;
+// // font-size: 16px;
+
+// // line-height: 122%;
+// // letter-spacing: 0%;
+// // text-transform: uppercase;
+
+// // text-transform: uppercase;
+// // color: black;
+// // }
+// // &__list {
+// // display: flex;
+// // flex-direction: column;
+// // gap: 8px;
+// // }
+// // &__btn {
+// // font-family: 'Rubik';
+// // font-weight: 400;
+// // font-style: normal;
+// // font-size: 16px;
+
+// // line-height: 140%;
+// // letter-spacing: 0%;
+
+// // color: black;
+// // }
+// // &__inner {
+// //   padding: 24px;
+// //  display: grid;
+// //  grid-template-columns: repeat(3, 1fr);
+// //  gap: 4px;
+// //  @media (max-width:1200px) {
+// // grid-template-columns: repeat(2, 1fr);
+// //  }
+// //  @media (max-width:800px) {
+// // grid-template-columns: repeat(1, 1fr);
+// //  }
+
+// // }
+
+// &__el {
+//   max-width: 300px;
+//   width: 100%;
+
+
+// }
+// &--visible {
+// opacity: 1;
+// visibility: visible;
+// }
+
+// }
+
+}
+&__link {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+border: 0px solid gainsboro;
+padding: 20px 20px 20px;
+aspect-ratio: 1 / 1;
+}
+&__icon {
+
+margin-bottom: 2px;
+}
+&__quantity {
+color: var(--color-secondary);
+}
+&__subtitle {
+font-family: 'Rubik';
+font-weight: 500;
+margin-bottom: 16px;
+font-size: 16px;
+color: var(--color-primary);
+line-height: 122%;
+letter-spacing: 0%;
+text-align: center;
+text-transform: uppercase;
+
+}
+}

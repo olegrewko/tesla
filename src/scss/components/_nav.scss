@@ -28,7 +28,7 @@ color: #1A1A1A;
 outline: none;
 }
 &:focus-visible {
-outline: 2px dashed currentColor;
+outline: 2px dashed gray;
 outline-offset: 3px;
 }
 @include hover {

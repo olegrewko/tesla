@@ -4,10 +4,13 @@
   // base
   --gap: 24px;
   --font-family: "Rubik", sans-serif;
-  --content-width: 1170px;
+  --content-width: 100%;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
+  --header-height: 67.41px;
   // colors
   --light-color: #fff;
+  --color-primary: #1a1a1a;
+  --color-secondary: #666;
+  --color-accent: #345dcf;
 }
