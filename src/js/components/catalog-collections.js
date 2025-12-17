@@ -10,8 +10,11 @@ const catalogMenu = document.querySelector(".catalog-menu");
 const collectionsMenu = document.querySelector(".collections-menu");
 
 headerBtns.forEach(btn => {
+//  megamenus.forEach(megamenu => {megamenu.classList.remove("megamenu--visible"); });
+
 if (btn.classList.contains('header__catalog')) {
    btn.addEventListener('click', (e) => {
+megamenus.forEach(megamenu => {megamenu.classList.remove("megamenu--visible"); });
    if (!catalogMenu.classList.contains('megamenu--visible')) {
 
    disableScroll();
@@ -28,6 +31,7 @@ if (btn.classList.contains('header__catalog')) {
 
 if (btn.classList.contains('header__collections')) {
    btn.addEventListener('click', (e) => {
+megamenus.forEach(megamenu => {megamenu.classList.remove("megamenu--visible"); });
    if (!collectionsMenu.classList.contains('megamenu--visible')) {
 
    disableScroll();
