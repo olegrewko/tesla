@@ -1,0 +1,102 @@
+.product {
+  position: relative;
+  padding: 24px 28px;
+  // width: 450px;
+  min-height: 550px;
+  box-shadow: 4px 4px 24px 0 rgba(235, 240, 240, 0);
+  background-color: #fff;
+
+  &__top {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    /* Для абсолютного позиционирования кнопки и бейджей */
+    display: flex;
+    justify-content: center;
+    /* Горизонтальное центрирование */
+    align-items: center;
+    /* Вертикальное центрирование */
+    min-height: 320px;
+    /* Минимальная высота, равная высоте картинки */
+  }
+
+  .product__top picture,
+  .product__top .image {
+    max-width: 100%;
+    /* Чтобы картинка не выходила за пределы */
+    height: auto;
+  }
+
+  &__badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // position: absolute;
+    // top: 10px;
+    // left: 10px;
+    z-index: 2;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    gap: 4px;
+  }
+
+  &__fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  &__brand {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-family: 'Rubik';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--color-secondary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__price {}
+
+  &__link {
+    color: inherit;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__btn {
+    margin-top: 12px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,85 @@
+.products {
+  padding-bottom: 100px;
+
+  &__tabs {
+    flex-grow: 1;
+  }
+
+  &__top {
+    display: flex;
+    border: 1px solid gainsboro;
+    margin-bottom: 40px;
+  }
+
+  &__all-btn {
+    flex-shrink: 0;
+    padding: 8px;
+    width: 456px;
+    border-left: 1px solid gainsboro;
+  }
+
+  &__btn {
+
+    width: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 34px;
+  }
+
+  // &__inner {
+  //   display: none;
+
+  //   &--active {
+  //     display: block;
+  //   }
+  // }
+
+  &__slider {
+    margin: -20px;
+    padding: 20px;
+
+    .swiper-slide {
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .swiper-slide-visible {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__scrollbar {
+    &.swiper-scrollbar {
+      position: relative;
+      inset: 0;
+      border-radius: 0;
+      width: 100%;
+      height: 2px;
+      margin-bottom: 12px;
+      background: rgb(230, 228, 228);
+    }
+
+    .swiper-scrollbar-drag {
+      border-radius: 0;
+      background-color: var(--color-secondary);
+    }
+  }
+
+
+  &__slider-btn {
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 122%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+}

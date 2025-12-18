@@ -1,0 +1,117 @@
+.loop-scroll {
+  padding: 13px 4px;
+  font-family: 'Rubik';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  color: var(--color-accent);
+  white-space: nowrap;
+  line-height: 120%;
+  letter-spacing: 20%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// .loop-scroll {
+//   overflow: hidden; /* Скрываем всё, что выходит за пределы */
+//   position: relative;
+//   white-space: nowrap; /* Текст в одну строку */
+//   width: 100%;
+// }
+
+.loop-scroll__inner {
+  display: inline-block;
+  padding-left: 100%;
+  /* Начальный отступ для плавного появления */
+  animation: scrollText 130s linear infinite;
+  /* Анимация */
+}
+
+// @keyframes scrollText {
+//   0% {
+//     transform: translateX(0); /* Начинаем с полного отображения */
+//   }
+//   100% {
+//     transform: translateX(-100%); /* Сдвигаем на одну полную копию */
+//   }
+// }
+// /* На мобильных делаем медленнее */
+// @media (max-width: 768px) {
+//   .loop-scroll__inner {
+//     animation-duration: 40s;
+//     font-size: 0.9em;
+//   }
+// }
+// .loop-scroll {
+//   overflow: hidden;
+//   width: 100%;
+// }
+
+.loop-scroll__inner {
+  display: flex;
+  width: max-content;
+  /* Ширина по содержимому */
+  animation: scrollSeamless 120s linear infinite;
+}
+
+.loop-scroll__text {
+  white-space: nowrap;
+  padding-right: 0.1rem;
+  /* Отступ между копиями */
+}
+
+@keyframes scrollSeamless {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* Сдвигаем на ровно одну копию */
+  }
+}
+
+.loop-scroll {
+  --scroll-speed: 260s;
+  /* Скорость: больше = медленнее */
+  --scroll-direction: normal;
+  /* normal (влево) или reverse (вправо) */
+  --scroll-pause: none;
+  /* paused (пауза) или running (воспроизведение) */
+
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.loop-scroll__inner {
+  display: inline-block;
+  padding-left: 100%;
+  white-space: nowrap;
+  animation: scrollText var(--scroll-speed) linear infinite;
+  animation-direction: var(--scroll-direction);
+  animation-play-state: var(--scroll-pause);
+}
+
+/* Пауза при наведении */
+// .loop-scroll:hover .loop-scroll__inner {
+//   animation-play-state: paused;
+// }
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* На мобильных делаем медленнее */
+@media (max-width: 768px) {
+  .loop-scroll__inner {
+    animation-duration: 40s;
+    font-size: 0.9em;
+  }
+}
