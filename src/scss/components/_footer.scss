@@ -1,0 +1,57 @@
+.footer {
+  padding-top: 54px;
+  padding-bottom: 24px;
+  min-height: 386px;
+  background-color: #000;
+  color: aliceblue;
+
+  &__title {
+    font-family: "Rubik";
+    font-weight: 400;
+
+    font-size: 22px;
+    color: aliceblue;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    font-family: 'Rubik';
+    font-weight: 400;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    font-size: 16px;
+    color: aliceblue;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__copy {
+    margin-right: auto;
+    color: var(--color-secondary);
+  }
+
+  &__add {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__bottom {
+    margin-top: 140px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}

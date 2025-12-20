@@ -76,7 +76,7 @@
 //   console.log(e.detail);
 //   console.log(e.detail.dir);
 // });
-
+// Отправка форм
 // import { validateForms } from './functions/validate-forms';
 // const rules1 = [...];
 

@@ -5,4 +5,5 @@ export default {
   bodyEl: document.body,
   enterModalSteps: document.querySelectorAll(".enter-modal__step"),
   mainProductsInner:document.querySelectorAll(".products__inner"),
+  subscribeForm:document.querySelector(".subscribe__form"),
 }

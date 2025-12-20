@@ -1,0 +1,41 @@
+.cooky-block {
+
+  position: fixed;
+  right: -320px;
+  top: 32px;
+  z-index: 1500;
+  max-width: 400px;
+  width: 100%;
+  background-color: transparent;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 22px;
+    color: var(--color-primary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__btn {
+    width: 100%;
+    opacity: 0.4;
+  }
+}
