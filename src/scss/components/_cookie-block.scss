@@ -1,17 +1,20 @@
-.cooky-block {
+.cookie-block {
 
   position: fixed;
-  right: -320px;
+  right: 32px;
   top: 32px;
-  z-index: 1500;
+  z-index: 1100;
   max-width: 400px;
   width: 100%;
   background-color: transparent;
-  padding: 24px;
+  padding: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
 
   &__title {
     font-family: 'Rubik';
@@ -37,5 +40,10 @@
   &__btn {
     width: 100%;
     opacity: 0.4;
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
   }
 }

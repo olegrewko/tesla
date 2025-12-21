@@ -61,6 +61,7 @@
     "graph-modal": "^1.0.7",
     "graph-tabs": "^1.0.2",
     "inputmask": "^5.0.8",
+    "js-cookie": "^3.0.5",
     "just-validate": "^4.3.0",
     "rellax": "^1.12.1",
     "simplebar": "^6.2.5",

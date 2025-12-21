@@ -6,3 +6,4 @@ import "./components/catalog-collections.js";
 import "./components/modal.js";
 import "./components/enter-modal-form.js";
 import "./components/main-products.js";
+import "./components/cookie.js";
