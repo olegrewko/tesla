@@ -23,7 +23,31 @@
     top: 24px;
     width: 20px;
     height: 20px;
-    background-color: red;
+    // background-color: red;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 5px;
+      width: 16px;
+      height: 2px;
+      background-color: var(--color-primary);
+      translate: -50% -50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 5px;
+      width: 2px;
+      height: 16px;
+      background-color: var(--color-primary);
+      translate: -50% -50%;
+    }
   }
 
 }
