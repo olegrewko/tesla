@@ -1,0 +1,29 @@
+.catalog-content-filter {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__block {
+    position: relative;
+    border-bottom: 1px solid gainsboro;
+    padding: 4px;
+    padding-left: 0;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+}

@@ -4,80 +4,167 @@
   position: relative;
   z-index: 1100;
   background: #fff;
+
   &__top {
-  padding: 20px 0;
-  border-bottom: 1px solid gainsboro;
+    padding: 20px 0;
+    border-bottom: 1px solid gainsboro;
   }
-&__container {
-  display: flex;
 
-  align-items: center;
+  &__container {
+    display: flex;
+
+    align-items: center;
 
 
-  // gap: var(--gap);
-}
+    // gap: var(--gap);
+  }
 
-&__logo {
-  margin-right: 32px;
-font-family: var(--font-family);
-font-weight: 700;
-font-style: 'Rubik-Bold';
-font-size: 22px;
-line-height: 120%;
-letter-spacing: 0%;
-text-transform: uppercase;
-color: #1A1A1A;
+  &__logo {
+    margin-right: 32px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-style: 'Rubik-Bold';
+    font-size: 22px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #1A1A1A;
 
-}
-&__enter {
-text-transform: uppercase;
-}
-&__actions {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-margin-left: auto;
+  }
 
-}
-&__action {
-font-family: 'Rubik';
-font-weight: 400;
-font-style: 'Rubik-Regular';
-font-size: 16px;
-line-height: 120%;
-letter-spacing: 0%;
-text-transform: uppercase;
-color: #1A1A1A;
-transition: color 0.3s ease-in-out;
-.icon {
-fill: currentColor;
-}
-&:focus {
-outline: none;
-}
-}
-&__fav,
-&__cart {
-width: 24px;
-height: 24px;
-}
-&__catalog {
-// margin-left: calc(-1 * var(gap));
-margin-left: -30px;
-}
-&__phone {
-margin-left: auto;
-font-family: 'Rubik';
-font-weight: 400;
-font-style: 'Rubik-Regular';
-font-size: 16px;
-line-height: 120%;
-letter-spacing: 0%;
-text-transform: uppercase;
-color: #1A1A1A;
-}
-&__bottom {
+  &__enter {
+    text-transform: uppercase;
+  }
 
-border: 1px solid gainsboro;
-}
+  &__cabinet {
+    margin-left: 32px;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+
+  }
+
+  &__action {
+
+    font-family: 'Rubik';
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    transition: color 0.3s ease-in-out;
+
+    .icon {
+      fill: currentColor;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &-count-fav {
+      position: absolute;
+      right: -20px;
+      top: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Rubik';
+      font-weight: 400;
+      width: 14px;
+      height: 14px;
+      padding: 0 4px;
+      font-size: 12px;
+      color: #fff;
+      background-color: #000;
+      line-height: 120%;
+      letter-spacing: 0%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &-count-cart {
+      position: absolute;
+      right: -20px;
+      top: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Rubik';
+      font-weight: 400;
+      width: 14px;
+      height: 14px;
+      padding: 0 4px;
+      font-size: 12px;
+      color: #fff;
+      background-color: var(--color-accent);
+      line-height: 120%;
+      letter-spacing: 0%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    // &__fav {
+    //   background-color: var(--color-accent);
+    // }
+
+    // &__cart {
+    //   background-color: var(--color-primary);
+    // }
+  }
+
+
+
+  &__fav,
+  &__cart {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: 0 20px;
+  }
+
+  // &__fav {
+  //   background-color: var(--color-accent);
+  // }
+
+  // &__cart {
+  //   background-color: var(--color-primary);
+  // }
+
+  &__catalog {
+    // margin-left: calc(-1 * var(gap));
+    margin-left: -30px;
+  }
+
+  &__phone {
+    margin-left: auto;
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-style: 'Rubik-Regular';
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #1A1A1A;
+  }
+
+  &__bottom {
+
+    border: 1px solid gainsboro;
+  }
 }

@@ -1,0 +1,26 @@
+.catalog-content-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik";
+  font-weight: 400;
+  padding: 8px;
+  gap: 4px;
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--color-secondary);
+  line-height: 140%;
+  letter-spacing: 0%;
+  white-space: nowrap;
+  background-color: gainsboro;
+  width: 133px;
+  height: 38px;
+
+
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}

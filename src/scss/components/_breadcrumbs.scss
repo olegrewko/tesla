@@ -1,0 +1,37 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &__item {
+
+
+    &:not(:last-child) {
+      .breadcrumbs__link {
+        &::after {
+          content: "/";
+          color: var(--color-secondary);
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Rubik";
+    font-weight: 600;
+
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 122%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    &[href] {
+      color: var(--color-primary);
+    }
+  }
+}
