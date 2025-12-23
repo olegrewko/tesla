@@ -16,7 +16,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      border: 1px solid gainsboro;
+      border: 2px solid gainsboro;
       border-radius: 100%;
       width: 20px;
       height: 20px;
@@ -32,7 +32,7 @@
       height: 20px;
       border-radius: 100%;
       box-sizing: border-box;
-      background-image: url(../img/radio.png);
+      background-image: url(../img/radio-checked.png);
       background-color: var(--color-accent);
       background-position: center;
       background-size: 10px 10px;
@@ -43,16 +43,16 @@
   }
 }
 
-.custom-checkbox__field:checked+.custom-checkbox__content::after {
+.custom-radio__field:checked+.custom-radio__content::after {
   opacity: 1;
 }
 
-.custom-checkbox__field:focus+.custom-checkbox__content::before {
+.custom-radio__field:focus+.custom-radio__content::before {
   outline: 2px dashed var(--color-primary);
   outline-offset: 2px;
 }
 
-.custom-checkbox__field:disabled+.custom-checkbox__content {
+.custom-radio__field:disabled+.custom-radio__content {
   opacity: 0.4;
   pointer-events: none;
 }

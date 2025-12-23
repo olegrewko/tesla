@@ -1,7 +1,7 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   gap: 8px;
 
   &__item {
@@ -18,13 +18,14 @@
   }
 
   &__link {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+
     gap: 8px;
     font-family: "Rubik";
-    font-weight: 600;
+    font-weight: 500;
 
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-secondary);
     line-height: 122%;
     letter-spacing: 0%;

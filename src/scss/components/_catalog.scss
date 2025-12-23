@@ -1,4 +1,5 @@
-.catalog-content {
+.catalog {
+
   &__top {
     border: 1px solid gainsboro;
   }
@@ -32,19 +33,26 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // justify-content: flex-start;
-    gap: 24px;
-    padding: 24px;
-    padding-left: 0;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 2px;
+    // padding-left: 0;
   }
 
   &__left {
     max-width: 474px;
     width: 100%;
+    border-right: 1px solid gainsboro;
   }
 
   &__inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
 }

@@ -8,5 +8,5 @@ export default {
   subscribeForm: document.querySelector(".subscribe__form"),
   cookieBlock: document.querySelector(".cookie-block"),
   cookieBlockBtn: document.querySelector(".cookie-block__btn"),
-  catalogFilterBlocks: document.querySelector(".catalog-content-filter__block"),
+  catalogFilterBlocks: document.querySelectorAll(".catalog-filter__block"),
 }

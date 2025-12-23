@@ -7,4 +7,4 @@ import "./components/modal.js";
 import "./components/enter-modal-form.js";
 import "./components/main-products.js";
 import "./components/cookie.js";
-import "./components/catalog-content-filter.js";
+import "./components/catalog-filter.js";
