@@ -9,4 +9,9 @@ export default {
   cookieBlock: document.querySelector(".cookie-block"),
   cookieBlockBtn: document.querySelector(".cookie-block__btn"),
   catalogFilterBlocks: document.querySelectorAll(".catalog-filter__block"),
+  // filterPrice: document.querySelectorAll(""),
+
+  priceRange: document.querySelector('.price-range'),
+  priceMin: document.getElementById('price-min'),
+  priceMax: document.getElementById('price-max'),
 }

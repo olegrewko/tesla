@@ -162,10 +162,11 @@
           </li>
           </ul>
           <ul class="list-reset catalog-filter">
-            <li class="catalog-filter__block catalog-filter__block--open">
+            <li class="catalog-filter__block">
               <h4 class="catalog-filter__title">Цена</h4>
+              <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
+                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
                 <ul class="list-reset catalog-filter__items">
                   <li class="catalog-filter__item">
                     <label class="custom-radio">
@@ -186,6 +187,15 @@
                     </label>
                   </li>
                 </ul>
+                <div class="catalog-filter__price">
+                  <input type="number" min="0" max="50 000" step="1" placeholder="0"
+                    class="small-input catalog-filter__price-input catalog-filter__price-input--min">
+                  <span class="catalog-filter__price-divider">-</span>
+                  <input type="number" min="0" max="50 000" step="1" placeholder="50 000"
+                    class="small-input catalog-filter__price-input catalog-filter__price-input--max">
+
+                </div>
+                <div class="price-range" id="price-range"></div>
               </div><!--catalog-filter__inner-->
             </li>
           </ul>
@@ -197,3 +207,72 @@
   </div>
   </div>
 </section>
+
+
+<!-- <script>
+  import vars from "../js/_vars.js";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Проверяем, что переменная существует
+    if (!vars || !vars.catalogFilterBlocks) {
+      console.error('vars.catalogFilterBlocks не определена!');
+      return;
+    }
+
+    console.log('Блоков найдено:', vars.catalogFilterBlocks.length);
+
+    if (vars.catalogFilterBlocks.length) {
+      vars.catalogFilterBlocks.forEach((block, index) => {
+        const btn = block.querySelector(".catalog-filter__btn");
+        const inner = block.querySelector(".catalog-filter__inner");
+
+        // Проверяем, что элементы внутри блока найдены
+        if (!btn) {
+          console.error(`Не найдена кнопка в блоке ${index}`);
+          return;
+        }
+
+        if (!inner) {
+          console.error(`Не найден inner в блоке ${index}`);
+          return;
+        }
+
+        console.log(`Настройка блока ${index}:`, { btn, inner });
+
+        btn.addEventListener('click', (e) => {
+          console.log(`Клик по блоку ${index}`);
+
+          // Переключаем класс
+          block.classList.toggle('catalog-filter__block--open');
+          const isOpen = block.classList.contains('catalog-filter__block--open');
+
+          console.log(`Состояние: ${isOpen ? 'открыт' : 'закрыт'}`);
+
+          // Устанавливаем ARIA атрибуты
+          btn.setAttribute("aria-expanded", isOpen);
+          btn.setAttribute('aria-label', isOpen ? "Закрыть блок" : "Открыть блок");
+
+          // Анимация высоты
+          if (isOpen) {
+            inner.style.maxHeight = `${inner.scrollHeight}px`;
+            // Добавляем transition для плавности
+            inner.style.transition = 'max-height 0.3s ease';
+          } else {
+            inner.style.maxHeight = null;
+          }
+        });
+
+        // Добавляем обработчик клавиатуры для доступности
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+    } else {
+      console.warn('Блоки фильтра не найдены на странице');
+    }
+  });
+
+</script> -->

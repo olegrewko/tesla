@@ -34,3 +34,4 @@ vars.mainProductsInner.forEach(inner => {
   }
  });
 });
+}

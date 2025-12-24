@@ -8,3 +8,4 @@ import "./components/enter-modal-form.js";
 import "./components/main-products.js";
 import "./components/cookie.js";
 import "./components/catalog-filter.js";
+import "./components/price-range.js";
