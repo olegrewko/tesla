@@ -16,4 +16,7 @@ export default {
   priceMax: document.getElementById('price-max'),
   customSelects: document.querySelectorAll(".custom-select"),
   productSlider: document.querySelector(".product-hero__slider"),
+  productPopupsBtns: document.querySelectorAll(".product-hero__btn"),
+  productPopups: document.querySelectorAll(".product-hero__popup"),
+  productPopupsClose: document.querySelectorAll(".product-hero__popup-close"),
 }
