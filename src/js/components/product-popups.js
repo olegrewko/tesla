@@ -16,3 +16,4 @@ document.querySelector(`.products__inner[data-target="${activeTab}"]`)
 .classList.add("products__inner--active")
   });
 });
+}
