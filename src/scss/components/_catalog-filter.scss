@@ -33,22 +33,22 @@
     border-bottom: 1px solid gainsboro;
 
     padding: 4px;
-    padding-left: 0;
+    // padding-left: 0;
 
     &--open {
       .catalog-filter__inner {
-        height: 100px;
+        max-height: 250px;
+        height: 100%;
         opacity: 1;
-        padding-top: 5px;
+        padding-top: 0px;
+        transition: all 0.3s ease-in-out;
       }
     }
   }
 
   &__inner {
-
-
-
     height: 0;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
   }
 

@@ -9,3 +9,5 @@ import "./components/main-products.js";
 import "./components/cookie.js";
 import "./components/catalog-filter.js";
 import "./components/price-range.js";
+import "./components/custom-select.js";
+import "./components/product-slider.js";

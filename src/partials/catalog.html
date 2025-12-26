@@ -131,6 +131,9 @@
             </div>
             <button class="btn-reset catalog__reset">Очистить</button>
           </div>
+          <!-- <div class="catalog__right">
+
+          </div> -->
         </div>
       </div>
     </div>
@@ -142,8 +145,9 @@
           <ul class="list-reset catalog-filter">
             <li class="catalog-filter__block catalog-filter__block--open">
               <h4 class="catalog-filter__title">Бренды</h4>
+              <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
+                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
                 <ul class="list-reset catalog-filter__items">
                   <li class="catalog-filter__item">
                     <label class="custom-checkbox">
@@ -157,9 +161,10 @@
                       <span class="custom-checkbox__content">Senheiser</span>
                     </label>
                   </li>
+                </ul>
               </div> <!--catalog-filter__inner-->
-          </ul>
-          </li>
+
+            </li>
           </ul>
           <ul class="list-reset catalog-filter">
             <li class="catalog-filter__block">
@@ -199,8 +204,274 @@
               </div><!--catalog-filter__inner-->
             </li>
           </ul>
+          <ul class="list-reset catalog-filter">
+            <li class="catalog-filter__block">
+              <h4 class="catalog-filter__title">Направленность</h4>
+              <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
+              <div class="catalog-filter__inner">
+                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
+                <ul class="list-reset catalog-filter__items">
+                  <li class="catalog-filter__item">
+                    <label class="custom-checkbox">
+                      <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
+                      <span class="custom-checkbox__content">Shure</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter__item">
+                    <label class="custom-checkbox">
+                      <input class="custom-checkbox__field" checked type="checkbox" name="Бренды[]">
+                      <span class="custom-checkbox__content">Senheiser</span>
+                    </label>
+                  </li>
+                </ul>
+              </div> <!--catalog-filter__inner-->
+
+            </li>
+          </ul>
+          <ul class="list-reset catalog-filter">
+            <li class="catalog-filter__block">
+              <h4 class="catalog-filter__title">Цвет</h4>
+              <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
+              <div class="catalog-filter__inner">
+                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
+                <ul class="list-reset catalog-filter__items">
+                  <li class="catalog-filter__item">
+                    <label class="custom-checkbox">
+                      <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
+                      <span class="custom-checkbox__content">Shure</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter__item">
+                    <label class="custom-checkbox">
+                      <input class="custom-checkbox__field" checked type="checkbox" name="Бренды[]">
+                      <span class="custom-checkbox__content">Senheiser</span>
+                    </label>
+                  </li>
+                </ul>
+              </div> <!--catalog-filter__inner-->
+
+            </li>
+          </ul>
+          <button class="btn btn--quinary catalog__set">применить фильтры</button>
         </div>
-        <div class="catalog__right"></div>
+        <div class="catalog__right">
+          <div class="catalog__meta">
+            <div class="catalog__shows">Показано 45 товаров</div>
+            <div class="custom-select catalog__select">
+              <button class="btn-reset custom-select__btn">
+                <span>Сначала популярные</span>
+                <svg width="15" height="15" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.86217 11.8047L4.66683 14V0.666667C4.66683 0.298 4.36883 0 4.00017 0C3.6315 0 3.3335 0.298 3.3335 0.666667V14L1.13817 11.8047C0.8775 11.544 0.456167 11.544 0.1955 11.8047C-0.0651667 12.0653 -0.0651667 12.4867 0.1955 12.7473L3.0575 15.6093C3.3175 15.8693 3.65883 15.9993 4.00017 15.9993C4.3415 15.9993 4.68283 15.8693 4.94283 15.6093L7.80483 12.7473C8.0655 12.4867 8.0655 12.0653 7.80483 11.8047C7.54417 11.544 7.12283 11.544 6.86217 11.8047ZM14.4715 4.19533C14.7322 3.93467 14.7322 3.51333 14.4715 3.25267L11.6095 0.390667C11.3495 0.130667 11.0082 0 10.6668 0C10.3255 0 9.98417 0.13 9.72417 0.39L6.86217 3.252C6.6015 3.51267 6.6015 3.934 6.86217 4.19467C7.12283 4.45533 7.54417 4.45533 7.80483 4.19467L10.0002 1.99933V15.3333C10.0002 15.702 10.2982 16 10.6668 16C11.0355 16 11.3335 15.702 11.3335 15.3333V2L13.5288 4.19533C13.7895 4.456 14.2108 4.456 14.4715 4.19533Z"
+                    fill="#1A1A1A" />
+                </svg>
+              </button>
+              <div class="custom-select__dropdown">
+                <ul class="list-reset custom-select__list">
+                  <li class="custom-select__item">
+                    <button class="btn-reset custom-select__choose custom-select__choose--active">
+                      Сначала популярные
+                    </button>
+                  </li>
+                  <li class="custom-select__item">
+                    <button class="btn-reset custom-select__choose">
+                      Сначала дешевле
+                    </button>
+                  </li>
+                  <li class="custom-select__item">
+                    <button class="btn-reset custom-select__choose">
+                      Сначала дороже
+                    </button>
+                  </li>
+                  <li class="custom-select__item">
+                    <button class="btn-reset custom-select__choose">
+                      Высокий рейтинг
+                    </button>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ul class="list-reset catalog__products">
+            <li class="catalog__products-item">
+              <article class="product">
+                <div class="product__top"
+                  style="display: flex; justify-content: center; align-items: center; position: relative; min-height: 320px;">
+                  <button class="btn-reset product__fav" aria-label="Добавить в избранное">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1983_2331)">
+                        <path
+                          d="M17.5 1.91699C16.3739 1.93451 15.2724 2.24885 14.3067 2.82826C13.341 3.40768 12.5453 4.23166 12 5.21699C11.4546 4.23166 10.6589 3.40768 9.6932 2.82826C8.7275 2.24885 7.62601 1.93451 6.49996 1.91699C4.7049 1.99498 3.01366 2.78025 1.79574 4.10122C0.577818 5.4222 -0.0677922 7.17152 -4.17093e-05 8.96699C-4.17093e-05 13.514 4.78596 18.48 8.79996 21.847C9.69618 22.6001 10.8293 23.013 12 23.013C13.1706 23.013 14.3037 22.6001 15.2 21.847C19.214 18.48 24 13.514 24 8.96699C24.0677 7.17152 23.4221 5.4222 22.2042 4.10122C20.9863 2.78025 19.295 1.99498 17.5 1.91699ZM13.915 20.317C13.3789 20.7684 12.7007 21.0159 12 21.0159C11.2992 21.0159 10.621 20.7684 10.085 20.317C4.94696 16.006 1.99996 11.87 1.99996 8.96699C1.9316 7.70171 2.36632 6.46072 3.20932 5.51469C4.05232 4.56866 5.23519 3.99434 6.49996 3.91699C7.76472 3.99434 8.9476 4.56866 9.7906 5.51469C10.6336 6.46072 11.0683 7.70171 11 8.96699C11 9.23221 11.1053 9.48656 11.2929 9.6741C11.4804 9.86164 11.7347 9.96699 12 9.96699C12.2652 9.96699 12.5195 9.86164 12.7071 9.6741C12.8946 9.48656 13 9.23221 13 8.96699C12.9316 7.70171 13.3663 6.46072 14.2093 5.51469C15.0523 4.56866 16.2352 3.99434 17.5 3.91699C18.7647 3.99434 19.9476 4.56866 20.7906 5.51469C21.6336 6.46072 22.0683 7.70171 22 8.96699C22 11.87 19.053 16.006 13.915 20.313V20.317Z"
+                          fill="#1A1A1A" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1983_2331">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <div class="product__badges">
+                    <span class="badge">Хит продаж</span>
+                    <span class="badge">Новинки</span>
+                  </div>
+                  <picture>
+                    <source srcset="img/products/1-main.webp" type="image/webp">
+                    <img src="img/products/1-main.png" class="image" width="320" height="320"
+                      alt="img/products/1-main.png">
+                  </picture>
+                </div>
+                <div class="product__bottom">
+                  <a href="#" class="product__brand">Audio-Technica</a>
+                  <h3 class="product__title">
+                    <a href="#" class="product__link">AT-LPW40WN</a>
+                  </h3>
+                  <div class="product__price">110 000 ₽</div>
+                  <button class="btn btn--primary product__btn">В корзину</button>
+                </div>
+              </article>
+            </li>
+            <li class="catalog__products-item">
+              <article class="product">
+                <div class="product__top">
+                  <button class="btn-reset product__fav" aria-label="Добавить в избранное">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1983_2331)">
+                        <path
+                          d="M17.5 1.91699C16.3739 1.93451 15.2724 2.24885 14.3067 2.82826C13.341 3.40768 12.5453 4.23166 12 5.21699C11.4546 4.23166 10.6589 3.40768 9.6932 2.82826C8.7275 2.24885 7.62601 1.93451 6.49996 1.91699C4.7049 1.99498 3.01366 2.78025 1.79574 4.10122C0.577818 5.4222 -0.0677922 7.17152 -4.17093e-05 8.96699C-4.17093e-05 13.514 4.78596 18.48 8.79996 21.847C9.69618 22.6001 10.8293 23.013 12 23.013C13.1706 23.013 14.3037 22.6001 15.2 21.847C19.214 18.48 24 13.514 24 8.96699C24.0677 7.17152 23.4221 5.4222 22.2042 4.10122C20.9863 2.78025 19.295 1.99498 17.5 1.91699ZM13.915 20.317C13.3789 20.7684 12.7007 21.0159 12 21.0159C11.2992 21.0159 10.621 20.7684 10.085 20.317C4.94696 16.006 1.99996 11.87 1.99996 8.96699C1.9316 7.70171 2.36632 6.46072 3.20932 5.51469C4.05232 4.56866 5.23519 3.99434 6.49996 3.91699C7.76472 3.99434 8.9476 4.56866 9.7906 5.51469C10.6336 6.46072 11.0683 7.70171 11 8.96699C11 9.23221 11.1053 9.48656 11.2929 9.6741C11.4804 9.86164 11.7347 9.96699 12 9.96699C12.2652 9.96699 12.5195 9.86164 12.7071 9.6741C12.8946 9.48656 13 9.23221 13 8.96699C12.9316 7.70171 13.3663 6.46072 14.2093 5.51469C15.0523 4.56866 16.2352 3.99434 17.5 3.91699C18.7647 3.99434 19.9476 4.56866 20.7906 5.51469C21.6336 6.46072 22.0683 7.70171 22 8.96699C22 11.87 19.053 16.006 13.915 20.313V20.317Z"
+                          fill="#1A1A1A" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1983_2331">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <div class="product__badges">
+                    <span class="badge">Хит продаж</span>
+                    <span class="badge">Новинки</span>
+                  </div>
+                  <picture>
+                    <source srcset="img/products/2-main.webp" type="image/webp">
+                    <img src="img/products/2-main.png" class="image" width="320" height="320"
+                      alt="img/products/2-main.png">
+                  </picture>
+                </div>
+                <div class="product__bottom">
+                  <a href="#" class="product__brand">Audio-Technica</a>
+                  <h3 class="product__title">
+                    <a href="#" class="product__link">AT-LPW40WN</a>
+                  </h3>
+                  <div class="product__price">110 000 ₽</div>
+                  <button class="btn btn--primary product__btn">В корзину</button>
+                </div>
+              </article>
+            </li>
+            <li class="catalog__products-item">
+              <article class="product">
+                <div class="product__top">
+                  <button class="btn-reset product__fav" aria-label="Добавить в избранное">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1983_2331)">
+                        <path
+                          d="M17.5 1.91699C16.3739 1.93451 15.2724 2.24885 14.3067 2.82826C13.341 3.40768 12.5453 4.23166 12 5.21699C11.4546 4.23166 10.6589 3.40768 9.6932 2.82826C8.7275 2.24885 7.62601 1.93451 6.49996 1.91699C4.7049 1.99498 3.01366 2.78025 1.79574 4.10122C0.577818 5.4222 -0.0677922 7.17152 -4.17093e-05 8.96699C-4.17093e-05 13.514 4.78596 18.48 8.79996 21.847C9.69618 22.6001 10.8293 23.013 12 23.013C13.1706 23.013 14.3037 22.6001 15.2 21.847C19.214 18.48 24 13.514 24 8.96699C24.0677 7.17152 23.4221 5.4222 22.2042 4.10122C20.9863 2.78025 19.295 1.99498 17.5 1.91699ZM13.915 20.317C13.3789 20.7684 12.7007 21.0159 12 21.0159C11.2992 21.0159 10.621 20.7684 10.085 20.317C4.94696 16.006 1.99996 11.87 1.99996 8.96699C1.9316 7.70171 2.36632 6.46072 3.20932 5.51469C4.05232 4.56866 5.23519 3.99434 6.49996 3.91699C7.76472 3.99434 8.9476 4.56866 9.7906 5.51469C10.6336 6.46072 11.0683 7.70171 11 8.96699C11 9.23221 11.1053 9.48656 11.2929 9.6741C11.4804 9.86164 11.7347 9.96699 12 9.96699C12.2652 9.96699 12.5195 9.86164 12.7071 9.6741C12.8946 9.48656 13 9.23221 13 8.96699C12.9316 7.70171 13.3663 6.46072 14.2093 5.51469C15.0523 4.56866 16.2352 3.99434 17.5 3.91699C18.7647 3.99434 19.9476 4.56866 20.7906 5.51469C21.6336 6.46072 22.0683 7.70171 22 8.96699C22 11.87 19.053 16.006 13.915 20.313V20.317Z"
+                          fill="#1A1A1A" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1983_2331">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <div class="product__badges">
+                    <span class="badge">Хит продаж</span>
+                    <span class="badge">Новинки</span>
+                  </div>
+                  <picture>
+                    <source srcset="img/products/3-main.webp" type="image/webp">
+                    <img src="img/products/3-main.png" class="image" width="320" height="320"
+                      alt="img/products/3-main.png">
+                  </picture>
+                </div>
+                <div class="product__bottom">
+                  <a href="#" class="product__brand">Audio-Technica</a>
+                  <h3 class="product__title">
+                    <a href="#" class="product__link">AT-LPW40WN</a>
+                  </h3>
+                  <div class="product__price">110 000 ₽</div>
+                  <button class="btn btn--primary product__btn">В корзину</button>
+                </div>
+              </article>
+            </li>
+            <li class="catalog__products-item">
+              <article class="product">
+                <div class="product__top">
+                  <button class="btn-reset product__fav" aria-label="Добавить в избранное">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1983_2331)">
+                        <path
+                          d="M17.5 1.91699C16.3739 1.93451 15.2724 2.24885 14.3067 2.82826C13.341 3.40768 12.5453 4.23166 12 5.21699C11.4546 4.23166 10.6589 3.40768 9.6932 2.82826C8.7275 2.24885 7.62601 1.93451 6.49996 1.91699C4.7049 1.99498 3.01366 2.78025 1.79574 4.10122C0.577818 5.4222 -0.0677922 7.17152 -4.17093e-05 8.96699C-4.17093e-05 13.514 4.78596 18.48 8.79996 21.847C9.69618 22.6001 10.8293 23.013 12 23.013C13.1706 23.013 14.3037 22.6001 15.2 21.847C19.214 18.48 24 13.514 24 8.96699C24.0677 7.17152 23.4221 5.4222 22.2042 4.10122C20.9863 2.78025 19.295 1.99498 17.5 1.91699ZM13.915 20.317C13.3789 20.7684 12.7007 21.0159 12 21.0159C11.2992 21.0159 10.621 20.7684 10.085 20.317C4.94696 16.006 1.99996 11.87 1.99996 8.96699C1.9316 7.70171 2.36632 6.46072 3.20932 5.51469C4.05232 4.56866 5.23519 3.99434 6.49996 3.91699C7.76472 3.99434 8.9476 4.56866 9.7906 5.51469C10.6336 6.46072 11.0683 7.70171 11 8.96699C11 9.23221 11.1053 9.48656 11.2929 9.6741C11.4804 9.86164 11.7347 9.96699 12 9.96699C12.2652 9.96699 12.5195 9.86164 12.7071 9.6741C12.8946 9.48656 13 9.23221 13 8.96699C12.9316 7.70171 13.3663 6.46072 14.2093 5.51469C15.0523 4.56866 16.2352 3.99434 17.5 3.91699C18.7647 3.99434 19.9476 4.56866 20.7906 5.51469C21.6336 6.46072 22.0683 7.70171 22 8.96699C22 11.87 19.053 16.006 13.915 20.313V20.317Z"
+                          fill="#1A1A1A" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1983_2331">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <div class="product__badges">
+                    <span class="badge">Хит продаж</span>
+                    <span class="badge">Новинки</span>
+                  </div>
+                  <picture>
+                    <source srcset="img/products/1-main.webp" type="image/webp">
+                    <img src="img/products/1-main.png" class="image" width="320" height="320"
+                      alt="img/products/1-main.png">
+                  </picture>
+                </div>
+                <div class="product__bottom">
+                  <a href="#" class="product__brand">Audio-Technica</a>
+                  <h3 class="product__title">
+                    <a href="#" class="product__link">AT-LPW40WN</a>
+                  </h3>
+                  <div class="product__price">110 000 ₽</div>
+                  <button class="btn btn--primary product__btn">В корзину</button>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <ul class="list-reset pagination">
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn pagination__prev">Назад</button>
+            </li>
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn pagination__btn--active">1</button>
+            </li>
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn">2</button>
+            </li>
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn">3</button>
+            </li>
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn">4</button>
+            </li>
+            <li class="pagination__item">
+              <button class="btn-reset pagination__btn pagination__next">Вперед</button>
+            </li>
+
+
+
+          </ul>
+        </div>
 
       </div>
     </div>

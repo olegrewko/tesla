@@ -1,4 +1,31 @@
 .catalog {
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+
+  &__meta {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px;
+  }
+
+  &__shows {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    padding: 4px;
+  }
+
+  &__set {
+    margin-left: -5px;
+
+  }
 
   &__top {
     border: 1px solid gainsboro;
@@ -47,8 +74,9 @@
 
   &__inner {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+
   }
 }
 

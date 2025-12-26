@@ -1,0 +1,55 @@
+.custom-select {
+  position: relative;
+  max-width: 200px;
+  width: 100%;
+  z-index: 100;
+
+  &__dropdown {
+    position: absolute;
+    text-align: left;
+    right: 0;
+    top: 25px;
+    max-width: 200px;
+    width: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+  }
+
+  &__choose {
+    padding: 5px 0px;
+    width: 240px;
+    text-align: left;
+
+    &--active {
+      background-color: antiquewhite;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Rubik';
+    font-weight: 400;
+    gap: 10px;
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 140%;
+    letter-spacing: 0%;
+
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+  }
+}

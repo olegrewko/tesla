@@ -1,0 +1,292 @@
+.product-hero {
+  gap: 24px;
+
+
+  &__title {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 40px;
+    color: var(--color-primary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__prices {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--color-primary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__price-old {
+    font-family: 'Rubik';
+    font-weight: 600;
+
+    font-size: 16px;
+
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    text-decoration: line-through;
+    color: var(--color-secondary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__art {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__description {
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__inner {
+    display: flex;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  &__images,
+  &__info {
+    width: 50%;
+  }
+
+  &__images {
+    height: 780px;
+    border-right: 1px solid gainsboro;
+    background-color: #fff;
+    margin-bottom: 40px;
+  }
+
+  &__slider {
+    height: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+
+  .swiper-pagination.product-hero__pag {
+    // position: absolute;
+    width: auto;
+    left: 24px;
+    text-align: left;
+    bottom: 24px;
+
+    .swiper-pagination-bullet {
+      margin: 0;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--color-primary);
+      border-radius: 100%;
+      background-color: transparent;
+      // opacity: 1;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 12px;
+      height: 12px;
+      background-color: var(--color-primary);
+      border-radius: 100%;
+      opacity: 1;
+    }
+  }
+
+
+  &__slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 20px;
+      width: 50%;
+      border-right: 1px solid gainsboro;
+      height: 780px;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      width: 50%;
+      border-right: 1px solid gainsboro;
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__stepper {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+
+  &__cart-btn {
+    margin-left: -20px;
+    width: calc(100% + 24px);
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &-value {
+      font-family: 'Rubik';
+      font-weight: 600;
+      padding-left: 24px;
+      font-size: 16px;
+      color: var(--color-accent);
+      line-height: 122%;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+      background-image: url(../img/star.svg);
+      background-position: left center;
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+    }
+
+    &-testimonials {
+      font-family: 'Rubik';
+      font-weight: 400;
+
+      font-size: 16px;
+      color: var(--color-secondary);
+      line-height: 122%;
+      letter-spacing: 0%;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 40px;
+    font-family: 'Rubik';
+    font-weight: 600;
+
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 122%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__chars-items {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik';
+    font-weight: 400;
+
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__chars-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__chars-value {
+    font-family: 'Rubik';
+    font-weight: 600;
+
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__btns {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+
+  }
+
+  &__btn {
+    // margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: gainsboro;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-btn {
+      padding: 20px 24px;
+      font-family: 'Rubik';
+      font-weight: 500;
+
+      font-size: 16px;
+      color: var(--color-primary);
+      line-height: 122%;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+
+
+    }
+
+    svg {
+      display: block;
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+      object-fit: cover;
+      margin: 0 10px;
+    }
+  }
+}

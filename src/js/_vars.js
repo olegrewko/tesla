@@ -14,4 +14,6 @@ export default {
   priceRange: document.querySelector('.price-range'),
   priceMin: document.getElementById('price-min'),
   priceMax: document.getElementById('price-max'),
+  customSelects: document.querySelectorAll(".custom-select"),
+  productSlider: document.querySelector(".product-hero__slider"),
 }
