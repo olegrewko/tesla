@@ -155,12 +155,14 @@
     }
 
     &-right {
+
       height: 780px;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 20px;
+      justify-content: space-between;
+      // padding: 20px;
       width: 50%;
       border-right: 1px solid gainsboro;
     }
@@ -186,10 +188,16 @@
 
   }
 
+  &__chars {
+    padding: 20px;
+  }
+
   &__rating {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 20px;
 
     &-value {
       font-family: 'Rubik';
@@ -257,11 +265,14 @@
   }
 
   &__btns {
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    width: 470px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-around;
+    // gap: 5px;
 
   }
 
@@ -270,7 +281,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 400px;
+    width: 470px;
     border-top: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
     border-left: 1px solid gainsboro;
