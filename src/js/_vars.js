@@ -19,4 +19,5 @@ export default {
   productPopupsBtns: document.querySelectorAll(".product-hero__btn"),
   productPopups: document.querySelectorAll(".product-hero__popup"),
   productPopupsClose: document.querySelectorAll(".product-hero__popup-close"),
+  productRatingBar: document.querySelector(".product-test__rating-bars"),
 }

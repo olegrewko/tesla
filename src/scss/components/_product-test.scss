@@ -1,0 +1,35 @@
+.product-test {
+  padding-top: 50px;
+  margin-bottom: 100px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+  }
+
+  &__left {
+    padding-right: 50px;
+  }
+
+  &__right {}
+
+  &____title {
+    margin-top: 0;
+  }
+
+  &__content {
+    // max-width: 1900px;
+    // width: 100%;
+
+  }
+
+  &__benefits {
+    width: 300px;
+  }
+
+  &__d {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+  }
+
+}
