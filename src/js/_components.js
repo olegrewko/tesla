@@ -11,3 +11,4 @@ import "./components/catalog-filter.js";
 import "./components/price-range.js";
 import "./components/custom-select.js";
 import "./components/product-slider.js";
+import "./components/product-popups.js";

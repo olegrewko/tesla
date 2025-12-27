@@ -1,19 +1,32 @@
-import Swiper from 'swiper';
-import { Navigation, Scrollbar } from 'swiper/modules';
+
 import vars from "../_vars.js";
 
-Swiper.use([Navigation, Scrollbar]);
 
-if (vars.mainProductsInner.length) {
 
-vars.mainProductsTabsBtns.forEach((btn) => {
+if (vars.productPopupsBtns.length) {
+
+vars.productPopupsBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     const activeTab = e.currentTarget.dataset.tab
-  vars.mainProductsTabsBtns.forEach(btn => {btn.classList.remove("products-tabs__btn--active");});
-    e.currentTarget.classList.add("products-tabs__btn--active");
-vars.mainProductsInner.forEach(btn => {btn.classList.remove("products-tabs__btn--active");});
-document.querySelector(`.products__inner[data-target="${activeTab}"]`)
-.classList.add("products__inner--active")
+
+  vars.productPopups.forEach((popup) => {
+    btn.classList.remove("product-hero__popup--active");
+  });
+
+document.querySelector(`.product-hero__popup[data-target="${activeTab}"]`)
+.classList.add("product-hero__popup--active")
   });
 });
+
+vars.productPopupsClose.forEach((btn) => {
+   btn.addEventListener('click', (e) => {
+
+  vars.productPopups.forEach((popup) => {
+    popup.classList.remove("product-hero__popup--active");
+  });
+
+  });
+});
+
+
 }
