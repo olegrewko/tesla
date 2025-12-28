@@ -5,6 +5,9 @@ export default {
   bodyEl: document.body,
   enterModalSteps: document.querySelectorAll(".enter-modal__step"),
   mainProductsInner:document.querySelectorAll(".products__inner"),
+mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btns"),
+
+
   subscribeForm: document.querySelector(".subscribe__form"),
   cookieBlock: document.querySelector(".cookie-block"),
   cookieBlockBtn: document.querySelector(".cookie-block__btn"),

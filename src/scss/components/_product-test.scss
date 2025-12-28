@@ -1,8 +1,7 @@
 .product-test {
 
-  padding-top: 50px;
+  padding-top: 20px;
   margin-bottom: 100px;
-  border: 1px solid gainsboro;
 
   .grid {
     display: grid;
@@ -96,6 +95,7 @@
 
   &__left {
     padding-right: 50px;
+    border-right: 1px solid gainsboro
   }
 
   &__right {

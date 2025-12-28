@@ -11,27 +11,27 @@
     position: relative;
     display: flex;
     margin-bottom: 20px;
-    position: relative;
+
     /* Для абсолютного позиционирования кнопки и бейджей */
-    display: flex;
+
     justify-content: center;
     /* Горизонтальное центрирование */
     align-items: center;
     /* Вертикальное центрирование */
-    min-height: 320px;
+
     /* Минимальная высота, равная высоте картинки */
   }
 
-  .product__top picture,
-  .product__top .image {
-    max-width: 100%;
-    /* Чтобы картинка не выходила за пределы */
-    height: auto;
-  }
+  // .product__top picture,
+  // .product__top .image {
+  // max-width: 100%;
+  /* Чтобы картинка не выходила за пределы */
+  // height: auto;
+
 
   &__badges {
     position: absolute;
-    top: 10px;
+    top: 2px;
     left: 10px;
     z-index: 2;
     display: flex;
@@ -55,8 +55,8 @@
 
   &__fav {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     z-index: 2;
     width: 40px;
     height: 40px;
@@ -84,7 +84,15 @@
     letter-spacing: 0%;
   }
 
-  &__price {}
+  &__price {
+    font-family: 'Rubik';
+    font-weight: 600;
+
+    font-size: 16px;
+    color: var(--color-primary);
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
 
   &__link {
     color: inherit;
@@ -99,5 +107,6 @@
   &__btn {
     margin-top: 12px;
     width: 100%;
+    z-index: 4;
   }
 }

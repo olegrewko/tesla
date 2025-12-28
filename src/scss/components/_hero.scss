@@ -1,18 +1,20 @@
 .hero {
   position: relative;
-display: flex;
+  display: flex;
   overflow: hidden;
 
   &__image,
   &__text {
     width: 50%;
-// width: 960px;
-height: 640px;
+    // width: 960px;
+    height: 610px;
   }
+
   &__pic {
     width: 100%;
     height: 100%;
   }
+
   &__text {
     position: relative;
     display: flex;
@@ -20,46 +22,50 @@ height: 640px;
     align-items: flex-start;
     justify-content: center;
     padding: 40px;
-  background: var(--color-accent);
-  margin-bottom: 40px;
+    background: var(--color-accent);
+    margin-bottom: 20px;
   }
+
   &__decor {
-  position: absolute;
-  right: -212px;
-  top: 45px;
-  width: 512px;
-  height: 512px;
-  opacity: 1;
-  mix-blend-mode: hard-light;
-  pointer-events: none;
+    position: absolute;
+    right: -212px;
+    top: 45px;
+    width: 512px;
+    height: 512px;
+    opacity: 1;
+    mix-blend-mode: hard-light;
+    pointer-events: none;
   }
+
   &__title {
-  margin: 0;
-  max-width: 480px;
-  font-family: 'Rubik';
-  font-weight: 400;
-  font-style: normal;
-  font-size: 42px;
-  color: var(--light-color);
-  line-height: 120%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+    margin: 0;
+    max-width: 480px;
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+    color: var(--light-color);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    margin-bottom: 24px;
   }
+
   &__descr {
-  min-width: 540px;
-  width: 100%;
-  font-family: 'Rubik';
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  color: var(--light-color);
-  line-height: 140%;
-  letter-spacing: 0%;
-  margin-bottom: 30px;
+    min-width: 540px;
+    width: 100%;
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--light-color);
+    line-height: 140%;
+    letter-spacing: 0%;
+    margin-bottom: 30px;
   }
+
   &__btn {
-  width: 315px;
-  height: 60px;
+    width: 315px;
+    height: 60px;
   }
 }

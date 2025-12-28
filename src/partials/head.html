@@ -74,21 +74,21 @@
   <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
   <script>
 
-    // const priceRange = document.querySelector('.price-range');
+    const priceRange = document.querySelector('.price-range');
 
 
 
-    // if (priceRange) {
-    //   noUiSlider.create(priceRange, {
-    //     start: [0, 50000],
-    //     connect: true,
-    //     range: {
-    //       'min': 0,
-    //       'max': 50000
-    //     }
-    //   });
-    // }
-    // });
+    if (priceRange) {
+      noUiSlider.create(priceRange, {
+        start: [0, 50000],
+        connect: true,
+        range: {
+          'min': 0,
+          'max': 50000
+        }
+      });
+
+    }
 
   </script>
 </head>
