@@ -18,6 +18,37 @@
     margin-bottom: 10px;
     gap: 4px;
 
+    &-value {
+      font-family: 'Rubik';
+      font-weight: 400;
+
+      font-size: 36px;
+      color: var(--color-accent);
+      line-height: 120%;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+    }
+
+    &-testimonials {
+      font-family: 'Rubik';
+      font-weight: 400;
+
+      font-size: 16px;
+      color: var(--color-secondary);
+      line-height: 140%;
+      letter-spacing: 0%;
+    }
+
+    &-item {
+      font-family: 'Rubik';
+      font-weight: 400;
+
+      font-size: 16px;
+      color: var(--color-primary);
+      line-height: 140%;
+      letter-spacing: 0%;
+    }
+
     img {
       &:last-of-type {
         margin-right: 4px;

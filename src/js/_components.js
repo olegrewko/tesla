@@ -13,3 +13,4 @@ import "./components/custom-select.js";
 import "./components/product-slider.js";
 import "./components/product-popups.js";
 import "./components/product-rating.js";
+import "./components/product-similar-slider.js";

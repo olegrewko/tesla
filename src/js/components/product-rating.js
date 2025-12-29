@@ -1,7 +1,7 @@
 import vars from "../_vars.js";
 
 if (vars.productRatingBar) {
-  const maxReviews = parseInt(vars.productRatingBar.dataset.maxReviews)
+  const maxReviews = parseInt(vars.productRatingBar.dataset.maxReviews);
 
   const ratingBars = vars.productRatingBar.querySelectorAll('.product-test__rating-bar');
 
