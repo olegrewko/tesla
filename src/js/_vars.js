@@ -24,4 +24,6 @@ mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btn"),
   productPopupsClose: document.querySelectorAll(".product-hero__popup-close"),
   productRatingBar: document.querySelector(".product-test__rating-bars"),
 productSimilar: document.querySelector(".product-similar"),
+map: document.querySelector("#map"),
+
 }
