@@ -1,0 +1,77 @@
+.grid-cart {
+  display: grid;
+  grid-template-columns: 2fr 5fr 1fr 1fr 3fr;
+}
+
+
+.cart-content {
+  &__top {
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 24px 0;
+  }
+  &__inner {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    text-align: right;
+  }
+  &__image {width: 200px;}
+  &__title {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+
+  }
+  &__price {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: right;
+  }
+  &__sum {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: right;
+  }
+  &__middle {padding: 24px;}
+  &__stepper {
+display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  background: rgb(226, 224, 224);
+  gap: 8px;
+  &__minus,
+  &__plus {
+  width: 12px;
+  height: 12px;
+  }
+  &__disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  }
+  &__input {
+  width: 20px;
+  height: 12px;
+  background: transparent;
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-style: 'Rubik-Medium';
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #0c0c0c;
+  }
+  }
+
+}

@@ -25,5 +25,5 @@ mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btn"),
   productRatingBar: document.querySelector(".product-test__rating-bars"),
 productSimilar: document.querySelector(".product-similar"),
 map: document.querySelector("#map"),
-
+shopsContentBtns: document.querySelectorAll(".shops-content__btn"),
 }

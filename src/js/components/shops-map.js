@@ -1,4 +1,8 @@
 import vars from "../_vars.js";
+
+if(vars.map) {
+
+
 // script.js
 ymaps.ready(init);
 
@@ -38,4 +42,5 @@ function init() {
             myMap.setType('yandex#' + type);
         });
     });
+}
 }

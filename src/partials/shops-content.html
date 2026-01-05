@@ -3,7 +3,7 @@
     <div class="container">
       <div class="shops-content__inner">
         <form action="#" class="shops-content__form">
-          <label for="" class="shops-content__label">
+          <label  class="shops-content__label">
             <svg class="shops-content__icon" width="20px" height="20px" viewBox="0 0 20 20" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <circle cx="9.80589" cy="9.80541" r="7.49047" stroke="#666666" stroke-width="1.5" stroke-linecap="round"
@@ -11,14 +11,20 @@
               <path d="M15.0156 15.4043L17.9523 18.3334" stroke="#666666" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-          </label>
+
           <input type="search" name="shops-search" class="small-input shops-content__input"
             placeholder="Название,адрес или метро">
+          </label>
         </form>
         <label class="custom-checkbox">
-          <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
-          <span class="custom-checkbox__content">Shure</span>
+          <input class="custom-checkbox__field" type="checkbox" name="Открыт сейчас">
+          <span class="custom-checkbox__content">Открыт сейчас</span>
         </label>
+        <label class="custom-checkbox">
+          <input class="custom-checkbox__field" type="checkbox" name="Рядом">
+          <span class="custom-checkbox__content">Рядом</span>
+        </label>
+
       </div>
     </div>
   </div>
@@ -28,25 +34,25 @@
         <div class="shops-content__left">
           <div class="shops-content__items" data-simplebar="init">
             <div class="shops-content__item">
-              <h3 class="shops-content__subtitle">Real-to-Reel</h3>
+              <h3 class="shops-content__subtitle">Приморский</h3>
               <div class="shops-content__metro shops-content__metro--green">Сокол</div>
               <div class="shops-content__address">г Москва ул Ясеневая 34 </div>
               <div class="shops-content__sh">9.00 - 20.00</div>
-              <button class="shop-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
+              <button class="btn-reset shops-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
             </div>
             <div class="shops-content__item">
-              <h3 class="shops-content__subtitle">Real-to-Reel</h3>
+              <h3 class="shops-content__subtitle">Адмиралтейский</h3>
               <div class="shops-content__metro shops-content__metro--green">Сокол</div>
               <div class="shops-content__address">г Москва ул Ясеневая 34 </div>
               <div class="shops-content__sh">9.00 - 20.00</div>
-              <button class="shop-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
+              <button class="btn-reset shops-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
             </div>
             <div class="shops-content__item">
-              <h3 class="shops-content__subtitle">Real-to-Reel</h3>
+              <h3 class="shops-content__subtitle">Центральный</h3>
               <div class="shops-content__metro shops-content__metro--green">Сокол</div>
               <div class="shops-content__address">г Москва ул Ясеневая 34 </div>
               <div class="shops-content__sh">9.00 - 20.00</div>
-              <button class="shop-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
+              <button class="btn-reset shops-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
             </div>
           </div>
         </div>
@@ -57,14 +63,8 @@
             <button class="map-btn" data-type="hybrid">Гибрид</button>
 
           </div>
-          <!-- <div class="shops-content__map" id="map"></div> -->
-          <div id="map"></div>
-          <div class="info">
-            <h3>Информация о карте:</h3>
-            <p>Текущий тип карты: <span id="current-type">Схема</span></p>
-            <p>Масштаб: <span id="current-zoom">10</span></p>
-            <p>Координаты центра: <span id="current-center">55.76, 37.64</span></p>
-          </div>
+
+          <div id="map" class="shops-content__map"  style="width: 100%; height: 400px;"></div>
 
         </div>
       </div>
