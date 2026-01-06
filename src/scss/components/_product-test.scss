@@ -256,28 +256,29 @@
   left: 0;
   height: 100%;
   width: 0; /* Начальная ширина 0 */
-  background: cadetblue;
+  // background: var(--color-accent);
+  background-color: #e0e0e0;
   border-radius: 1px;
   transition: width 1s ease-in-out;
 }
 
 /* Цвета для разных рейтингов */
 .product-test__rating-item:nth-child(1) .product-test__rating-value-bar {
-  background: cadetblue;
+  background: var(--color-accent);
 }
 
 .product-test__rating-item:nth-child(2) .product-test__rating-value-bar {
-  background: cadetblue;
+  background: var(--color-accent);
 }
 
 .product-test__rating-item:nth-child(3) .product-test__rating-value-bar {
-  background: cadetblue;
+  background: var(--color-accent);
 }
 
 .product-test__rating-item:nth-child(4) .product-test__rating-value-bar {
-  background: linear-gradient(90deg, #ff5722, #ff9800);
+  background: var(--color-accent);
 }
 
 .product-test__rating-item:nth-child(5) .product-test__rating-value-bar {
-  background: linear-gradient(90deg, #f44336, #ff5722);
+  background: var(--color-accent);
 }

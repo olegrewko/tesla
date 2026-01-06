@@ -1,0 +1,30 @@
+.not-found {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
+padding: 60px 40px;
+
+&__digit {
+font-weight: 600;
+font-size: 300px;
+line-height: 120%;
+text-transform: uppercase;
+color: var(--color-accent);
+}
+&__title {
+font-weight: 500;
+font-size: 32px;
+line-height: 120%;
+text-transform: uppercase;
+color: var(--color-primary);
+}
+&__descr {
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+text-transform: uppercase;
+color: var(--color-primary);
+max-width: 340px;
+}
+}
