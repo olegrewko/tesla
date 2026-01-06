@@ -1,38 +1,8 @@
 <section class="order-content">
 
-    <!-- <form method="POST"  class="order-content__form">
-      <div   class="order-content__inner">
-    <h2 class="order-content__title order-content__title--form">Остались вопросы? Напишите нам</h2>
-    <div class="order-content__inputs">
-      <label class="order-content__label">
-      <input type="text" name="name"  class="order-content__input small-input name-input"  placeholder="Имя">
-      </label>
-            <label class="order-content__label">
-      <input type="text" name="company"  class="order-content__input small-input company-input" placeholder="Компания">
-      </label>
-            <label class="order-content__label">
-      <input type="email" name="email"  class="order-content__input small-input email-input" placeholder="E-mail*">
-      </label>
-                  <label class="order-content__label">
-      <input type="tel" name="email"  class="order-content__input small-input tel-input" placeholder="Телефон">
-      </label>
-                        <label class="order-content__label order-content__label--textarea">
-      <textarea  name="message"  class="order-content__input small-input message-textarea small-textarea" placeholder="Сообщение">
-      </textarea>
-      </label>
-    </div>
-      <label  class="custom-checkbox">
-        <input type="checkbox"
-         name="policy"
-         class="custom-checkbox__field" >
-         <span class="custom-checkbox__content">Я согласен с политикой обработки персональных данных</span>
-      </label>
-      <button class="btn btn--primary order-content__btn" type="submit">Отправить</button>
-      </div>
-    </form> -->
     <form method="POST" class="order-content__form" id="contactForm">
     <div class="order-content__inner">
-        <h2 class="order-content__title order-content__title--form">Остались вопросы? Напишите нам</h2>
+        <h2 class="order-content__title order-content__title--form">Контактные данные</h2>
 
         <div class="order-content__inputs">
             <!-- Поле Имя -->
@@ -41,11 +11,17 @@
                 <span class="input-error"></span>
             </label>
 
-            <!-- Поле Компания -->
+             <!-- Поле Фамилия -->
             <label class="order-content__label">
-                <input type="text" name="company" class="order-content__input small-input company-input" placeholder="Компания">
+                <input type="text" name="family" class="order-content__input small-input name-input" placeholder="Фамилия">
                 <span class="input-error"></span>
             </label>
+
+            <!-- Поле Компания -->
+            <!-- <label class="order-content__label">
+                <input type="text" name="company" class="order-content__input small-input company-input" placeholder="Компания">
+                <span class="input-error"></span>
+            </label> -->
 
             <!-- Поле Email -->
             <label class="order-content__label">
@@ -59,12 +35,26 @@
                 <span class="input-error"></span>
             </label>
 
-            <!-- Поле Сообщение -->
+
+
+                        <!-- Поле Адрес -->
+            <label class="order-content__label">
+                <input type="text" name="address" class="order-content__input small-input tel-input" placeholder="Адрес">
+                <span class="input-error"></span>
+            </label>
+
+            <!-- Поле Индекс -->
+            <label class="order-content__label order-content__label--textarea">
+                <textarea name="index" class="order-content__input small-input message-textarea small-textarea" placeholder="Индекс"></textarea>
+                <span class="input-error"></span>
+            </label>
+        </div>
+
+                    <!-- Поле Сообщение -->
             <label class="order-content__label order-content__label--textarea">
                 <textarea name="message" class="order-content__input small-input message-textarea small-textarea" placeholder="Сообщение"></textarea>
                 <span class="input-error"></span>
             </label>
-        </div>
 
         <!-- Чекбокс -->
         <label class="custom-checkbox">
@@ -75,7 +65,7 @@
 
         <!-- Кнопка отправки -->
         <button class="btn btn--primary order-content__btn" type="submit" id="submitBtn">
-            <span class="btn-text">Отправить</span>
+            <span class="btn-text">Оформить заказ</span>
             <span class="btn-loader" style="display: none;">
                 <svg width="20" height="20" viewBox="0 0 50 50">
                     <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="31.415, 31.415"/>
@@ -96,39 +86,53 @@
     </form>
 
   <div  class="order-content__info">
-    <h2 class="order-content__title">Наши контакты</h2>
+    <h2 class="order-content__title">Ваш заказ</h2>
     <div   class="order-content__wrapper">
-      <div class="order-content__col">
-        <div class="order-content__item">
-          <h3 class="order-content__subtitle">Обработка заказов</h3>
-          <div class="order-content__text">
-            9.00-20.00 пн-пт
-          </div>
+      <ul class="list-reset order-content__items">
+        <li class="order-content__item">
+          <article class="order-content">
+            <picture>
+              <img src="img/products/1-mini.png" alt="img/products/1-mini.png" class="order-content__image" width="80" height="80">
+            </picture>
+            <h3 class="order-content__title">
+              <a href="#" class="order-content__link">Neumann TLM 123 BK</a>
+            </h3>
+            <div class="order-content__inner">
+              <div class="order-content__quantity">1 шт</div>
+              <div class="order-content__price">85 625</div>
+            </div>
+          </article>
+        </li>
+        <li class="order-content__item">
+          <article class="order-content">
+            <picture>
+              <img src="img/products/1-mini.png" alt="img/products/1-mini.png" class="order-content__image" width="80" height="80">
+            </picture>
+            <h3 class="order-content__title">
+              <a href="#" class="order-content__link">Neumann TLM 123 BK</a>
+            </h3>
+            <div class="order-content__inner">
+              <div class="order-content__quantity">1 шт</div>
+              <div class="order-content__price">85 625</div>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <div class="order-content__result">
+        <div class="order-content__row">
+          <div class="order-content__item">Доставка</div>
+          <div class="order-content__item">1 500</div>
         </div>
-        <div class="order-content__item">
-            <h3 class="order-content__subtitle">Телефон</h3>
-          <a href="tel:+79998525821" class="order-content__text">
-            8-999-852-58-21
-          </a>
+        <div class="order-content__row">
+          <div class="order-content__item">Сумма</div>
+          <div class="order-content__item">89 556</div>
+        </div>
+                <div class="order-content__row">
+          <div class="order-content__item">Итого</div>
+          <div class="order-content__item">89 556</div>
         </div>
       </div>
 
-      <div class="order-content__col">
-        <div class="order-content__item">
-          <h3 class="order-content__subtitle">Реквизиты</h3>
-          <div class="order-content__text">
-            ООО "Reel-to-Real" <br />
-            ИНН: 2132656412121 <br />
-            КПП: 2132656412121 <br />
-          </div>
-        </div>
-        <div class="order-content__item">
-            <h3 class="order-content__subtitle">Телефон</h3>
-          <a href="tel:+79998525821" class="order-content__text">
-            8-999-852-58-21
-          </a>
-        </div>
-      </div>
 
 
     </div>
