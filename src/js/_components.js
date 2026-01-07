@@ -16,3 +16,4 @@ import "./components/product-rating.js";
 import "./components/product-similar-slider.js";
 import "./components/shops-map.js";
 import "./components/contacts-form.js";
+import "./components/theme-switcher.js";

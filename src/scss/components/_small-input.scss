@@ -11,9 +11,22 @@ font-size: 16px;
 line-height: 120%;
 letter-spacing: 0%;
 color: var(--color-primary);
+transition: border-color 0.3s ease-in-out;
 
 &::placeholder {
 color: var(--color-secondary)
+}
+
+&:focus {
+  outline: 1px dashed currentcolor;
+  outline-offset: 3px;
+}
+@include hover {
+  border-color: var(--color-accent);
+}
+
+&:active {
+  border-color: var(--color-orange);
 }
 
 }

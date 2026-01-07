@@ -37,11 +37,7 @@
       border: 2px solid #2c4bd7;
     }
 
-    // &:hover  {
-    // background-color: white;
-    // color: #2c4bd7;
-    // border: 2px solid #2c4bd7;
-    // }
+
     &:active {
       background-color: rgb(11, 150, 220);
       color: #ecedf2;
@@ -60,13 +56,14 @@
 
     &:focus-visible {
       outline: 1px dashed black;
+      outline-offset: 3px;
     }
 
     &:hover {
-      background-color: var(--color-secondary);
+      background-color: var(--color-warning);
       color: #fff;
-      border: 1px solid var(--color-secondary);
-      // outline-offset: 3px;
+      border: 1px solid var(--color-warning);
+
       transition: all 0.3s ease-in-out;
     }
 

@@ -1,11 +1,11 @@
 .product {
   position: relative;
-  padding: 4px 8px;
+  padding: 4px 0px;
   width: 450px;
-  height: 450px;
+  height: auto;
   box-shadow: 4px 4px 24px 0 rgba(235, 240, 240, 0);
   background-color: #fff;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 
   &__top {
     position: relative;
@@ -105,8 +105,8 @@
   }
 
   &__btn {
-    margin-top: 12px;
-    width: 100%;
+    margin-top: 2px;
+    width: 450px;
     z-index: 4;
     @include hover {
     background-color: #fff;

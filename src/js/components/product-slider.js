@@ -101,21 +101,21 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Swiper initialized:', swiper);
 
   // Дополнительные элементы управления
-  addCustomControls(swiper);
+  // addCustomControls(swiper);
 });
 
 // Дополнительные кастомные элементы управления
-function addCustomControls(swiper) {
+// function addCustomControls(swiper) {
   // Создаем контейнер для кнопок
-  const sliderContainer = swiper.el;
-  const controlsContainer = document.createElement('div');
-  controlsContainer.className = 'slider-controls';
-  controlsContainer.style.cssText = `
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  `;
+  // const sliderContainer = swiper.el;
+  // const controlsContainer = document.createElement('div');
+  // controlsContainer.className = 'slider-controls';
+  // controlsContainer.style.cssText = `
+  //   display: flex;
+  //   justify-content: center;
+  //   gap: 10px;
+  //   margin-top: 20px;
+  // `;
 
   // Кнопка "Начать сначала"
   // const restartBtn = document.createElement('button');
@@ -130,20 +130,20 @@ function addCustomControls(swiper) {
   // toggleAutoplayBtn.className = 'btn btn--secondary';
   // toggleAutoplayBtn.textContent = 'Пауза';
 
-  toggleAutoplayBtn.addEventListener('click', () => {
-    if (swiper.autoplay.running) {
-      swiper.autoplay.stop();
-      toggleAutoplayBtn.textContent = 'Продолжить';
-    } else {
-      swiper.autoplay.start();
-      toggleAutoplayBtn.textContent = 'Пауза';
-    }
-  });
+  // toggleAutoplayBtn.addEventListener('click', () => {
+  //   if (swiper.autoplay.running) {
+  //     swiper.autoplay.stop();
+  //     toggleAutoplayBtn.textContent = 'Продолжить';
+  //   } else {
+  //     swiper.autoplay.start();
+  //     toggleAutoplayBtn.textContent = 'Пауза';
+  //   }
+  // });
 
-  controlsContainer.appendChild(restartBtn);
-  controlsContainer.appendChild(toggleAutoplayBtn);
-  sliderContainer.appendChild(controlsContainer);
-}
+  // controlsContainer.appendChild(restartBtn);
+  // controlsContainer.appendChild(toggleAutoplayBtn);
+  // sliderContainer.appendChild(controlsContainer);
+// }
 // vars.mainProductsInner------------------------------------
 
 vars.mainProductsInner.forEach(inner => {
@@ -154,7 +154,7 @@ vars.mainProductsInner.forEach(inner => {
   loop: true,
   watchSlidesProgress: true,
   scrollbar: {
-    el: inner.querySelector(".products__scrollbar"),
+    el: inner.querySelector(".swiper-scrollbar"),
     draggable: true
   },
   navigation: {
