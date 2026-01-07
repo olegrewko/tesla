@@ -1,44 +1,473 @@
 .to-top {
 
   position: fixed;
-  right: 34px;
-  bottom: 34px;
-  width: 40px;
-  height: 40px;
+  right: 60px;
+  bottom: 60px;
+  width: 80px;
+  height: 80px;
   padding: 4px;
   background-color: transparent;
-  // opacity: 0;
-  // visibility: hidden;
 
-  // &--visible {
-  //  opacity: 1;
-  //  visibility: visible;
-  // }
-  // svg {
-  //   fill: currentcolor;
-  // }
-
-    &:focus {
-      outline: none;
     }
 
-    &:focus-visible {
-      outline: 2px dashed black;
-      outline-offset: 2px;
+// Переменные
+$transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Миксины
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin glow-effect($color, $intensity: 0.3) {
+  filter: drop-shadow(0 0 4px rgba($color, $intensity))
+          drop-shadow(0 0 8px rgba($color, $intensity * 0.7))
+          drop-shadow(0 0 12px rgba($color, $intensity * 0.5));
+}
+
+// Контейнер для иконки
+.upload-container {
+  position: relative;
+  @include center-flex;
+  width: 80px;
+  height: 80px;
+
+  // Состояние загрузки
+  &.loading {
+    .upload-icon {
+      .arrow-group {
+        transform: translateY(-2px);
+
+        .progress-line {
+          animation: progress-fill 2s ease-in-out infinite;
+        }
+      }
+
+      .loading-dots {
+        opacity: 1;
+
+        .dot {
+          animation: dots-pulse 1.4s ease-in-out infinite;
+
+          &.dot-1 { animation-delay: 0s; }
+          &.dot-2 { animation-delay: 0.2s; }
+          &.dot-3 { animation-delay: 0.4s; }
+        }
+      }
+
+      .border-animation {
+        stroke-width: 2;
+        animation: border-rotate 3s linear infinite;
+      }
+    }
+  }
+
+  // Состояние успеха
+  &.success {
+    .upload-icon {
+      .arrow-group {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      .success-check {
+        opacity: 1;
+        animation: check-draw 0.6s $transition-bounce forwards;
+
+        path {
+          stroke-dasharray: 20;
+          stroke-dashoffset: 20;
+          animation: check-stroke 0.5s ease-in-out 0.3s forwards;
+        }
+      }
+
+      .sparkles {
+        opacity: 1;
+
+        .sparkle {
+          animation: sparkle-pop 0.8s ease-out forwards;
+
+          &.sparkle-1 {
+            animation-delay: 0.1s;
+            transform-origin: 30px 30px;
+          }
+          &.sparkle-2 {
+            animation-delay: 0.2s;
+            transform-origin: 50px 30px;
+          }
+          &.sparkle-3 {
+            animation-delay: 0.3s;
+            transform-origin: 35px 45px;
+          }
+          &.sparkle-4 {
+            animation-delay: 0.4s;
+            transform-origin: 45px 45px;
+          }
+        }
+      }
+
+      .border-animation {
+        stroke-width: 2;
+        animation: success-pulse 1.5s ease-in-out;
+      }
+    }
+  }
+
+  // Состояние ошибки
+  &.error {
+    .upload-icon {
+      .arrow-group {
+        animation: shake 0.5s ease-in-out;
+
+        .arrow-outline {
+          stroke: #FF5252;
+        }
+      }
+
+      .border-animation {
+        stroke: #FF5252;
+        stroke-width: 2;
+        animation: error-pulse 0.8s ease-in-out;
+      }
+    }
+  }
+}
+
+// Стили для SVG иконки
+.upload-icon {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all $transition-medium;
+
+  // Ховер эффекты
+  &:hover {
+    transform: scale(1.05);
+
+    .shadow-group {
+      filter: url(#shadow_filter) brightness(1.1);
     }
 
-    &:hover {
-      // background-color: #2c4bd7;
-      // color: #fff;
-
-      border: 2px dashed #2c4bd7;
-      border-radius: 5px;
-      outline-offset: 3px;
+    .icon-bg {
+      fill: url(#bg_gradient);
+      animation: bg-shimmer 2s ease-in-out infinite;
     }
 
-    &:active {
-      // background-color: rgb(11, 150, 220);
-      color: #ecedf2;
-      border: 2px solid rgb(11, 150, 220);
+    .arrow-outline {
+      @include glow-effect(#2196F3, 0.5);
+      stroke-width: 2;
     }
+
+    .border-animation {
+      stroke-width: 2;
+      opacity: 0.8;
+    }
+  }
+
+  // Активное состояние (клик)
+  &:active {
+    transform: scale(0.95);
+  }
+
+  // Элементы иконки
+  .shadow-group {
+    transition: filter $transition-medium;
+  }
+
+  .icon-bg {
+    transition: fill $transition-medium;
+  }
+
+  .arrow-group {
+    transition: all $transition-medium;
+
+    .arrow-outline {
+      color: #666;
+      transition: all $transition-medium;
+    }
+
+    .arrow-fill {
+      transition: fill $transition-slow;
+    }
+
+    .progress-line {
+      transition: stroke-dashoffset $transition-slow;
+    }
+  }
+
+  .border-animation {
+    transition: all $transition-medium;
+  }
+}
+
+// Анимации
+@keyframes progress-fill {
+  0%, 100% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dots-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes border-rotate {
+  0% {
+    stroke-dashoffset: 160;
+  }
+  50% {
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bg-shimmer {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes check-draw {
+  0% {
+    transform: scale(0) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes check-stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes sparkle-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes success-pulse {
+  0% {
+    stroke-width: 2;
+    opacity: 1;
+  }
+  50% {
+    stroke-width: 3;
+    opacity: 0.8;
+  }
+  100% {
+    stroke-width: 2;
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes error-pulse {
+  0%, 100% {
+    stroke-width: 2;
+  }
+  50% {
+    stroke-width: 4;
+  }
+}
+
+// Анимация появления
+.upload-container {
+  animation: slide-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Темная тема
+[data-theme="dark"] {
+  .upload-icon {
+    .shadow-rect {
+      fill: #2d2d2d;
+    }
+
+    .icon-bg {
+      fill: #1a1a1a;
+    }
+
+    .arrow-outline {
+      color: #b0b0b0;
+    }
+  }
+
+  .upload-container {
+    &.success {
+      .success-check path {
+        stroke: #4CAF50;
+      }
+    }
+
+    &.error {
+      .arrow-outline {
+        stroke: #FF6B6B;
+      }
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .upload-container {
+    width: 64px;
+    height: 64px;
+
+    .upload-icon {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-container {
+    width: 56px;
+    height: 56px;
+
+    .upload-icon {
+      width: 56px;
+      height: 56px;
+    }
+  }
+}
+
+// Состояние drag-over (перетаскивание файла)
+.upload-container.drag-over {
+  .upload-icon {
+    animation: pulse 1s ease-in-out infinite;
+
+    .icon-bg {
+      fill: #e3f2fd;
+    }
+
+    .arrow-outline {
+      stroke: #2196F3;
+      animation: arrow-float 1s ease-in-out infinite;
+    }
+
+    .border-animation {
+      stroke-width: 2;
+      opacity: 1;
+      animation: border-rotate 2s linear infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes arrow-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+// Прогресс бар
+.upload-progress {
+  position: absolute;
+  bottom: -8px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity $transition-medium;
+
+  .upload-container.loading & {
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    border-radius: 2px;
+    animation: progress-grow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes progress-grow {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }

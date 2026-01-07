@@ -1,27 +1,136 @@
 <footer class="footer">
-  <a href="#header" class="btn-reset to-top">
-    <svg class="icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g filter="url(#filter0_d_126_9443)">
-        <rect x="20" y="20" width="40" height="40" rx="6" fill="white" shape-rendering="crispEdges" />
-        <path
-          d="M34.758 28.2335L31.1747 24.6585C30.8624 24.3481 30.44 24.1738 29.9997 24.1738C29.5594 24.1738 29.137 24.3481 28.8247 24.6585L25.2414 28.2335C25.0861 28.3896 24.999 28.6008 24.999 28.821C24.999 29.0411 25.0861 29.2523 25.2414 29.4085C25.3188 29.4866 25.411 29.5486 25.5125 29.5909C25.6141 29.6332 25.723 29.655 25.833 29.655C25.943 29.655 26.0519 29.6332 26.1535 29.5909C26.255 29.5486 26.3472 29.4866 26.4247 29.4085L29.1664 26.6668V35.8335C29.1664 36.0545 29.2541 36.2665 29.4104 36.4227C29.5667 36.579 29.7787 36.6668 29.9997 36.6668C30.2207 36.6668 30.4327 36.579 30.5889 36.4227C30.7452 36.2665 30.833 36.0545 30.833 35.8335V26.6668L33.5747 29.4085C33.7305 29.5654 33.9423 29.654 34.1634 29.6548C34.3845 29.6556 34.5969 29.5685 34.7538 29.4126C34.9108 29.2568 34.9994 29.0451 35.0001 28.8239C35.0009 28.6028 34.9138 28.3904 34.758 28.2335Z"
-          fill="#666666" />
-      </g>
-      <defs>
-        <filter id="filter0_d_126_9443" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha" />
-          <feOffset dx="4" dy="4" />
-          <feGaussianBlur stdDeviation="10" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0.923077 0 0 0 0 0.878698 0 0 0 0 0.878698 0 0 0 0.25 0" />
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_126_9443" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_126_9443" result="shape" />
-        </filter>
-      </defs>
-    </svg>
+  <a href="#header" class="btn-reset  to-top">
+
+  <!-- <div class="upload-container"> -->
+    <svg class="upload-icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тень с анимацией -->
+  <g class="shadow-group" filter="url(#shadow_filter)">
+    <rect class="shadow-rect" x="20" y="20" width="40" height="40" rx="6" fill="white" shape-rendering="geometricPrecision" />
+  </g>
+
+  <!-- Основной контейнер -->
+  <g class="icon-container">
+    <!-- Фон с градиентом -->
+    <rect class="icon-bg" x="20" y="20" width="40" height="40" rx="6" fill="url(#bg_gradient)" />
+
+    <!-- Стрелка загрузки -->
+    <g class="arrow-group">
+      <!-- Внешняя стрелка (контур) -->
+      <path class="arrow-outline"
+            d="M40 30L33 37H37V45H43V37H47L40 30Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+
+      <!-- Внутренняя стрелка (заливка) -->
+      <path class="arrow-fill"
+            d="M40 30L33 37H37V45H43V37H47L40 30Z"
+            fill="transparent"
+            stroke="transparent"/>
+
+      <!-- Анимированная линия прогресса -->
+      <path class="progress-line"
+            d="M40 30L33 37H37V45H43V37H47L40 30Z"
+            fill="none"
+            stroke="url(#progress_gradient)"
+            stroke-width="2"
+            stroke-dasharray="100"
+            stroke-dashoffset="100"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+
+    <!-- Точки загрузки -->
+    <g class="loading-dots" opacity="0">
+      <circle class="dot dot-1" cx="40" cy="25" r="2" fill="currentColor"/>
+      <circle class="dot dot-2" cx="40" cy="25" r="2" fill="currentColor"/>
+      <circle class="dot dot-3" cx="40" cy="25" r="2" fill="currentColor"/>
+    </g>
+
+    <!-- Галочка успеха -->
+    <g class="success-check" opacity="0">
+      <path d="M35 40L38 43L45 36"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+
+    <!-- Вспышки анимации -->
+    <g class="sparkles" opacity="0">
+      <circle class="sparkle sparkle-1" cx="30" cy="30" r="1.5" fill="#FFD700"/>
+      <circle class="sparkle sparkle-2" cx="50" cy="30" r="1" fill="#00D4FF"/>
+      <circle class="sparkle sparkle-3" cx="35" cy="45" r="1.2" fill="#FF4081"/>
+      <circle class="sparkle sparkle-4" cx="45" cy="45" r="0.8" fill="#4CAF50"/>
+    </g>
+  </g>
+
+  <!-- Анимированная обводка -->
+  <rect class="border-animation"
+        x="20" y="20"
+        width="40" height="40"
+        rx="6"
+        fill="none"
+        stroke="url(#border_gradient)"
+        stroke-width="0"
+        stroke-dasharray="160"
+        stroke-dashoffset="160"/>
+
+  <!-- Градиенты -->
+  <defs>
+    <!-- Градиент для фона -->
+    <linearGradient id="bg_gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F8F8F8" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Градиент для прогресса -->
+    <linearGradient id="progress_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="50%" stop-color="#2196F3"/>
+      <stop offset="100%" stop-color="#9C27B0"/>
+    </linearGradient>
+
+    <!-- Градиент для обводки -->
+    <linearGradient id="border_gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="50%" stop-color="#2196F3"/>
+      <stop offset="100%" stop-color="#4CAF50"/>
+    </linearGradient>
+
+    <!-- Фильтр для тени -->
+    <filter id="shadow_filter" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="2" dy="2"/>
+      <feGaussianBlur stdDeviation="3"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feOffset dx="4" dy="4"/>
+      <feGaussianBlur stdDeviation="6"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.08 0"/>
+      <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+    </filter>
+
+    <!-- Фильтр для свечения -->
+    <filter id="glow_filter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#2196F3" flood-opacity="0.6" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
+  <!-- </div> -->
   </a>
   <!--cooky-block  -->
   <div class="cookie-block">
