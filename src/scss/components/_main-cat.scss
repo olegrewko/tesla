@@ -23,6 +23,21 @@
     min-height: 260px;
     background-color: #fff;
     gap: 2px;
+    transition: all 0.3s ease-in-out;
+
+    @include hover {
+    background-color: var(--color-accent);
+
+      .main-cat__subtitle {
+       color: var(--light-color);
+       transition: all 0.3s ease-in-out;
+      }
+      .main-cat__quantity {
+       color: var(--light-color);
+       transition: all 0.3s ease-in-out;
+      }
+
+    }
 
     &:focus {
       outline: none;

@@ -2,7 +2,7 @@
 
     <form method="POST" class="order-content__form" id="contactForm">
     <div class="order-content__inner">
-        <h2 class="order-content__title order-content__title--form">Контактные данные</h2>
+        <h2 class="order-content__title">Контактные данные</h2>
 
         <div class="order-content__inputs">
             <!-- Поле Имя -->
@@ -44,8 +44,8 @@
             </label>
 
             <!-- Поле Индекс -->
-            <label class="order-content__label order-content__label--textarea">
-                <textarea name="index" class="order-content__input small-input message-textarea small-textarea" placeholder="Индекс"></textarea>
+                        <label class="order-content__label">
+                <input type="text" name="index" class="order-content__input small-input tel-input" placeholder="Индекс">
                 <span class="input-error"></span>
             </label>
         </div>
@@ -90,7 +90,7 @@
     <div   class="order-content__wrapper">
       <ul class="list-reset order-content__items">
         <li class="order-content__item">
-          <article class="order-content">
+          <article class="order-content__article">
             <picture>
               <img src="img/products/1-mini.png" alt="img/products/1-mini.png" class="order-content__image" width="80" height="80">
             </picture>
@@ -111,10 +111,10 @@
             <h3 class="order-content__title">
               <a href="#" class="order-content__link">Neumann TLM 123 BK</a>
             </h3>
-            <div class="order-content__inner">
+            <!-- <div class="order-content__inner"> -->
               <div class="order-content__quantity">1 шт</div>
               <div class="order-content__price">85 625</div>
-            </div>
+            <!-- </div> -->
           </article>
         </li>
       </ul>

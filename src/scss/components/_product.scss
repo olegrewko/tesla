@@ -1,8 +1,8 @@
 .product {
   position: relative;
-  padding: 24px 28px;
-  // width: 450px;
-  min-height: 550px;
+  padding: 4px 8px;
+  width: 450px;
+  height: 450px;
   box-shadow: 4px 4px 24px 0 rgba(235, 240, 240, 0);
   background-color: #fff;
   margin-bottom: 100px;
@@ -108,5 +108,9 @@
     margin-top: 12px;
     width: 100%;
     z-index: 4;
+    @include hover {
+    background-color: #fff;
+    color: var(--color-accent)
+    }
   }
 }

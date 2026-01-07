@@ -4,8 +4,25 @@
 display: flex;
 
 align-items: flex-start;
-justify-content: center;
+justify-content: space-between;
+&__article {
+  width: 700px;
+  width: 100%;
+  padding: 4px;
+  margin-top: 10px;
+display: flex;
 
+align-items: flex-start;
+justify-content: space-between;
+}
+&__row {
+  width: 100%;
+  padding: 4px;
+  margin-top: 20px;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+}
 &__form,
 &__info {
   position:  relative;
@@ -16,7 +33,7 @@ justify-content: center;
 }
 &__form {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 background-color: gainsboro;
 
@@ -28,15 +45,17 @@ background-color: #fff;
 &__inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-max-width: 600px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+// max-width: 600px;
 width: 100%;
 
 }
 &__inputs {
 display: flex;
 flex-wrap: wrap;
-gap: 20px;
+gap: 10px;
 }
 &__label {
   position: relative;
@@ -78,9 +97,9 @@ gap: 24px;
 // border: 1px solid gainsboro;
 }
 &__item {
-// max-width: 260px;
+width: 600px;
 display: flex;
-
+justify-content: space-between;
 align-items: flex-start;
 gap: 24px;
 border: 1px solid gainsboro;
@@ -100,18 +119,30 @@ border: 1px solid gainsboro;
 
 }
 &__title{
+
     margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 2px;
 
     font-family: 'Rubik';
     font-weight: 500;
 
     font-size: 20px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     line-height: 120%;
     letter-spacing: 0%;
     text-transform: uppercase;
 
+}
+&__link {
+    width: 400px;
+    font-family: 'Rubik';
+    font-weight: 500;
+    padding: 0px 10px;
+    font-size: 12px;
+    color: var(--color-secondary);
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
 }
 &__text{
     margin: 0;
