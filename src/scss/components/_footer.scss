@@ -15,16 +15,24 @@
     letter-spacing: 0%;
     text-transform: uppercase;
   }
-
+  &__item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   &__link {
     font-family: 'Rubik';
     font-weight: 400;
-    padding-top: 42px;
-    padding-bottom: 42px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 16px;
     color: aliceblue;
     line-height: 140%;
     letter-spacing: 0%;
+    transition: all 0.3s ease-in-out;
+    @include hover {
+    color: var(--color-accent-sea);
+    transition: all 0.3s ease-in-out;
+    }
   }
 
   &__copy {

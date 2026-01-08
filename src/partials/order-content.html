@@ -1,92 +1,92 @@
 <section class="order-content">
 
     <form method="POST" class="order-content__form" id="contactForm">
-    <div class="order-content__inner">
-        <h2 class="order-content__title">Контактные данные</h2>
+      <div class="order-content__inner">
+          <h2 class="order-content__title">Контактные данные</h2>
 
-        <div class="order-content__inputs">
-            <!-- Поле Имя -->
-            <label class="order-content__label">
-                <input type="text" name="name" class="order-content__input small-input name-input" placeholder="Имя">
-                <span class="input-error"></span>
-            </label>
+          <div class="order-content__inputs">
+              <!-- Поле Имя -->
+              <label class="order-content__label">
+                  <input type="text" name="name" class="order-content__input small-input name-input" placeholder="Имя">
+                  <span class="input-error"></span>
+              </label>
 
-             <!-- Поле Фамилия -->
-            <label class="order-content__label">
-                <input type="text" name="family" class="order-content__input small-input name-input" placeholder="Фамилия">
-                <span class="input-error"></span>
-            </label>
+              <!-- Поле Фамилия -->
+              <label class="order-content__label">
+                  <input type="text" name="family" class="order-content__input small-input name-input" placeholder="Фамилия">
+                  <span class="input-error"></span>
+              </label>
 
-            <!-- Поле Компания -->
-            <!-- <label class="order-content__label">
-                <input type="text" name="company" class="order-content__input small-input company-input" placeholder="Компания">
-                <span class="input-error"></span>
-            </label> -->
+              <!-- Поле Компания -->
+              <!-- <label class="order-content__label">
+                  <input type="text" name="company" class="order-content__input small-input company-input" placeholder="Компания">
+                  <span class="input-error"></span>
+              </label> -->
 
-            <!-- Поле Email -->
-            <label class="order-content__label">
-                <input type="email" name="email" class="order-content__input small-input email-input" placeholder="E-mail*" required>
-                <span class="input-error"></span>
-            </label>
+              <!-- Поле Email -->
+              <label class="order-content__label">
+                  <input type="email" name="email" class="order-content__input small-input email-input" placeholder="E-mail*" required>
+                  <span class="input-error"></span>
+              </label>
 
-            <!-- Поле Телефон -->
-            <label class="order-content__label">
-                <input type="tel" name="phone" class="order-content__input small-input tel-input" placeholder="Телефон">
-                <span class="input-error"></span>
-            </label>
+              <!-- Поле Телефон -->
+              <label class="order-content__label">
+                  <input type="tel" name="phone" class="order-content__input small-input tel-input" placeholder="Телефон">
+                  <span class="input-error"></span>
+              </label>
 
 
 
-                        <!-- Поле Адрес -->
-            <label class="order-content__label">
-                <input type="text" name="address" class="order-content__input small-input tel-input" placeholder="Адрес">
-                <span class="input-error"></span>
-            </label>
+                          <!-- Поле Адрес -->
+              <label class="order-content__label">
+                  <input type="text" name="address" class="order-content__input small-input tel-input" placeholder="Адрес">
+                  <span class="input-error"></span>
+              </label>
 
-            <!-- Поле Индекс -->
-                        <label class="order-content__label">
-                <input type="text" name="index" class="order-content__input small-input tel-input" placeholder="Индекс">
-                <span class="input-error"></span>
-            </label>
-        </div>
+              <!-- Поле Индекс -->
+                          <label class="order-content__label">
+                  <input type="text" name="index" class="order-content__input small-input tel-input" placeholder="Индекс">
+                  <span class="input-error"></span>
+              </label>
+          </div>
 
-                    <!-- Поле Сообщение -->
-            <label class="order-content__label order-content__label--textarea">
-                <textarea name="message" class="order-content__input small-input message-textarea small-textarea" placeholder="Сообщение"></textarea>
-                <span class="input-error"></span>
-            </label>
+                      <!-- Поле Сообщение -->
+              <label class="order-content__label order-content__label--textarea">
+                  <textarea name="message" class="order-content__input small-input message-textarea small-textarea" placeholder="Сообщение"></textarea>
+                  <span class="input-error"></span>
+              </label>
 
-        <!-- Чекбокс -->
-        <label class="custom-checkbox">
-            <input type="checkbox" name="policy" class="custom-checkbox__field policy-checkbox" required>
-            <span class="custom-checkbox__content">Я согласен с политикой обработки персональных данных</span>
-            <span class="checkbox-error"></span>
-        </label>
+          <!-- Чекбокс -->
+          <label class="custom-checkbox">
+              <input type="checkbox" name="policy" class="custom-checkbox__field policy-checkbox" required>
+              <span class="custom-checkbox__content">Я согласен с политикой обработки персональных данных</span>
+              <span class="checkbox-error"></span>
+          </label>
 
-        <!-- Кнопка отправки -->
-        <button class="btn btn--primary order-content__btn" type="submit" id="submitBtn">
-            <span class="btn-text">Оформить заказ</span>
-            <span class="btn-loader" style="display: none;">
-                <svg width="20" height="20" viewBox="0 0 50 50">
-                    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="31.415, 31.415"/>
-                </svg>
-            </span>
-        </button>
+          <!-- Кнопка отправки -->
+          <button class="btn btn--primary order-content__btn" type="submit" id="submitBtn">
+              <span class="btn-text">Оформить заказ</span>
+              <span class="btn-loader" style="display: none;">
+                  <svg width="20" height="20" viewBox="0 0 50 50">
+                      <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="31.415, 31.415"/>
+                  </svg>
+              </span>
+          </button>
 
-        <!-- Сообщение об успехе -->
-        <div class="form-success" style="display: none;">
-            <div class="success-message">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <p>Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.</p>
-            </div>
-        </div>
-    </div>
+          <!-- Сообщение об успехе -->
+          <div class="form-success" style="display: none;">
+              <div class="success-message">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <p>Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.</p>
+              </div>
+          </div>
+      </div>
     </form>
 
   <div  class="order-content__info">
-    <div class="order-content__inner">
+    <!-- <div class="order-content__inner"> -->
     <h2 class="order-content__title">Ваш заказ</h2>
     <div   class="order-content__wrapper">
       <ul class="list-reset order-content__items">

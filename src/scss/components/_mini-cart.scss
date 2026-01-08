@@ -57,13 +57,43 @@ letter-spacing: 0%;
 text-transform: uppercase;
 color: #1A1A1A;
 }
+// &__close {
+// width: 20px;
+// height: 20px;
+// color: #1A1A1A;
+// svg {
+// fill: currentcolor;
+// }
+// }
 &__close {
 width: 20px;
 height: 20px;
 color: #1A1A1A;
+transition: color 0.3s ease-in-out;
+
 svg {
 fill: currentcolor;
 }
+
+
+  &:focus {
+  outline: none;
+  }
+  &:focus-visible {
+  outline: 2px dashed currentcolor;
+  outline-offset: 2px;
+  }
+  @include hover {
+  color: var(--color-accent);
+
+  }
+svg {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
 }
 &__content {
   // height: 100%;

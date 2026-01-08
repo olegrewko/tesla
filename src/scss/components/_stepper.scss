@@ -8,6 +8,25 @@ gap: 8px;
 &__plus {
 width: 12px;
 height: 12px;
+color: var(--color-primary);
+transition: all 0.3s ease-in-out;
+
+  svg {
+  fill: currentcolor;
+  }
+  &:focus {
+  outline: none;
+  }
+    &:focus-visible {
+  outline: 1px dashed var(--color-primary);
+  outline-offset: 2px;
+  }
+  @include hover {
+  color: var(--color-accent);
+  }
+  &:active {
+  color: var(--color-deep-blue);
+  }
 }
 &__disabled {
 opacity: 0.7;
