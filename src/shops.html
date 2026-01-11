@@ -17,15 +17,15 @@
     @include('partials/popup.html')
     @include('partials/modal.html')
     @include('partials/footer.html')
-    <style>
-      /* #map {
+    <!-- <style>
+      #map {
         width: 100%;
         height: 400px;
         margin: 10px 0;
         border: 1px solid #ccc;
         border-radius: 8px;
         background: #0066ff;
-      } */
+      }
 
       .controls {
         margin: 20px 0;
@@ -60,10 +60,16 @@
         border-radius: 4px;
       }
     </style>
-    <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script> -->
-    <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ_API&lang=ru_RU"></script> -->
-    <!-- @include('html/h1.html') пример include -->
-    <!-- <script>
+
+    <script>
+       // Решение: объединяем все в один обработчик
+        ymaps.ready(function () {
+          // Проверяем, не инициализирована ли уже карта
+          if (window.mapInitialized) {
+            return;
+          }
+          window.mapInitialized = true;
+
       // Весь код в одном теге script
       ymaps.ready(init);
 
@@ -103,130 +109,122 @@
           });
         });
       }
-      // Инициализация карты
-      // ymaps.ready(init);
 
-      // function init() {
-      //   // Создаем карту
-      //   var myMap = new ymaps.Map("map", {
-      //     center: [55.76, 37.64],
-      //     zoom: 10,
-      //     controls: ['zoomControl', 'fullscreenControl', 'typeSelector', 'rulerControl']
-      //   });
+        // Добавляем метку
+        var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+          hintContent: 'Москва, Кремль',
+          balloonContent: '<strong>Москва</strong><br>Столица России<br><img src="https://via.placeholder.com/200x100" width="200" height="100">'
+        }, {
+          preset: 'islands#redIcon',
+          iconColor: '#ff0000'
+        });
 
-      //   // Добавляем метку
-      //   var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-      //     hintContent: 'Москва, Кремль',
-      //     balloonContent: '<strong>Москва</strong><br>Столица России<br><img src="https://via.placeholder.com/200x100" width="200" height="100">'
-      //   }, {
-      //     preset: 'islands#redIcon',
-      //     iconColor: '#ff0000'
-      //   });
+      myMap.geoObjects.add(myPlacemark);
 
-      // myMap.geoObjects.add(myPlacemark);
+      // Получаем элементы управления
+      var buttons = document.querySelectorAll('.map-btn');
+      var currentTypeSpan = document.getElementById('current-type');
+      var currentZoomSpan = document.getElementById('current-zoom');
+      var currentCenterSpan = document.getElementById('current-center');
 
-      // // Получаем элементы управления
-      // var buttons = document.querySelectorAll('.map-btn');
-      // var currentTypeSpan = document.getElementById('current-type');
-      // var currentZoomSpan = document.getElementById('current-zoom');
-      // var currentCenterSpan = document.getElementById('current-center');
+      // Добавляем обработчики для кнопок
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var type = this.getAttribute('data-type');
 
-      // // Добавляем обработчики для кнопок
-      // buttons.forEach(function (button) {
-      //   button.addEventListener('click', function () {
-      //     var type = this.getAttribute('data-type');
+          // Меняем тип карты
+          myMap.setType('yandex#' + type);
 
-      //     // Меняем тип карты
-      //     myMap.setType('yandex#' + type);
+          // Обновляем активную кнопку
+          buttons.forEach(function (btn) {
+            btn.classList.remove('active');
+          });
+          this.classList.add('active');
 
-      //     // Обновляем активную кнопку
-      //     buttons.forEach(function (btn) {
-      //       btn.classList.remove('active');
-      //     });
-      //     this.classList.add('active');
+          // Обновляем информацию о типе карты
+          var typeNames = {
+            'map': 'Схема',
+            'satellite': 'Спутник',
+            'hybrid': 'Гибрид',
+            'vector#publicMap': 'Народная',
+            'vector#publicMapHybrid': 'Народная+спутник'
+          };
+          currentTypeSpan.textContent = typeNames[type];
+        });
+      });
 
-      //     // Обновляем информацию о типе карты
-      //     var typeNames = {
-      //       'map': 'Схема',
-      //       'satellite': 'Спутник',
-      //       'hybrid': 'Гибрид',
-      //       'vector#publicMap': 'Народная',
-      //       'vector#publicMapHybrid': 'Народная+спутник'
-      //     };
-      //     currentTypeSpan.textContent = typeNames[type];
-      //   });
-      // });
+      // Обновляем информацию при изменении масштаба
+      myMap.events.add('boundschange', function (event) {
+        currentZoomSpan.textContent = event.get('newZoom');
+        var center = event.get('newCenter');
+        currentCenterSpan.textContent = center[0].toFixed(4) + ', ' + center[1].toFixed(4);
+      });
 
-      // // Обновляем информацию при изменении масштаба
-      // myMap.events.add('boundschange', function (event) {
-      //   currentZoomSpan.textContent = event.get('newZoom');
-      //   var center = event.get('newCenter');
-      //   currentCenterSpan.textContent = center[0].toFixed(4) + ', ' + center[1].toFixed(4);
-      // });
+      // Добавляем несколько меток
 
-      // // Добавляем несколько меток
-      // var additionalPlaces = [
-      //   {
-      //     coords: [55.751, 37.618],
-      //     name: 'Красная площадь',
-      //     description: 'Главная площадь Москвы'
-      //   },
-      //   {
-      //     coords: [55.709, 37.603],
-      //     name: 'Парк Горького',
-      //     description: 'Центральный парк культуры и отдыха'
-      //   },
-      //   {
-      //     coords: [55.715, 37.553],
-      //     name: 'МГУ',
-      //     description: 'Московский государственный университет'
-      //   }
-      // ];
+      
+      var additionalPlaces = [
+        {
+          coords: [55.751, 37.618],
+          name: 'Красная площадь',
+          description: 'Главная площадь Москвы'
+        },
+        {
+          coords: [55.709, 37.603],
+          name: 'Парк Горького',
+          description: 'Центральный парк культуры и отдыха'
+        },
+        {
+          coords: [55.715, 37.553],
+          name: 'МГУ',
+          description: 'Московский государственный университет'
+        }
+      ];
 
-      // additionalPlaces.forEach(function (place) {
-      //   var placemark = new ymaps.Placemark(place.coords, {
-      //     hintContent: place.name,
-      //     balloonContent: place.description
-      //   }, {
-      //     preset: 'islands#blueIcon'
-      //   });
+      additionalPlaces.forEach(function (place) {
+        var placemark = new ymaps.Placemark(place.coords, {
+          hintContent: place.name,
+          balloonContent: place.description
+        }, {
+          preset: 'islands#blueIcon'
+        });
 
-      //   myMap.geoObjects.add(placemark);
-      // });
+        myMap.geoObjects.add(placemark);
+      });
 
-      // // Поиск по карте
-      // var searchControl = new ymaps.control.SearchControl({
-      //   options: {
-      //     provider: 'yandex#search',
-      //     noPlacemark: false
-      //   }
-      // });
+      // Поиск по карте
+      var searchControl = new ymaps.control.SearchControl({
+        options: {
+          provider: 'yandex#search',
+          noPlacemark: false
+        }
+      });
 
-      // myMap.controls.add(searchControl);
+      myMap.controls.add(searchControl);
 
-      // // Координаты при клике
-      // myMap.events.add('click', function (event) {
-      //   var coords = event.get('coords');
+      // Координаты при клике
+      myMap.events.add('click', function (event) {
+        var coords = event.get('coords');
 
-      //   // Если клик по карте (не по метке)
-      //   if (!event.get('target').properties) {
-      //     var clickPlacemark = new ymaps.Placemark(coords, {
-      //       balloonContent: 'Вы кликнули по координатам: ' + coords
-      //     }, {
-      //       preset: 'islands#greenIcon'
-      //     });
+        // Если клик по карте (не по метке)
+        if (!event.get('target').properties) {
+          var clickPlacemark = new ymaps.Placemark(coords, {
+            balloonContent: 'Вы кликнули по координатам: ' + coords
+          }, {
+            preset: 'islands#greenIcon'
+          });
 
-      //     myMap.geoObjects.add(clickPlacemark);
+          myMap.geoObjects.add(clickPlacemark);
 
-      //     // Удаляем старую метку через 5 секунд
-      //     setTimeout(function () {
-      //       myMap.geoObjects.remove(clickPlacemark);
-      //     }, 5000);
-      //   }
-      // });
-      // }
+          // Удаляем старую метку через 5 секунд
+          setTimeout(function () {
+            myMap.geoObjects.remove(clickPlacemark);
+          }, 5000);
+        }
+      });
+        });
     </script> -->
-  </div>
+
   <script defer src="js/main.js"></script>
   <script>
     // import vars from "./js/_vars.js";
@@ -296,7 +294,7 @@
 
   </script>
   <!-- Инициализируем ПОСЛЕ загрузки DOM -->
-  <!-- <script>
+   <script>
     const priceRange = document.querySelector('.price-range');
 
     if (priceRange) {
@@ -329,9 +327,8 @@
     } else {
       console.error('Элемент .price-range не найден!');
     }
-  </script> -->
-  <!-- Добавьте в <head> или перед </body> -->
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ваш_ключ_api" type="text/javascript"></script>
+  </script>
+
 </body>
 
 </html>

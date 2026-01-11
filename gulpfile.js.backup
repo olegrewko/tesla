@@ -1,0 +1,447 @@
+
+--------------------------------------------------------------------------------
+# Создайте SSH ключ Ed25519 (рекомендуется)
+ssh-keygen -t ed25519 -C "olegrewko@github.com"
+
+# Или одной командой (без вопросов):
+ssh-keygen -t ed25519 -f ~/.ssh/id_github -C "olegrewko@github.com" -N ""
+
+Enter file in which to save the key (/c/Users/user/.ssh/id_ed25519):
+
+→ Нажмите Enter
+
+Enter passphrase (empty for no passphrase):
+
+→ Нажмите Enter
+
+Enter same passphrase again:
+
+→ Нажмите Enter
+
+# Посмотрите папку .ssh
+ls -la ~/.ssh/
+
+# Должны быть файлы:
+# id_ed25519      - приватный ключ (НЕ ПОКАЗЫВАТЬ НИКОМУ!)
+# id_ed25519.pub  - публичный ключ (этот добавляем в GitHub)
+
+# Покажите ключ
+cat ~/.ssh/id_ed25519.pub
+
+# Или сохраните в файл на Рабочем столе
+cat ~/.ssh/id_ed25519.pub > ~/Desktop/github_key.txt
+echo "✅ Ключ сохранен на Рабочий стол: github_key.txt"
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQ3NlHqVwLHg80Lm8M9zYwZ8KjXk7aT1GfKpL9R8wH olegrewko@github.com
+
+ Добавьте ключ в GitHub:
+
+ Шаг за шагом:
+Откройте браузер и войдите в GitHub (логин: olegrewko)
+
+Перейдите: https://github.com/settings/ssh/new
+
+Заполните:
+
+Title: Новый компьютер (любое название)
+
+Key type: Authentication Key
+
+Key: Вставьте скопированный ключ (всю строку)
+
+Нажмите: Add SSH key
+
+# Создайте конфиг файл
+cat > ~/.ssh/config << 'EOF'
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+EOF
+
+# Проверьте
+cat ~/.ssh/config
+
+ssh -T git@github.com
+
+Hi olegrewko! You've successfully authenticated, but GitHub does not provide shell access.
+
+# Установите имя и email (обязательно!)
+git config --global user.name "olegrewko"
+git config --global user.email "ваш_real_email@gmail.com"
+
+# Проверьте
+git config --global --list
+
+# Перейдите в папку проекта
+cd ~/Desktop/tesla
+
+# Измените URL
+git remote set-url origin git@github.com:olegrewko/tesla.git
+
+# Проверьте
+git remote -v
+# Должно быть: git@github.com:olegrewko/tesla.git
+
+git push origin main
+
+
+#!/bin/bash
+echo "=== НАСТРОЙКА НОВОГО КОМПЬЮТЕРА ДЛЯ GITHUB ==="
+
+# 1. Создаем SSH ключ
+echo "1. Создаю SSH ключ..."
+ssh-keygen -t ed25519 -f ~/.ssh/id_github -C "olegrewko@github.com" -N "" -q
+
+# 2. Показываем ключ
+echo -e "\n2. ВАШ SSH КЛЮЧ (скопируйте ВСЮ строку):"
+echo "=========================================="
+cat ~/.ssh/id_github.pub
+echo "=========================================="
+
+# 3. Сохраняем на Рабочий стол
+cat ~/.ssh/id_github.pub > ~/Desktop/GITHUB_SSH_KEY.txt
+echo -e "\n✅ Ключ также сохранен: ~/Desktop/GITHUB_SSH_KEY.txt"
+
+# 4. Настраиваем SSH
+echo -e "\n3. Настраиваю SSH..."
+cat > ~/.ssh/config << 'EOF'
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_github
+    IdentitiesOnly yes
+EOF
+
+# 5. Настраиваем Git
+echo "4. Настраиваю Git..."
+git config --global user.name "olegrewko"
+git config --global user.email "ваш_email@gmail.com"
+
+echo -e "\n🎯 ЧТО ДЕЛАТЬ ДАЛЬШЕ:"
+echo "1. Откройте: https://github.com/settings/ssh/new"
+echo "2. Вставьте скопированный ключ"
+echo "3. Нажмите 'Add SSH key'"
+echo "4. Вернитесь в терминал и нажмите Enter"
+read -p "Готово? Нажмите Enter..."
+
+# 6. Проверяем
+echo -e "\n5. Проверяю подключение..."
+ssh -T git@github.com
+
+echo -e "\n✅ Готово! Теперь можно делать git push"
+
+# Исправьте если нужно
+git remote set-url origin git@github.com:olegrewko/tesla.git
+
+# Добавить ключ в ssh-agent (для автоматической загрузки)
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_github
+
+# Настроить алиасы для Git
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+4. Если всё равно не работает - проверьте:
+# Проверка шаг за шагом
+echo "=== ДИАГНОСТИКА ==="
+echo "1. SSH ключ:"
+ls -la ~/.ssh/
+echo -e "\n2. SSH конфиг:"
+cat ~/.ssh/config 2>/dev/null || echo "Нет конфига"
+echo -e "\n3. Remote URL:"
+git remote -v
+echo -e "\n4. Проверка SSH:"
+ssh -vT git@github.com 2>&1 | tail -10
+
+. Быстрая команда для всего процесса:
+# Выполните эти 4 команды по порядку:
+
+# 1. Создать ключ
+ssh-keygen -t ed25519 -f ~/.ssh/id_github -C "olegrewko@github.com" -N ""
+
+# 2. Показать ключ (скопировать в буфер)
+cat ~/.ssh/id_github.pub
+
+# 3. Добавить ключ на GitHub (в браузере)
+#    https://github.com/settings/ssh/new
+
+# 4. Переключить репозиторий на SSH
+git remote set-url origin git@github.com:olegrewko/tesla.git
+
+--------------------------------------------------------------------------------
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPdxxxb4RFJ4sz9NSKtzPpc6UUWW61oeHHR7DPIGjLvb
+--------------------------------------------------------------------------------
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+
+// import { paths } from './gulp/config/paths.js';
+// import { clean } from './gulp/tasks/clean.js';
+// import { svgSprites } from './gulp/tasks/sprite.js';
+// import { styles } from './gulp/tasks/styles.js';
+// import { stylesBackend } from './gulp/tasks/styles-backend.js';
+// import { scripts } from './gulp/tasks/scripts.js';
+// import { scriptsBackend } from './gulp/tasks/scripts-backend.js';
+// import { resources } from './gulp/tasks/resources.js';
+// import { images } from './gulp/tasks/images.js';
+// import { webpImages } from './gulp/tasks/webp.js';
+// import { htmlInclude } from './gulp/tasks/html-include.js';
+// import { cacheTask } from './gulp/tasks/cache.js';
+// import { rewrite } from './gulp/tasks/rewrite.js';
+// import { htmlMinify } from './gulp/tasks/html-minify.js';
+// import { zipFiles } from './gulp/tasks/zip.js';
+
+// global.app = {
+//   gulp,
+//   isProd: process.argv.includes('--build'),
+//   paths,
+// }
+
+// const watcher = () => {
+//   browserSync.init({
+//     server: {
+//       baseDir: `${app.paths.base.build}`
+//     },
+//     notify: false,
+//     port: 3000,
+//   });
+
+//   gulp.watch(app.paths.srcScss, styles);
+//   gulp.watch(app.paths.srcFullJs, scripts);
+//   gulp.watch(`${app.paths.srcPartialsFolder}/*.html`, htmlInclude);
+//   gulp.watch(`${app.paths.base.src}/*.html`, htmlInclude);
+//   gulp.watch(`${app.paths.resourcesFolder}/**`, resources);
+//   gulp.watch(`${app.paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
+//   gulp.watch(`${app.paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
+//   gulp.watch(app.paths.srcSvg, svgSprites);
+// }
+
+// const dev = gulp.series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watcher);
+// const backend = gulp.series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites);
+// const build = gulp.series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify);
+// const cache = gulp.series(cacheTask, rewrite);
+// const zip = zipFiles;
+
+// export { dev }
+// export { build }
+// export { backend }
+// export { cache }
+// export { zip }
+
+// gulp.task('default', dev);
+// import gulp from 'gulp';
+// import browserSync from 'browser-sync';
+const del = require('del');
+
+// Пути
+const paths = {
+  src: {
+    html: './src/**/*.html',
+    scss: './src/scss/**/*.scss',
+    js: './src/js/**/*.js',
+    img: './src/img/**/*.{jpg,jpeg,png,svg,gif,webp}',
+    svg: './src/svg/**/*.svg',
+    fonts: './src/fonts/**/*.{woff,woff2,ttf,eot}',
+    resources: './src/resources/**/*'
+  },
+  build: {
+    html: './dist/',
+    css: './dist/css/',
+    js: './dist/js/',
+    img: './dist/img/',
+    fonts: './dist/fonts/',
+    resources: './dist/resources/'
+  },
+  watch: {
+    html: './src/**/*.html',
+    scss: './src/scss/**/*.scss',
+    js: './src/js/**/*.js',
+    img: './src/img/**/*.{jpg,jpeg,png,svg,gif,webp}',
+    svg: './src/svg/**/*.svg',
+    fonts: './src/fonts/**/*.{woff,woff2,ttf,eot}'
+  }
+};
+
+// Инициализация BrowserSync
+const server = browserSync.create();
+
+// Очистка папки dist
+export const clean = () => {
+  return del(['dist/**/*', '!dist']);
+};
+
+// Копирование HTML
+export const html = () => {
+  return gulp.src(paths.src.html)
+    .pipe(gulp.dest(paths.build.html))
+    .pipe(server.stream());
+};
+
+// Компиляция SCSS
+export const styles = () => {
+  const sass = require('gulp-sass')(require('sass'));
+  const autoprefixer = require('gulp-autoprefixer');
+  const cleanCSS = require('gulp-clean-css');
+  const rename = require('gulp-rename');
+
+  return gulp.src(paths.src.scss)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      cascade: false,
+      grid: true
+    }))
+    .pipe(cleanCSS())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.build.css))
+    .pipe(server.stream());
+};
+
+// Обработка JavaScript
+export const scripts = () => {
+  const webpack = require('webpack-stream');
+  const rename = require('gulp-rename');
+
+  return gulp.src('./src/js/main.js')
+    .pipe(webpack({
+      mode: 'production',
+      output: {
+        filename: 'main.min.js'
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env']
+              }
+            }
+          }
+        ]
+      }
+    }))
+    .pipe(gulp.dest(paths.build.js))
+    .pipe(server.stream());
+};
+
+// Оптимизация изображений
+export const images = () => {
+  const imagemin = require('gulp-imagemin');
+
+  return gulp.src(paths.src.img)
+    .pipe(imagemin([
+      imagemin.mozjpeg({ quality: 80, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: true },
+          { cleanupIDs: false }
+        ]
+      })
+    ]))
+    .pipe(gulp.dest(paths.build.img))
+    .pipe(server.stream());
+};
+
+// Создание WebP
+export const webp = () => {
+  const webp = require('gulp-webp');
+
+  return gulp.src('./src/img/**/*.{jpg,jpeg,png}')
+    .pipe(webp({ quality: 80 }))
+    .pipe(gulp.dest(paths.build.img));
+};
+
+// SVG спрайты
+export const sprite = () => {
+  const svgSprite = require('gulp-svg-sprite');
+
+  return gulp.src(paths.src.svg)
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: '../sprite.svg'
+        }
+      }
+    }))
+    .pipe(gulp.dest(paths.build.img));
+};
+
+// Копирование шрифтов
+export const fonts = () => {
+  return gulp.src(paths.src.fonts)
+    .pipe(gulp.dest(paths.build.fonts));
+};
+
+// Копирование ресурсов
+export const resources = () => {
+  return gulp.src(paths.src.resources)
+    .pipe(gulp.dest(paths.build.resources));
+};
+
+// Наблюдение за файлами
+export const watch = () => {
+  server.init({
+    server: {
+      baseDir: "./dist"
+    },
+    notify: false,
+    port: 3000,
+    open: true
+  });
+
+  gulp.watch(paths.watch.html, gulp.series(html));
+  gulp.watch(paths.watch.scss, gulp.series(styles));
+  gulp.watch(paths.watch.js, gulp.series(scripts));
+  gulp.watch(paths.watch.img, gulp.series(images));
+  gulp.watch(paths.watch.svg, gulp.series(sprite));
+  gulp.watch(paths.watch.fonts, gulp.series(fonts));
+};
+
+// Сборка для разработки
+export const dev = gulp.series(
+  clean,
+  gulp.parallel(
+    html,
+    styles,
+    scripts,
+    images,
+    webp,
+    sprite,
+    fonts,
+    resources
+  ),
+  watch
+);
+
+// Сборка для продакшена
+export const build = gulp.series(
+  clean,
+  gulp.parallel(
+    html,
+    styles,
+    scripts,
+    images,
+    webp,
+    sprite,
+    fonts,
+    resources
+  )
+);
+
+// Создание ZIP-архива
+export const zip = () => {
+  const zip = require('gulp-zip');
+
+  return gulp.src('dist/**/*')
+    .pipe(zip('project.zip'))
+    .pipe(gulp.dest('./'));
+};
+
+// Экспорт задач по умолчанию
+export default dev;
