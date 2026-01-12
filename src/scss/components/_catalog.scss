@@ -83,7 +83,7 @@
 .grid {
   display: grid;
   grid-template-columns: 3fr 9fr;
- 
+ gap: 4px;
 }
 // Анимация удаления баджей
 .catalog {

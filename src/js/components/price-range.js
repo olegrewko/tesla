@@ -1,18 +1,6 @@
 import noUiSlider from "nouislider";
 import vars from "../_vars.js";
 
-// if (vars.priceRange) {
-//  noUiSlider.create(vars.priceRange, {
-//     start: [20, 80],
-//     connect: true,
-//     range: {
-//       'min': 0,
-//       'max': 100
-//     },
-//   });
-// }
-
-
 
 // Отладка: что импортировалось?
 console.log('noUiSlider импортирован:', typeof noUiSlider);

@@ -27,4 +27,5 @@ productSimilar: document.querySelector(".product-similar"),
 map: document.querySelector("#map"),
 shopsContentBtns: document.querySelectorAll(".shops-content__btn"),
 contactsForm: document.querySelector(".contacts-content__form"),
+filterPrice: document.querySelectorAll(".catalog-filter__price"),
 }
