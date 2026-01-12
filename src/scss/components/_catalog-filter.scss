@@ -133,22 +133,82 @@
                   border-radius: 4px;
     }
 
-  //  @include hover {
 
-            //   &::before,
-            //   &::after {
-            //     background-color: var(--color--warning); // Меняем цвет при наведении
-            //     transition: all 0.3s ease;
-            //   }
-            // }
-
-            // &:focus {
-            //   outline: 2px dashed var(--color--warning);
-            //   outline-offset: 2px;
-            //   transition: all 0.3s ease;
-            // }
-
-
-  // }
 }
+}
+
+/* price-slider.css */
+.catalog-filter__price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.catalog-filter__price-input {
+  width: 100px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.catalog-filter__price-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.catalog-filter__price-divider {
+  color: #666;
+  font-weight: 500;
+}
+
+.price-range {
+  margin: 20px 0;
+}
+
+/* Кастомизация noUiSlider */
+.noUi-target {
+  background: #f0f0f0;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+}
+
+.noUi-connect {
+  background: var(--color-primary, #007bff);
+}
+
+.noUi-handle {
+  width: 20px !important;
+  height: 20px !important;
+  background: #fff;
+  border: 2px solid var(--color-primary, #007bff);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+
+.noUi-handle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.noUi-handle:focus {
+  outline: none;
+}
+
+/* Для touch устройств */
+.noUi-handle-touch-area {
+  width: 40px !important;
+  height: 40px !important;
 }

@@ -1,5 +1,7 @@
 <section class="catalog">
   <!-- <h2 class="visually_hidden">Вокальные</h2> -->
+  <!-- В index.html перед другими стилями -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css">
   <div class="catalog__top">
     <div class="container">
       <div class="catalog__inner grid">
@@ -199,13 +201,20 @@
                   </li>
                 </ul>
                 <div class="catalog-filter__price">
+                  <input type="text" pattern="[0-9\s]*" inputmode="numeric" min="0" max="50000" placeholder="0"
+                    class="small-input catalog-filter__price-input catalog-filter__price-input--min">
+                  <span class="catalog-filter__price-divider">-</span>
+                  <input type="text" pattern="[0-9\s]*" inputmode="numeric" min="0" max="50000" placeholder="50 000"
+                    class="small-input catalog-filter__price-input catalog-filter__price-input--max">
+                </div>
+                <!-- <div class="catalog-filter__price">
                   <input type="number" min="0" max="50 000" step="1" placeholder="0"
                     class="small-input catalog-filter__price-input catalog-filter__price-input--min">
                   <span class="catalog-filter__price-divider">-</span>
                   <input type="number" min="0" max="50 000" step="1" placeholder="50 000"
                     class="small-input catalog-filter__price-input catalog-filter__price-input--max">
 
-                </div>
+                </div> -->
                 <div class="price-range" id="price-range"></div>
               </div><!--catalog-filter__inner-->
             </li>
