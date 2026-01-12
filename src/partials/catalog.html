@@ -149,6 +149,12 @@
               <div class="catalog-filter__inner">
                 <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
                 <ul class="list-reset catalog-filter__items">
+                                    <li class="catalog-filter__item">
+                                      <label class="custom-checkbox">
+                                        <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
+                                        <span class="custom-checkbox__content">Dali</span>
+                                      </label>
+                                    </li>
                   <li class="catalog-filter__item">
                     <label class="custom-checkbox">
                       <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
@@ -329,9 +335,10 @@
                     <a href="#" class="product__link">AT-LPW40WN</a>
                   </h3>
                   <div class="product__price">110 000 ₽</div>
-                  <button class="btn btn--primary product__btn">В корзину</button>
+                  <!-- <button class="btn btn--primary product__btn">В корзину</button> -->
                 </div>
               </article>
+              <button class="btn btn--primary product__btn">В корзину</button>
             </li>
             <li class="catalog__products-item">
               <article class="product">
@@ -367,9 +374,10 @@
                     <a href="#" class="product__link">AT-LPW40WN</a>
                   </h3>
                   <div class="product__price">110 000 ₽</div>
-                  <button class="btn btn--primary product__btn">В корзину</button>
+                  <!-- <button class="btn btn--primary product__btn">В корзину</button> -->
                 </div>
               </article>
+              <button class="btn btn--primary product__btn">В корзину</button>
             </li>
             <li class="catalog__products-item">
               <article class="product">
@@ -405,9 +413,10 @@
                     <a href="#" class="product__link">AT-LPW40WN</a>
                   </h3>
                   <div class="product__price">110 000 ₽</div>
-                  <button class="btn btn--primary product__btn">В корзину</button>
+                  <!-- <button class="btn btn--primary product__btn">В корзину</button> -->
                 </div>
               </article>
+              <button class="btn btn--primary product__btn">В корзину</button>
             </li>
             <li class="catalog__products-item">
               <article class="product">
@@ -443,9 +452,10 @@
                     <a href="#" class="product__link">AT-LPW40WN</a>
                   </h3>
                   <div class="product__price">110 000 ₽</div>
-                  <button class="btn btn--primary product__btn">В корзину</button>
+                  <!-- <button class="btn btn--primary product__btn">В корзину</button> -->
                 </div>
               </article>
+              <button class="btn btn--primary product__btn">В корзину</button>
             </li>
           </ul>
           <ul class="list-reset pagination">
@@ -478,6 +488,39 @@
   </div>
   </div>
 </section>
+  <!-- <script>
+    const priceRange = document.querySelector('.price-range');
 
+    if (priceRange) {
+      console.log('Элемент найден, создаю слайдер...');
+
+      noUiSlider.create(priceRange, {
+        start: [0, 50000],
+        connect: true,
+        range: {
+          'min': 0,
+          'max': 50000
+        },
+        step: 1000, // Шаг для удобства
+        tooltips: true, // Показать значения
+        format: {
+          to: function (value) {
+            return Math.round(value).toLocaleString('ru-RU') + ' ₽';
+          },
+          from: function (value) {
+            return Number(value.replace(/\s/g, '').replace('₽', ''));
+          }
+        }
+      });
+
+      // Для отладки: красим слайдер
+      priceRange.style.backgroundColor = '#f0f0f0';
+      priceRange.style.padding = '20px';
+      priceRange.style.borderRadius = '8px';
+
+    } else {
+      console.error('Элемент .price-range не найден!');
+    }
+  </script> -->
 
 
