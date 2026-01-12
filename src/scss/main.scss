@@ -6,6 +6,7 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "./components/catalog-filter";
 @import "./components/stepper";
 @import "./components/modal";
 @import "./components/small-input";
@@ -37,7 +38,7 @@
 @import "./components/catalog-filter-badge";
 @import "./components/custom-checkbox";
 @import "./components/custom-radio";
-@import "./components/catalog-filter";
+// @import "./components/catalog-filter";
 @import "./components/price-range";
 @import "./components/custom-select";
 @import "./components/pagination";
