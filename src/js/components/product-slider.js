@@ -16,93 +16,105 @@ if (vars.productSlider) {
   }
  });
 }
-
-// products-slider.js
-document.addEventListener('DOMContentLoaded', function() {
-  const productsSlider = document.querySelector('.products__slider');
-
-  if (!productsSlider) return;
-
-  // Инициализация Swiper
-  const swiper = new Swiper(productsSlider, {
-    // Основные настройки
-    slidesPerView: 4, // Количество видимых слайдов по умолчанию
-    spaceBetween: 20, // Отступ между слайдами
-    loop: true, // Бесконечная прокрутка
-    speed: 500, // Скорость анимации
-    grabCursor: true, // Курсор-рука при наведении
-
-    // Адаптивность
-    breakpoints: {
-      // при 576px
-      576: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      // при 768px
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      // при 992px
-      992: {
-        slidesPerView: 4,
-        spaceBetween: 20
-      },
-      // при 1200px
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 30
-      }
-    },
-
-    // Навигация (стрелки)
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // Пагинация (точки)
+// ----------------------------------------------------------------
+if (vars.heroSlider) {
+  const swiper = new Swiper(vars.heroSlider, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".hero__pag",
       clickable: true,
-      dynamicBullets: true,
-    },
 
-    // Скроллбар
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,
-    },
-
-    // Автопрокрутка
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-
-    // Эффекты
-    effect: 'slide', // или 'fade', 'cube', 'coverflow', 'flip'
-
-    // Параллакс
-    parallax: true,
-
-    // Отключение предзагрузки
-    preloadImages: false,
-
-    // Ленивая загрузка изображений
-    lazy: {
-      loadPrevNext: true,
-      loadPrevNextAmount: 2,
-    },
+    }
   });
+}
+// products-slider.js
+// document.addEventListener('DOMContentLoaded', function() {
+//   const productsSlider = document.querySelector('.products__slider');
 
-  console.log('Swiper initialized:', swiper);
+//   if (!productsSlider) return;
+
+//   // Инициализация Swiper
+//   const swiper = new Swiper(productsSlider, {
+//     // Основные настройки
+//     slidesPerView: 4, // Количество видимых слайдов по умолчанию
+//     spaceBetween: 20, // Отступ между слайдами
+//     loop: true, // Бесконечная прокрутка
+//     speed: 500, // Скорость анимации
+//     grabCursor: true, // Курсор-рука при наведении
+
+//     // Адаптивность
+//     breakpoints: {
+//       // при 576px
+//       576: {
+//         slidesPerView: 2,
+//         spaceBetween: 20
+//       },
+//       // при 768px
+//       768: {
+//         slidesPerView: 3,
+//         spaceBetween: 20
+//       },
+//       // при 992px
+//       992: {
+//         slidesPerView: 4,
+//         spaceBetween: 20
+//       },
+//       // при 1200px
+//       1200: {
+//         slidesPerView: 4,
+//         spaceBetween: 30
+//       }
+//     },
+
+//     // Навигация (стрелки)
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+
+//     // Пагинация (точки)
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//       dynamicBullets: true,
+//     },
+
+//     // Скроллбар
+//     scrollbar: {
+//       el: '.swiper-scrollbar',
+//       draggable: true,
+//     },
+
+//     // Автопрокрутка
+//     autoplay: {
+//       delay: 3000,
+//       disableOnInteraction: false,
+//       pauseOnMouseEnter: true,
+//     },
+
+//     // Эффекты
+//     effect: 'slide', // или 'fade', 'cube', 'coverflow', 'flip'
+
+//     // Параллакс
+//     parallax: true,
+
+//     // Отключение предзагрузки
+//     preloadImages: false,
+
+//     // Ленивая загрузка изображений
+//     lazy: {
+//       loadPrevNext: true,
+//       loadPrevNextAmount: 2,
+//     },
+//   });
+
+//   console.log('Swiper initialized:', swiper);
 
   // Дополнительные элементы управления
   // addCustomControls(swiper);
-});
+// });-------------------------------------
 
 // Дополнительные кастомные элементы управления
 // function addCustomControls(swiper) {

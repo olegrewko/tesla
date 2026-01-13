@@ -5,7 +5,7 @@ getHeaderHeight();
 // В вашем основном JS файле (например, main.js)
 import 'simplebar/dist/simplebar.css';
 // В вашем основном JS файле (например, catalog.js)
-import { initPriceSlider } from './price-slider.js';
+// import { initPriceSlider } from './price-slider.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   // Инициализируем слайдер
