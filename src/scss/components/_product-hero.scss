@@ -87,6 +87,7 @@
   }
 
   &__images {
+    position: relative;
     height: 780px;
     border-right: 1px solid gainsboro;
     background-color: #fff;
@@ -286,6 +287,7 @@
     border-bottom: 1px solid gainsboro;
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
+    background-color: var(--color-accent-sea);
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -326,6 +328,7 @@
     height: 100%;
     background-color: #fff;
     border: 2px dashed var(--color-accent);
+
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
@@ -334,6 +337,7 @@
     &--active {
       opacity: 1;
       visibility: visible;
+      background-color: var(--color-sage);
       transition: all 0.3s ease-in-out;
       translate: 0;
     }
