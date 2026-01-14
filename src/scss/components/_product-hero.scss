@@ -77,31 +77,31 @@
     justify-content: space-between;
     border-top: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
 
   &__images,
   &__info {
-    height: 780px;
+    height: 740px;
     width: 50%;
   }
 
   &__images {
     position: relative;
-    height: 780px;
+    height: 740px;
     border-right: 1px solid gainsboro;
     background-color: #fff;
     margin-bottom: 40px;
   }
 
   &__slider {
-    height: 100%;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    height: 740px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
   }
 
   .swiper-pagination.product-hero__pag {
-    
+
     width: auto;
     left: 24px;
     text-align: left;

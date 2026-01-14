@@ -1,88 +1,266 @@
+// .main-cat {
+//   // width: 1920;
+//   // min-height: 260;
+//   padding-bottom: 100px;
+//   opacity: 1;
+
+//   // top: 838px;
+//   &__icon {
+//     margin-bottom: 10px;
+//   }
+
+//   &__list {
+//     display: flex;
+//     flex-wrap: nowrap;
+//     border-bottom: 1px solid gainsboro;
+//     gap: 2px;
+
+//   }
+
+//   &__link {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     min-height: 260px;
+//     background-color: #fff;
+//     gap: 2px;
+//     transition: all 0.3s ease-in-out;
+
+//     @include hover {
+//     background-color: var(--color-accent);
+
+//       .main-cat__subtitle {
+//        color: var(--light-color);
+//        transition: all 0.3s ease-in-out;
+//       }
+//       .main-cat__quantity {
+//        color: var(--light-color);
+//        transition: all 0.3s ease-in-out;
+//       }
+
+//     }
+
+//     &:focus {
+//       outline: none;
+//     }
+
+//     &:focus-visible {
+//       outline: 1px dashed var(--color-primary);
+//       outline-offset: 3px;
+//     }
+//   }
+
+//   &__item {
+//     width: calc(100% / 4);
+
+//     &:not(:last-child) {
+//       .main-cat__link {
+//         padding: 2px;
+//       }
+//     }
+//   }
+
+//   &__subtitle {
+//     margin: 2px;
+//     padding: 2px;
+//     font-family: 'Rubik';
+//     font-weight: 400;
+//     font-style: normal;
+//     font-size: 24px;
+//     color: var(--color-primary);
+//     line-height: 120%;
+//     letter-spacing: 0%;
+//     text-align: center;
+//     text-transform: uppercase;
+//   }
+
+//   &__quantity {
+//     margin-top: 10px;
+//     font-family: 'Rubik';
+//     font-weight: 400;
+//     font-style: normal;
+//     font-size: 16px;
+//     color: var(--color-secondary);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+//     text-align: center;
+
+//   }
+//             @media (max-width: 1023px) {
+//               .main-cat__list {
+//                 display: flex;
+//                 flex-wrap: wrap;
+//               }
+//             }
+// }
 .main-cat {
-  width: 1920;
-  min-height: 260;
-  padding-bottom: 100px;
-  opacity: 1;
+  padding: 30px 0;
+}
 
-  // top: 838px;
-  &__icon {
-    margin-bottom: 10px;
+.main-cat__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.main-cat__item {
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.main-cat__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+
+      @include hover {
+        background-color: var(--color-accent);
+
+          .main-cat__subtitle {
+           color: var(--light-color);
+           transition: all 0.3s ease-in-out;
+          }
+          .main-cat__quantity {
+           color: var(--light-color);
+           transition: all 0.3s ease-in-out;
+          }
+
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline: 1px dashed var(--color-primary);
+          outline-offset: 3px;
+        }
+}
+
+
+.main-cat__link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+.main-cat__icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.main-cat__subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.main-cat__quantity {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Планшеты (768px - 1023px) */
+@media (max-width: 1023px) {
+  .main-cat {
+    padding: 40px 0;
   }
 
-  &__list {
-    display: flex;
-    border-bottom: 1px solid gainsboro;
-    gap: 2px;
+  .main-cat__list {
+    gap: 20px;
   }
 
-  &__link {
-    display: flex;
-    flex-direction: column;
+  .main-cat__item {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .main-cat__link {
+    padding: 28px 20px;
+  }
+
+  .main-cat__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .main-cat__subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Мобильные (до 767px) */
+@media (max-width: 767px) {
+  .main-cat {
+    padding: 32px 0;
+  }
+
+  .main-cat__list {
+    gap: 16px;
+    justify-content: stretch;
+  }
+
+  .main-cat__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .main-cat__link {
+    padding: 24px 16px;
+    border-radius: 12px;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    min-height: 260px;
-    background-color: #fff;
-    gap: 2px;
-    transition: all 0.3s ease-in-out;
-
-    @include hover {
-    background-color: var(--color-accent);
-
-      .main-cat__subtitle {
-       color: var(--light-color);
-       transition: all 0.3s ease-in-out;
-      }
-      .main-cat__quantity {
-       color: var(--light-color);
-       transition: all 0.3s ease-in-out;
-      }
-
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus-visible {
-      outline: 1px dashed var(--color-primary);
-      outline-offset: 3px;
-    }
+    text-align: left;
+    gap: 16px;
   }
 
-  &__item {
-    width: calc(100% / 4);
-
-    &:not(:last-child) {
-      .main-cat__link {
-        padding: 2px;
-      }
-    }
+  .main-cat__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
 
-  &__subtitle {
-    margin: 2px;
-    padding: 2px;
-    font-family: 'Rubik';
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    color: var(--color-primary);
-    line-height: 120%;
-    letter-spacing: 0%;
-    text-align: center;
-    text-transform: uppercase;
+  .main-cat__content {
+    flex: 1;
   }
 
-  &__quantity {
-    margin-top: 10px;
-    font-family: 'Rubik';
-    font-weight: 400;
-    font-style: normal;
+  .main-cat__subtitle {
     font-size: 16px;
-    color: var(--color-secondary);
-    line-height: 140%;
-    letter-spacing: 0%;
-    text-align: center;
+    margin-bottom: 4px;
+  }
 
+  .main-cat__quantity {
+    font-size: 13px;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .main-cat__link {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .main-cat__icon {
+    width: 40px;
+    height: 40px;
   }
 }

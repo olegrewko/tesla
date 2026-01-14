@@ -111,3 +111,81 @@
     </div>
   </div>
 </header>
+<!-- /* JavaScript для бургер-меню */
+// -->
+<script>document.addEventListener('DOMContentLoaded', function () {
+      // Создаем бургер-кнопку
+      const burgerBtn=document.createElement('button');
+      burgerBtn.className='btn-reset header__burger';
+      burgerBtn.innerHTML='<span></span><span></span><span></span>';
+      burgerBtn.setAttribute('aria-label', 'Открыть меню');
+
+      // Создаем мобильное меню
+      const mobileMenu=document.createElement('div');
+      mobileMenu.className='mobile-menu';
+
+      const closeBtn=document.createElement('button');
+      closeBtn.className='btn-reset mobile-menu__close';
+      closeBtn.innerHTML='×';
+      closeBtn.setAttribute('aria-label', 'Закрыть меню');
+
+      const menuList=document.createElement('ul');
+      menuList.className='list-reset mobile-menu__list';
+
+      // Копируем пункты меню из десктопной версии
+      const navItems=document.querySelectorAll('.nav__item');
+
+      navItems.forEach(item=> {
+          const clone=item.cloneNode(true);
+          clone.classList.add('mobile-menu__item');
+          clone.querySelector('.nav__link').classList.add('mobile-menu__link');
+          menuList.appendChild(clone);
+        });
+
+      mobileMenu.appendChild(closeBtn);
+      mobileMenu.appendChild(menuList);
+      document.body.appendChild(mobileMenu);
+
+      // Добавляем бургер в хедер
+      const headerTop=document.querySelector('.header__top .header__container');
+
+      if (headerTop) {
+        headerTop.insertBefore(burgerBtn, headerTop.children[1]);
+      }
+
+      // Обработчики событий
+      burgerBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('active');
+          document.body.style.overflow='hidden';
+        });
+
+      closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow='';
+        });
+
+      // Закрытие при клике на ссылку
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(link=> {
+          link.addEventListener('click', function() {
+              mobileMenu.classList.remove('active');
+              document.body.style.overflow='';
+            });
+        });
+
+      // Закрытие при клике вне меню
+      mobileMenu.addEventListener('click', function(e) {
+          if (e.target===mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow='';
+          }
+        });
+
+      // Обработка ресайза окна
+      window.addEventListener('resize', function() {
+          if (window.innerWidth > 940) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow='';
+          }
+        });
+    });
+  </script>

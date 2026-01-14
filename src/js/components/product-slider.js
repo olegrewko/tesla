@@ -158,20 +158,76 @@ if (vars.heroSlider) {
 // }
 // vars.mainProductsInner------------------------------------
 
-vars.mainProductsInner.forEach(inner => {
+// vars.mainProductsInner.forEach(inner => {
 
- const swiper = new Swiper(inner.querySelector('.products__slider'), {
-  slidesPerView: 4,
-  spaceBetween: 24,
-  loop: true,
-  watchSlidesProgress: true,
-  scrollbar: {
-    el: inner.querySelector(".swiper-scrollbar"),
-    draggable: true
-  },
-  navigation: {
-    prevEl: inner.querySelector(".products__slider-btn--prev"),
-    nextEl: inner.querySelector(".products__slider-btn--next")
-  }
- });
+//  const swiper = new Swiper(inner.querySelector('.products__slider'), {
+//   slidesPerView: 4,
+//   spaceBetween: 24,
+//   loop: true,
+//   watchSlidesProgress: true,
+//    // Адаптивные брейкпоинты
+//    breakpoints: {
+//      480: {
+//        slidesPerView: 2,
+//        spaceBetween: 16
+//      },
+//      768: {
+//        slidesPerView: 3,
+//        spaceBetween: 20
+//      },
+//      1024: {
+//        slidesPerView: 4,
+//        spaceBetween: 24
+//      }
+//    },
+//   scrollbar: {
+//     el: inner.querySelector(".swiper-scrollbar"),
+//     draggable: true
+//   },
+//   navigation: {
+//     prevEl: inner.querySelector(".products__slider-btn--prev"),
+//     nextEl: inner.querySelector(".products__slider-btn--next")
+//   }
+//  });
+// });
+let swipers = [];
+
+vars.mainProductsInner.forEach((inner, index) => {
+  const swiper = new Swiper(inner.querySelector('.products__slider'), {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      480: { slidesPerView: 2, spaceBetween: 16 },
+      768: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 24 }
+    },
+
+    scrollbar: {
+      el: inner.querySelector(".swiper-scrollbar"),
+      draggable: true
+    },
+    navigation: {
+      prevEl: inner.querySelector(".products__slider-btn--prev"),
+      nextEl: inner.querySelector(".products__slider-btn--next")
+    },
+
+    // Обновлять при изменении размера
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true
+  });
+
+  swipers.push(swiper);
+});
+
+// Обновлять все свайперы при ресайзе
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    swipers.forEach(swiper => swiper.update());
+  }, 250);
 });

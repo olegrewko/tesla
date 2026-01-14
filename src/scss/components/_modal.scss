@@ -1,124 +1,692 @@
+// .graph-modal {
+
+// &__container {
+// &--enter {
+//   border-radius: 4px;
+//   padding: 0;
+// max-width: 400px;
+// width: 100%;
+// }
+// }
+// &__close {
+// right: 12px;
+// top: 12px;
+// width: 24px;
+// height: 24px;
+// fill: var(--color-secondary);
+// background: none;
+//   transition: fill 0.3s ease-in-out;
+
+//   &:focus {
+//   outline: none;
+//   }
+//   &:focus-visible {
+//   outline: 2px dashed currentcolor;
+//   outline-offset: 2px;
+//   }
+//   @include hover {
+//   fill: var(--color-accent);
+
+//   }
+// svg {
+// display: block;
+// width: 100%;
+// height: 100%;
+// object-fit: cover;
+// }
+
+// }
+
+// }
+// .enter-modal {
+
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   padding: 44px 48px;
+//   padding-bottom: 42px;
+//   &__second-step {
+//     display: none;
+//   }
+//   &__title {
+// font-family: 'Rubik';
+// font-weight: 500;
+// font-style: normal;
+// font-size: 22px;
+
+// line-height: 120%;
+// letter-spacing: 0%;
+// text-align: center;
+// text-transform: uppercase;
+// margin-bottom: 10px;
+//   }
+// &__form {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+// width: 100%;
+// gap: 10px;
+// }
+// &__label {
+// width: 100%;
+// }
+// &__btn {
+//   padding: 10px 38px;
+// width: 100%;
+// font-family: 'Rubik';
+// font-weight: 600;
+
+// font-size: 16px;
+
+// line-height: 122%;
+// letter-spacing: 0%;
+// text-transform: uppercase;
+
+// }
+// &__descr {
+// font-family: 'Rubik';
+// font-weight: 400;
+// font-style: normal;
+// font-size: 16px;
+
+// line-height: 140%;
+// letter-spacing: 0%;
+// text-align: center;
+// margin-bottom: 16px;
+// }
+// &__text {
+// font-family: 'Rubik';
+// font-weight: 400;
+// font-style: normal;
+// font-size: 16px;
+
+// line-height: 140%;
+// letter-spacing: 0%;
+// text-align: center;
+// margin-bottom: 16px;
+// }
+// &__back {
+//   position: absolute;
+// left: 12px;
+// top: 12px;
+// width: 24px;
+// height: 24px;
+// fill: var(--color-secondary);
+// background: none;
+
+// svg {
+// display: block;
+// width: 100%;
+// height: 100%;
+// object-fit: cover;
+// }
+// }
+// }
+// // -------------------Светлая тема----------------------------------
+// /* Важные стили для работы модального окна */
 .graph-modal {
-
-&__container {
-&--enter {
-  border-radius: 4px;
-  padding: 0;
-max-width: 400px;
-width: 100%;
-}
-}
-&__close {
-right: 12px;
-top: 12px;
-width: 24px;
-height: 24px;
-fill: var(--color-secondary);
-background: none;
-  transition: fill 0.3s ease-in-out;
-
-  &:focus {
-  outline: none;
-  }
-  &:focus-visible {
-  outline: 2px dashed currentcolor;
-  outline-offset: 2px;
-  }
-  @include hover {
-  fill: var(--color-accent);
-
-  }
-svg {
-display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-}
-
-}
-.enter-modal {
-
-  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: none;
+  /* По умолчанию скрыто */
   align-items: center;
-  flex-direction: column;
-  padding: 44px 48px;
-  padding-bottom: 42px;
-  &__second-step {
-    display: none;
-  }
-  &__title {
-font-family: 'Rubik';
-font-weight: 500;
-font-style: normal;
-font-size: 22px;
-
-line-height: 120%;
-letter-spacing: 0%;
-text-align: center;
-text-transform: uppercase;
-margin-bottom: 10px;
-  }
-&__form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-width: 100%;
-gap: 10px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
 }
-&__label {
-width: 100%;
+
+.graph-modal.is-open {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
 }
-&__btn {
-  padding: 10px 38px;
-width: 100%;
-font-family: 'Rubik';
-font-weight: 600;
 
-font-size: 16px;
-
-line-height: 122%;
-letter-spacing: 0%;
-text-transform: uppercase;
-
+.graph-modal__container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
-&__descr {
-font-family: 'Rubik';
-font-weight: 400;
-font-style: normal;
-font-size: 16px;
 
-line-height: 140%;
-letter-spacing: 0%;
-text-align: center;
-margin-bottom: 16px;
+.graph-modal.is-open .graph-modal__container {
+  transform: translateY(0);
+  opacity: 1;
 }
-&__text {
-font-family: 'Rubik';
-font-weight: 400;
-font-style: normal;
-font-size: 16px;
 
-line-height: 140%;
-letter-spacing: 0%;
-text-align: center;
-margin-bottom: 16px;
+.graph-modal__container.active {
+  display: block;
 }
-&__back {
+
+.graph-modal__close {
   position: absolute;
-left: 12px;
-top: 12px;
-width: 24px;
-height: 24px;
-fill: var(--color-secondary);
-background: none;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
 
-svg {
-display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
+.graph-modal__close svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease;
 }
+
+.graph-modal__close:hover svg {
+  transform: scale(1.1);
 }
+
+/* Стили для формы */
+.enter-modal__step {
+  display: none;
 }
+
+.enter-modal__step--active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.enter-modal__title {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.enter-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.enter-modal__label {
+  display: block;
+}
+
+.enter-modal__input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.enter-modal__input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.enter-modal__btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Второй шаг */
+.enter-modal__back {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.enter-modal__desc {
+  margin: 0 0 20px 0;
+  color: #666;
+  text-align: center;
+}
+
+.enter-modal__code-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 8px;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.enter-modal__text {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Исправление для Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .graph-modal {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  .enter-modal__input,
+  .enter-modal__code-input {
+    -webkit-appearance: none;
+    border-radius: 6px;
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 576px) {
+  .graph-modal__container {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .enter-modal__title {
+    font-size: 20px;
+  }
+
+  .enter-modal__input,
+  .enter-modal__code-input {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
+// --------------Темная тема-------------------------------------------------
+/* Основные стили для модального окна */
+// .graph-modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   z-index: 9999;
+//   display: none;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: opacity 0.3s ease, visibility 0.3s ease;
+//   padding: 20px;
+//   backdrop-filter: blur(2px);
+// }
+
+// .graph-modal.is-open {
+//   display: flex !important;
+//   opacity: 1;
+//   visibility: visible;
+// }
+
+// .graph-modal__container {
+//   background: #fff;
+//   border-radius: 12px;
+//   padding: 40px;
+//   max-width: 400px;
+//   width: 100%;
+//   position: relative;
+//   transform: translateY(-20px);
+//   opacity: 0;
+//   transition: transform 0.3s ease, opacity 0.3s ease;
+//   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+// }
+
+// .graph-modal__container--enter {
+//   padding: 0;
+//   border-radius: 4px;
+// }
+
+// .graph-modal.is-open .graph-modal__container {
+//   transform: translateY(0);
+//   opacity: 1;
+// }
+
+// .graph-modal__close {
+//   position: absolute;
+//   top: 12px;
+//   right: 12px;
+//   width: 24px;
+//   height: 24px;
+//   background: transparent;
+//   border: none;
+//   cursor: pointer;
+//   padding: 0;
+//   z-index: 10;
+//   fill: var(--color-secondary, #666);
+//   transition: fill 0.3s ease-in-out;
+// }
+
+// .graph-modal__close:focus {
+//   outline: none;
+// }
+
+// .graph-modal__close:focus-visible {
+//   outline: 2px dashed currentColor;
+//   outline-offset: 2px;
+// }
+
+// .graph-modal__close:hover {
+//   fill: var(--color-accent, #333);
+// }
+
+// .graph-modal__close svg {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   transition: transform 0.2s ease;
+// }
+
+// .graph-modal__close:hover svg {
+//   transform: scale(1.1);
+// }
+
+// /* Стили для формы входа */
+// .enter-modal {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   padding: 44px 48px;
+//   padding-bottom: 42px;
+//   width: 100%;
+// }
+
+// /* Шаги формы */
+// .enter-modal__step {
+//   display: none;
+//   width: 100%;
+//   animation: fadeIn 0.3s ease;
+// }
+
+// .enter-modal__step--first {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .enter-modal__step--second {
+//   display: none;
+//   flex-direction: column;
+//   align-items: center;
+//   position: relative;
+// }
+
+// .enter-modal__step--active {
+//   display: flex !important;
+// }
+
+// /* Заголовок */
+// .enter-modal__title {
+//   font-family: 'Rubik', sans-serif;
+//   font-weight: 500;
+//   font-size: 22px;
+//   line-height: 120%;
+//   text-align: center;
+//   text-transform: uppercase;
+//   margin: 0 0 10px 0;
+//   color: #333;
+// }
+
+// /* Форма */
+// .enter-modal__form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   gap: 10px;
+//   margin-top: 10px;
+// }
+
+// .enter-modal__label {
+//   width: 100%;
+// }
+
+// .enter-modal__input,
+// .enter-modal__code-input {
+//   width: 100%;
+//   padding: 12px 15px;
+//   border: 1px solid #ddd;
+//   border-radius: 6px;
+//   font-size: 16px;
+//   font-family: 'Rubik', sans-serif;
+//   transition: border-color 0.3s ease;
+//   -webkit-appearance: none;
+//   appearance: none;
+// }
+
+// .enter-modal__input:focus,
+// .enter-modal__code-input:focus {
+//   outline: none;
+//   border-color: #333;
+// }
+
+// .enter-modal__input::placeholder {
+//   color: #999;
+// }
+
+// .enter-modal__code-input {
+//   text-align: center;
+//   letter-spacing: 4px;
+//   font-family: monospace;
+//   margin-bottom: 10px;
+// }
+
+// /* Кнопки */
+// .enter-modal__btn {
+//   padding: 10px 38px;
+//   width: 100%;
+//   font-family: 'Rubik', sans-serif;
+//   font-weight: 600;
+//   font-size: 16px;
+//   line-height: 122%;
+//   text-transform: uppercase;
+//   background: var(--color-primary, #333);
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .enter-modal__btn:hover {
+//   background: var(--color-accent, #444);
+// }
+
+// /* Описание */
+// .enter-modal__desc,
+// .enter-modal__text {
+//   font-family: 'Rubik', sans-serif;
+//   font-weight: 400;
+//   font-size: 16px;
+//   line-height: 140%;
+//   text-align: center;
+//   margin: 0 0 16px 0;
+//   color: #666;
+// }
+
+// .enter-modal__text {
+//   font-size: 13px;
+//   color: #999;
+// }
+
+// /* Кнопка "Назад" */
+// .enter-modal__back {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 24px;
+//   height: 24px;
+//   background: none;
+//   border: none;
+//   padding: 0;
+//   cursor: pointer;
+//   fill: var(--color-secondary, #666);
+//   transition: fill 0.3s ease;
+// }
+
+// .enter-modal__back:hover {
+//   fill: var(--color-accent, #333);
+// }
+
+// .enter-modal__back svg {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+// /* Анимации */
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(10px);
+//   }
+
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes modalAppear {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-20px) scale(0.95);
+//   }
+
+//   to {
+//     opacity: 1;
+//     transform: translateY(0) scale(1);
+//   }
+// }
+
+// /* Адаптация для мобильных */
+// @media (max-width: 576px) {
+//   .graph-modal {
+//     padding: 10px;
+//     backdrop-filter: blur(1px);
+//   }
+
+//   .graph-modal__container {
+//     padding: 30px 20px;
+//     max-width: 90%;
+//   }
+
+//   .graph-modal__container--enter {
+//     padding: 0;
+//   }
+
+//   .enter-modal {
+//     padding: 30px 20px;
+//   }
+
+//   .enter-modal__title {
+//     font-size: 20px;
+//     margin-bottom: 15px;
+//   }
+
+//   .enter-modal__input,
+//   .enter-modal__code-input {
+//     padding: 10px 12px;
+//     font-size: 15px;
+//   }
+
+//   .enter-modal__btn {
+//     padding: 12px;
+//     font-size: 15px;
+//   }
+
+//   .enter-modal__desc,
+//   .enter-modal__text {
+//     font-size: 14px;
+//   }
+// }
+
+// /* Для очень маленьких экранов */
+// @media (max-width: 375px) {
+//   .enter-modal {
+//     padding: 25px 15px;
+//   }
+
+//   .enter-modal__title {
+//     font-size: 18px;
+//   }
+
+//   .enter-modal__btn {
+//     padding: 10px;
+//     font-size: 14px;
+//   }
+// }
+
+// /* Исправление для Safari и Chrome */
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+//   .enter-modal__input,
+//   .enter-modal__code-input {
+//     border-radius: 6px;
+//   }
+
+//   .enter-modal__btn {
+//     -webkit-appearance: none;
+//     border-radius: 4px;
+//   }
+// }
+
+// /* Темная тема */
+// @media (prefers-color-scheme: dark) {
+//   .graph-modal__container {
+//     background: #1a1a1a;
+//     color: #fff;
+//   }
+
+//   .enter-modal__title {
+//     color: #fff;
+//   }
+
+//   .enter-modal__input,
+//   .enter-modal__code-input {
+//     background: #2a2a2a;
+//     border-color: #444;
+//     color: #fff;
+//   }
+
+//   .enter-modal__desc,
+//   .enter-modal__text {
+//     color: #aaa;
+//   }
+
+//   .graph-modal__close,
+//   .enter-modal__back {
+//     fill: #aaa;
+//   }
+
+//   .graph-modal__close:hover,
+//   .enter-modal__back:hover {
+//     fill: #fff;
+//   }
+// }

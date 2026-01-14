@@ -57,9 +57,32 @@
     gap: 32px;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
+  // .grid {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   gap: 24px;
+  // }
+    .grid {
+      display: grid;
+      gap: 24px;
+
+      /* Мобильная версия - 1 колонка */
+      grid-template-columns: 1fr;
+    }
+
+    /* Планшеты - 2 колонки */
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* Десктоп - 4 колонки */
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
 }
