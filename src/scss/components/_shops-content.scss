@@ -1,173 +1,614 @@
+// .shops-content {
+//   &__top {
+//     border-top: 1px solid gainsboro;
+//     border-bottom: 1px solid gainsboro;
+//     padding: 20px 0;
+//   }
+
+//   &__grid {
+//     display: grid;
+//     grid-template-columns: 5fr 7fr;
+//   }
+
+//   &__left {
+//     // grid-column: 5 span;
+//     border-right: 1px solid gainsboro;
+//   }
+
+//   &__right {
+//     // grid-column: 7 span;
+//   }
+
+//   &__items {
+//     .simplebar-content {
+//     display: flex;
+//     flex-direction: column;
+//     }
+
+//   }
+
+//   &__item {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 24px;
+//     gap: 8px;
+//     &:not(:last-of-type) {
+//       border-bottom: 1px solid gainsboro;
+//     }
+//   }
+
+//   &__subtitle {
+//     font-family: 'Rubik';
+//     font-weight: 400;
+//     margin: 0;
+//     font-size: 20px;
+//     color: var(--color-accent);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+//     margin-bottom: 8px;
+//   }
+
+//   &__metro {
+//     position: relative;
+//     padding-left: 16px;
+//     font-family: "Rubik";
+//     font-weight: 400;
+
+//     font-size: 16px;
+//     color: var(--color-primary);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+
+//     &--orange {
+//       --metro-bg: orange;
+//     }
+//     &--grey {
+//       --metro-bg: grey;
+//     }
+//     &--red {
+//       --metro-bg: red;
+//     }
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       top: 50%;
+//       left: 0;
+//       border-radius: 100%;
+//       width: 8px;
+//       height: 8px;
+//       background-color: green;
+//       translate: 0 -50%;
+//     }
+//   }
+
+//   &__address {
+//     font-family: 'Rubik';
+//     font-weight: 400;
+
+//     font-size: 16px;
+//     color: var(--color-secondary);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+//   }
+
+//   &__sh {
+//     font-family: 'Rubik';
+//     font-weight: 400;
+
+//     font-size: 16px;
+//     color: var(--color-secondary);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+//   }
+// // Кнопка на всю область
+//   &__btn {
+//     //  &::after {
+//       content: "";
+//       position: absolute;
+//       inset: 0;
+//     // }
+//   }
+
+//   &__inner {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//     padding-bottom: 50px;
+//   }
+
+//   &__form {
+//     display: flex;
+//     align-items: center;
+//     // gap: 20px;
+//     width: 100%;
+//     max-width: 300px;
+//   }
+
+//   &__label {
+//   position: relative;
+
+//   }
+
+//   &__input {
+//     width: 300px;
+//     padding-right: 4px;
+//     padding-left: 24px;
+//     background-color: transparent;
+//   }
+
+//   &__icon {
+//       position: absolute;
+//   left: 4px;
+// top: 50%;
+// display: block;
+
+// fill: none;
+// object-fit: cover;
+// stroke-width: 2px;
+// stroke: var(--color-secondary);
+// translate: 0 -50%;
+//     width: 16px;
+//     height: 16px;
+//     fill: transparent;
+
+//   }
+
+//   &__btn {
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       inset: 0;
+//     }
+//   }
+
+//   &__map {
+//     width: 100%;
+//     height: 500px;
+//     margin: 20px 0;
+//     // background: orange;
+//     margin-left: 2px;
+//   }
+// }
+/* Основные стили для секции магазинов */
 .shops-content {
-  &__top {
-    border-top: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
+  padding: 60px 0;
+}
+
+.shops-content__top {
+  padding: 30px 0;
+  // background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.shops-content__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shops-content__form {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.shops-content__label {
+  position: relative;
+  display: block;
+}
+
+.shops-content__icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.shops-content__input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.shops-content__input:focus {
+  outline: none;
+  border-color: #333;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.custom-checkbox__field {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.custom-checkbox__content {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Нижняя часть */
+.shops-content__bottom {
+  padding: 40px 0;
+}
+
+.shops-content__wrapper {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.shops-content__left {
+  height: 400px;
+  overflow: hidden;
+}
+
+.shops-content__items {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.shops-content__item {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.shops-content__item:hover {
+  border-color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shops-content__item.active {
+  border-color: #333;
+  background: #f8f9fa;
+}
+
+.shops-content__subtitle {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.shops-content__metro {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.shops-content__metro--green {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.shops-content__metro--blue {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.shops-content__metro--red {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.shops-content__address {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.shops-content__sh {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.shops-content__btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.shops-content__btn:hover {
+  transform: scale(1.1);
+}
+
+/* Правая часть с картой */
+.shops-content__right {
+  position: relative;
+}
+
+.controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-btn {
+  padding: 8px 20px;
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  background: #f8f9fa;
+  border-color: #999;
+}
+
+.map-btn.active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Кастомный скроллбар */
+.shops-content__items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shops-content__items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.shops-content__items::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.shops-content__items::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Адаптация для планшетов (1024px и меньше) */
+@media (max-width: 1024px) {
+  .shops-content__wrapper {
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+  }
+
+  .shops-content__form {
+    min-width: 250px;
+  }
+
+  .shops-content__item {
+    padding: 15px;
+  }
+}
+
+/* Адаптация для планшетов (768px и меньше) */
+@media (max-width: 768px) {
+  .shops-content {
+    padding: 40px 0;
+  }
+
+  .shops-content__top {
     padding: 20px 0;
   }
 
-  &__grid {
+  .shops-content__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .shops-content__form {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .shops-content__wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .shops-content__left {
+    height: auto;
+    max-height: 400px;
+  }
+
+  #map {
+    height: 350px;
+  }
+
+  .shops-content__items {
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    overflow-y: visible;
   }
 
-  &__left {
-    // grid-column: 5 span;
-    border-right: 1px solid gainsboro;
+  .shops-content__item {
+    margin-bottom: 0;
+  }
+}
+
+/* Адаптация для мобильных (576px и меньше) */
+@media (max-width: 576px) {
+  .shops-content {
+    padding: 30px 0;
   }
 
-  &__right {
-    // grid-column: 7 span;
+  .shops-content__inner {
+    gap: 12px;
   }
 
-  &__items {
-    .simplebar-content {
-    display: flex;
-    flex-direction: column;
-    }
-
+  .shops-content__input {
+    padding: 10px 15px 10px 40px;
+    font-size: 15px;
   }
 
-  &__item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    gap: 8px;
-    &:not(:last-of-type) {
-      border-bottom: 1px solid gainsboro;
-    }
+  .custom-checkbox {
+    font-size: 15px;
   }
 
-  &__subtitle {
-    font-family: 'Rubik';
-    font-weight: 400;
-    margin: 0;
-    font-size: 20px;
-    color: var(--color-accent);
-    line-height: 140%;
-    letter-spacing: 0%;
-    margin-bottom: 8px;
-  }
-
-  &__metro {
-    position: relative;
-    padding-left: 16px;
-    font-family: "Rubik";
-    font-weight: 400;
-
-    font-size: 16px;
-    color: var(--color-primary);
-    line-height: 140%;
-    letter-spacing: 0%;
-
-    &--orange {
-      --metro-bg: orange;
-    }
-    &--grey {
-      --metro-bg: grey;
-    }
-    &--red {
-      --metro-bg: red;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      border-radius: 100%;
-      width: 8px;
-      height: 8px;
-      background-color: green;
-      translate: 0 -50%;
-    }
-  }
-
-  &__address {
-    font-family: 'Rubik';
-    font-weight: 400;
-
-    font-size: 16px;
-    color: var(--color-secondary);
-    line-height: 140%;
-    letter-spacing: 0%;
-  }
-
-  &__sh {
-    font-family: 'Rubik';
-    font-weight: 400;
-
-    font-size: 16px;
-    color: var(--color-secondary);
-    line-height: 140%;
-    letter-spacing: 0%;
-  }
-// Кнопка на всю область
-  &__btn {
-    //  &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-    // }
-  }
-
-  &__inner {
-    display: flex;
-    align-items: center;
+  .shops-content__wrapper {
     gap: 20px;
-    padding-bottom: 50px;
   }
 
-  &__form {
-    display: flex;
-    align-items: center;
-    // gap: 20px;
-    width: 100%;
-    max-width: 300px;
+  .shops-content__items {
+    grid-template-columns: 1fr;
   }
 
-  &__label {
-  position: relative;
-
+  .shops-content__item {
+    padding: 15px;
   }
 
-  &__input {
-    width: 300px;
-    padding-right: 4px;
-    padding-left: 24px;
-    background-color: transparent;
+  .shops-content__subtitle {
+    font-size: 16px;
   }
 
-  &__icon {
-      position: absolute;
-  left: 4px;
-top: 50%;
-display: block;
-
-fill: none;
-object-fit: cover;
-stroke-width: 2px;
-stroke: var(--color-secondary);
-translate: 0 -50%;
-    width: 16px;
-    height: 16px;
-    fill: transparent;
-
+  .controls {
+    justify-content: center;
   }
 
-  &__btn {
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-    }
+  .map-btn {
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
-  &__map {
-    width: 100%;
-    height: 500px;
-    margin: 20px 0;
-    // background: orange;
-    margin-left: 2px;
+  #map {
+    height: 300px;
+  }
+}
+
+/* Очень маленькие экраны (до 400px) */
+@media (max-width: 400px) {
+  .shops-content__input {
+    font-size: 14px;
+  }
+
+  .custom-checkbox {
+    font-size: 14px;
+  }
+
+  .shops-content__metro {
+    font-size: 13px;
+  }
+
+  .shops-content__address,
+  .shops-content__sh {
+    font-size: 13px;
+  }
+
+  .map-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  #map {
+    height: 250px;
+  }
+}
+
+/* Улучшения для темной темы */
+@media (prefers-color-scheme: dark) {
+  .shops-content__top {
+    background: #1a1a1a;
+    border-bottom-color: #333;
+  }
+
+  .shops-content__item {
+    background: #2a2a2a;
+    border-color: #333;
+    color: #fff;
+  }
+
+  .shops-content__item:hover {
+    border-color: #666;
+  }
+
+  .shops-content__item.active {
+    background: #333;
+  }
+
+  .shops-content__subtitle {
+    color: #fff;
+  }
+
+  .shops-content__address {
+    color: #aaa;
+  }
+
+  .shops-content__input {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #fff;
+  }
+
+  .shops-content__input:focus {
+    border-color: #666;
+  }
+
+  .custom-checkbox__content {
+    color: #fff;
+  }
+
+  .map-btn {
+    background: #2a2a2a;
+    color: #fff;
+    border-color: #444;
+  }
+
+  .map-btn:hover {
+    background: #333;
+  }
+
+  .map-btn.active {
+    background: #666;
+    border-color: #666;
   }
 }

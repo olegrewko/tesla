@@ -1,35 +1,32 @@
-<section class="order-content">
+<!-- <section class="order-content">
 
     <form method="POST" class="order-content__form" id="contactForm">
       <div class="order-content__inner">
           <h2 class="order-content__title">Контактные данные</h2>
 
           <div class="order-content__inputs">
-              <!-- Поле Имя -->
+
               <label class="order-content__label">
                   <input type="text" name="name" class="order-content__input small-input name-input" placeholder="Имя">
                   <span class="input-error"></span>
               </label>
 
-              <!-- Поле Фамилия -->
+
               <label class="order-content__label">
                   <input type="text" name="family" class="order-content__input small-input name-input" placeholder="Фамилия">
                   <span class="input-error"></span>
               </label>
 
-              <!-- Поле Компания -->
-              <!-- <label class="order-content__label">
-                  <input type="text" name="company" class="order-content__input small-input company-input" placeholder="Компания">
-                  <span class="input-error"></span>
-              </label> -->
 
-              <!-- Поле Email -->
+
+
+
               <label class="order-content__label">
                   <input type="email" name="email" class="order-content__input small-input email-input" placeholder="E-mail*" required>
                   <span class="input-error"></span>
               </label>
 
-              <!-- Поле Телефон -->
+
               <label class="order-content__label">
                   <input type="tel" name="phone" class="order-content__input small-input tel-input" placeholder="Телефон">
                   <span class="input-error"></span>
@@ -37,33 +34,33 @@
 
 
 
-                          <!-- Поле Адрес -->
+
               <label class="order-content__label">
                   <input type="text" name="address" class="order-content__input small-input tel-input" placeholder="Адрес">
                   <span class="input-error"></span>
               </label>
 
-              <!-- Поле Индекс -->
+
                           <label class="order-content__label">
                   <input type="text" name="index" class="order-content__input small-input tel-input" placeholder="Индекс">
                   <span class="input-error"></span>
               </label>
           </div>
 
-                      <!-- Поле Сообщение -->
+
               <label class="order-content__label order-content__label--textarea">
                   <textarea name="message" class="order-content__input small-input message-textarea small-textarea" placeholder="Сообщение"></textarea>
                   <span class="input-error"></span>
               </label>
 
-          <!-- Чекбокс -->
+
           <label class="custom-checkbox">
               <input type="checkbox" name="policy" class="custom-checkbox__field policy-checkbox" required>
               <span class="custom-checkbox__content">Я согласен с политикой обработки персональных данных</span>
               <span class="checkbox-error"></span>
           </label>
 
-          <!-- Кнопка отправки -->
+
           <button class="btn btn--primary order-content__btn" type="submit" id="submitBtn">
               <span class="btn-text">Оформить заказ</span>
               <span class="btn-loader" style="display: none;">
@@ -73,7 +70,7 @@
               </span>
           </button>
 
-          <!-- Сообщение об успехе -->
+
           <div class="form-success" style="display: none;">
               <div class="success-message">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
@@ -86,7 +83,7 @@
     </form>
 
   <div  class="order-content__info">
-    <!-- <div class="order-content__inner"> -->
+
     <h2 class="order-content__title">Ваш заказ</h2>
     <div   class="order-content__wrapper">
       <ul class="list-reset order-content__items">
@@ -138,4 +135,543 @@
       </div>
     </div>
   </div>
+</section> -->
+<section class="order-content">
+  <form method="POST" class="order-content__form" id="contactForm">
+    <div class="order-content__inner">
+      <h2 class="order-content__title">Контактные данные</h2>
+
+      <div class="order-content__inputs">
+        <!-- Поле Имя -->
+        <label class="order-content__label">
+          <input type="text" name="name" class="order-content__input small-input" placeholder="Имя" required>
+          <span class="input-error"></span>
+        </label>
+
+        <!-- Поле Фамилия -->
+        <label class="order-content__label">
+          <input type="text" name="family" class="order-content__input small-input" placeholder="Фамилия" required>
+          <span class="input-error"></span>
+        </label>
+
+        <!-- Поле Email -->
+        <label class="order-content__label">
+          <input type="email" name="email" class="order-content__input small-input" placeholder="E-mail" required>
+          <span class="input-error"></span>
+        </label>
+
+        <!-- Поле Телефон -->
+        <label class="order-content__label">
+          <input type="tel" name="phone" class="order-content__input small-input" placeholder="Телефон" required>
+          <span class="input-error"></span>
+        </label>
+
+        <!-- Поле Адрес -->
+        <label class="order-content__label order-content__label--full">
+          <input type="text" name="address" class="order-content__input small-input" placeholder="Адрес" required>
+          <span class="input-error"></span>
+        </label>
+      </div>
+
+      <!-- Поле Сообщение -->
+      <label class="order-content__label order-content__label--full">
+        <textarea name="message" class="order-content__textarea small-textarea"
+          placeholder="Комментарий к заказу (необязательно)"></textarea>
+        <span class="input-error"></span>
+      </label>
+
+      <!-- Чекбокс -->
+      <label class="custom-checkbox">
+        <input type="checkbox" name="policy" class="custom-checkbox__field" required>
+        <span class="custom-checkbox__content">Согласен с политикой обработки данных</span>
+        <span class="checkbox-error"></span>
+      </label>
+
+      <!-- Кнопка отправки -->
+      <button class="btn btn--primary order-content__btn" type="submit">
+        <span class="btn-text">Оформить заказ</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="order-content__info">
+    <h2 class="order-content__title">Ваш заказ</h2>
+
+    <div class="order-content__wrapper">
+      <ul class="list-reset order-content__items">
+        <li class="order-content__item">
+          <article class="order-content__article">
+            <img src="img/products/1-mini.png" alt="Neumann TLM 123 BK" class="order-content__image" width="80"
+              height="80">
+            <div class="order-content__details">
+              <a href="#" class="order-content__link">Neumann TLM 123 BK</a>
+              <div class="order-content__meta">
+                <span class="order-content__quantity">1 шт</span>
+                <span class="order-content__price">85 625 ₽</span>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="order-content__item">
+          <article class="order-content__article">
+            <img src="img/products/1-mini.png" alt="Neumann TLM 123 BK" class="order-content__image" width="80"
+              height="80">
+            <div class="order-content__details">
+              <a href="#" class="order-content__link">Neumann TLM 123 BK</a>
+              <div class="order-content__meta">
+                <span class="order-content__quantity">1 шт</span>
+                <span class="order-content__price">85 625 ₽</span>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <div class="order-content__result">
+        <div class="order-content__row">
+          <span class="order-content__el">Товары</span>
+          <span class="order-content__el">171 250 ₽</span>
+        </div>
+        <div class="order-content__row">
+          <span class="order-content__el">Доставка</span>
+          <span class="order-content__el">1 500 ₽</span>
+        </div>
+        <div class="order-content__row order-content__row--total">
+          <span class="order-content__el">Итого</span>
+          <span class="order-content__el order-content__total">172 750 ₽</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  /* Базовые стили */
+  .order-content {
+    display: flex;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .order-content__form,
+  .order-content__info {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .order-content__form {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .order-content__info {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .order-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .order-content__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Форма */
+  .order-content__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .order-content__label {
+    display: block;
+  }
+
+  .order-content__label--full {
+    grid-column: 1 / -1;
+  }
+
+  .order-content__input,
+  .order-content__textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+
+  .order-content__input:focus,
+  .order-content__textarea:focus {
+    outline: none;
+    border-color: #333;
+  }
+
+  .order-content__textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  /* Чекбокс */
+  .custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .custom-checkbox__field {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  /* Кнопка */
+  .order-content__btn {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  /* Список товаров */
+  .order-content__wrapper {
+    margin-top: 25px;
+  }
+
+  .order-content__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .order-content__item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .order-content__item:last-child {
+    border-bottom: none;
+  }
+
+  .order-content__article {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .order-content__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .order-content__details {
+    flex: 1;
+  }
+
+  .order-content__link {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+
+  .order-content__link:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .order-content__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .order-content__price {
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Итоговая сумма */
+  .order-content__result {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+  }
+
+  .order-content__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .order-content__row--total {
+    border-top: 2px solid #333;
+    margin-top: 10px;
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .order-content__total {
+    font-size: 20px;
+    color: #333;
+  }
+
+  /* Адаптация для планшетов */
+  @media (max-width: 1024px) {
+    .order-content {
+      flex-direction: column;
+      gap: 30px;
+      padding: 30px 20px;
+    }
+
+    .order-content__form,
+    .order-content__info {
+      width: 100%;
+    }
+  }
+
+  /* Адаптация для мобильных */
+  @media (max-width: 768px) {
+    .order-content__inputs {
+      grid-template-columns: 1fr;
+    }
+
+    .order-content__form,
+    .order-content__info {
+      padding: 20px;
+    }
+
+    .order-content__title {
+      font-size: 20px;
+    }
+
+    .order-content__input,
+    .order-content__textarea {
+      padding: 10px 12px;
+      font-size: 15px;
+    }
+
+    .order-content__article {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .order-content__meta {
+      width: 100%;
+    }
+  }
+
+  /* Очень маленькие экраны */
+  @media (max-width: 480px) {
+    .order-content {
+      padding: 20px 15px;
+    }
+
+    .order-content__form,
+    .order-content__info {
+      padding: 15px;
+    }
+
+    .order-content__btn {
+      padding: 12px;
+      font-size: 15px;
+    }
+
+    .order-content__row {
+      font-size: 15px;
+    }
+
+    .order-content__row--total {
+      font-size: 16px;
+    }
+
+    .order-content__total {
+      font-size: 18px;
+    }
+  }
+
+  /* Темная тема */
+  @media (prefers-color-scheme: dark) {
+    .order-content__form {
+      background: #1a1a1a;
+    }
+
+    .order-content__info {
+      background: #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .order-content__title {
+      color: #fff;
+    }
+
+    .order-content__input,
+    .order-content__textarea {
+      background: #2a2a2a;
+      border-color: #444;
+      color: #fff;
+    }
+
+    .order-content__input:focus,
+    .order-content__textarea:focus {
+      border-color: #666;
+    }
+
+    .order-content__link {
+      color: #fff;
+    }
+
+    .order-content__link:hover {
+      color: #ddd;
+    }
+
+    .custom-checkbox {
+      color: #aaa;
+    }
+
+    .order-content__item {
+      border-bottom-color: #444;
+    }
+
+    .order-content__result {
+      border-top-color: #444;
+    }
+
+    .order-content__row {
+      color: #aaa;
+    }
+
+    .order-content__row--total {
+      border-top-color: #666;
+      color: #fff;
+    }
+  }
+</style>
+
+<script>
+  // Простая валидация формы
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    const submitBtn = form.querySelector('.order-content__btn');
+
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Блокируем кнопку
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        // Собираем данные формы
+        const formData = new FormData(this);
+
+        try {
+          // Имитация отправки (замените на реальный fetch)
+          await new Promise(resolve => setTimeout(resolve, 1500));
+
+          // Показываем успешное сообщение
+          alert('Заказ успешно оформлен! Мы свяжемся с вами в ближайшее время.');
+
+          // Очищаем форму
+          form.reset();
+
+        } catch (error) {
+          alert('Ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
+        } finally {
+          // Разблокируем кнопку
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Оформить заказ';
+        }
+      });
+
+      // Простая валидация полей в реальном времени
+      const inputs = form.querySelectorAll('.order-content__input, .order-content__textarea');
+
+      inputs.forEach(input => {
+        input.addEventListener('blur', function () {
+          validateField(this);
+        });
+
+        input.addEventListener('input', function () {
+          clearError(this);
+        });
+      });
+
+      function validateField(field) {
+        const value = field.value.trim();
+        const errorSpan = field.parentElement.querySelector('.input-error');
+
+        if (field.hasAttribute('required') && !value) {
+          showError(field, 'Это поле обязательно для заполнения');
+          return false;
+        }
+
+        if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            showError(field, 'Введите корректный email');
+            return false;
+          }
+        }
+
+        if (field.type === 'tel' && value) {
+          const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+          if (!phoneRegex.test(value)) {
+            showError(field, 'Введите корректный номер телефона');
+            return false;
+          }
+        }
+
+        clearError(field);
+        return true;
+      }
+
+      function showError(field, message) {
+        const errorSpan = field.parentElement.querySelector('.input-error');
+        if (errorSpan) {
+          errorSpan.textContent = message;
+          errorSpan.style.display = 'block';
+          field.style.borderColor = '#ff4444';
+        }
+      }
+
+      function clearError(field) {
+        const errorSpan = field.parentElement.querySelector('.input-error');
+        if (errorSpan) {
+          errorSpan.textContent = '';
+          errorSpan.style.display = 'none';
+          field.style.borderColor = '';
+        }
+      }
+    }
+  });
+</script>

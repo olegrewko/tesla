@@ -423,3 +423,57 @@ function removeBadgeByText(text) {
     }
   });
 }
+// Простой JS для улучшения UX---------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  // Удаление фильтров
+  document.querySelectorAll('.catalog-filter-badge__close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function () {
+      this.closest('.catalog-filter-badge').remove();
+    });
+  });
+
+  // Очистка всех фильтров
+  const resetBtn = document.querySelector('.catalog__reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      document.querySelectorAll('.catalog-filter-badge').forEach(badge => {
+        badge.remove();
+      });
+    });
+  }
+
+  // Селект сортировки
+  const selectBtn = document.querySelector('.custom-select__btn');
+  const selectDropdown = document.querySelector('.custom-select__dropdown');
+  const selectOptions = document.querySelectorAll('.custom-select__choose');
+
+  if (selectBtn && selectDropdown) {
+    selectBtn.addEventListener('click', function () {
+      selectDropdown.style.display = selectDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Закрытие при клике вне селекта
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.custom-select')) {
+        selectDropdown.style.display = 'none';
+      }
+    });
+
+    // Выбор опции
+    selectOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        selectBtn.querySelector('span').textContent = this.textContent;
+        selectOptions.forEach(opt => opt.classList.remove('custom-select__choose--active'));
+        this.classList.add('custom-select__choose--active');
+        selectDropdown.style.display = 'none';
+      });
+    });
+  }
+
+  // Закрытие dropdown по ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && selectDropdown) {
+      selectDropdown.style.display = 'none';
+    }
+  });
+});

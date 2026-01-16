@@ -32,7 +32,7 @@
     <div class="container">
       <div class="shops-content__wrapper shops-content__grid">
         <div class="shops-content__left">
-          <div class="shops-content__items" data-simplebar="init">
+           <div class="shops-content__items" data-simplebar="init">
             <div class="shops-content__item">
               <h3 class="shops-content__subtitle">Приморский</h3>
               <div class="shops-content__metro shops-content__metro--green">Сокол</div>
@@ -54,7 +54,22 @@
               <div class="shops-content__sh">9.00 - 20.00</div>
               <button class="btn-reset shops-content__btn" data-shop="primorsky" aria-label="Перейти к маркеру на карте"></button>
             </div>
+              <div class="shops-content__item" data-shop-id="primorsky">
+                <h3 class="shops-content__subtitle">Приморский</h3>
+                <div class="shops-content__metro shops-content__metro--green">Сокол</div>
+                <div class="shops-content__address">г Москва ул Ясеневая 34</div>
+                <div class="shops-content__sh">9.00 - 20.00</div>
+                <button class="btn-reset shops-content__btn" data-shop="primorsky" aria-label="Показать на карте магазин Приморский">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                      fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
           </div>
+
+
         </div>
         <div class="shops-content__right">
           <div class="controls">
@@ -87,24 +102,7 @@
           flex-wrap: wrap;
         }
 
-        /* .map-btn {
-          padding: 10px 20px;
-          background: #0066ff;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 14px;
-          transition: background 0.3s;
-        } */
 
-        /* .map-btn:hover {
-          background: #0052cc;
-        } */
-
-        /* .map-btn.active {
-          background: #003d99;
-        } */
 
         .info {
           margin-top: 20px;
@@ -135,280 +133,429 @@
       }
       </style>
 
-
-      <!-- <script>
-        document.querySelectorAll('#map .ymaps-2-1-79-map').forEach((map, i) => i > 0 && map.remove());
-        // Полная очистка перед созданием новой карты
-        ymaps.ready(function () {
-          var mapContainer = document.getElementById('map');
-
-          if (!mapContainer) {
-            console.error('Контейнер не найден');
-            return;
-          }
-
-          // УДАЛЯЕМ ВСЕ старые карты
-          var oldMaps = mapContainer.querySelectorAll('.ymaps-2-1-79-map');
-          oldMaps.forEach(function (map) {
-            map.remove();
-          });
-
-          // Очищаем контейнер
-          mapContainer.innerHTML = '';
-
-          // Создаем новую карту
-          var myMap = new ymaps.Map('map', {
-            center: [55.76, 37.64],
-            zoom: 10,
-            controls: ['zoomControl', 'fullscreenControl']
-          });
-
-          // Только одна метка
-          var placemark = new ymaps.Placemark([55.76, 37.64], {
-            hintContent: 'Москва',
-            balloonContent: 'Столица России'
-          });
-
-          myMap.geoObjects.add(placemark);
-          // --------------------------
-                // Добавляем несколько меток
-
-
-          var additionalPlaces = [
-            {
-              coords: [55.751, 37.618],
-              name: 'Красная площадь',
-              description: 'Главная площадь Москвы'
-            },
-            {
-              coords: [55.709, 37.603],
-              name: 'Парк Горького',
-              description: 'Центральный парк культуры и отдыха'
-            },
-            {
-              coords: [55.715, 37.553],
-              name: 'МГУ',
-              description: 'Московский государственный университет'
-            }
-          ];
-
-          additionalPlaces.forEach(function (place) {
-            var placemark = new ymaps.Placemark(place.coords, {
-              hintContent: place.name,
-              balloonContent: place.description
-            }, {
-              preset: 'islands#blueIcon'
-            });
-
-            myMap.geoObjects.add(placemark);
-          });
-
-          // Поиск по карте
-          var searchControl = new ymaps.control.SearchControl({
-            options: {
-              provider: 'yandex#search',
-              noPlacemark: false
-            }
-          });
-
-          myMap.controls.add(searchControl);
-
-          // Координаты при клике
-          myMap.events.add('click', function (event) {
-            var coords = event.get('coords');
-
-            // Если клик по карте (не по метке)
-            if (!event.get('target').properties) {
-              var clickPlacemark = new ymaps.Placemark(coords, {
-                balloonContent: 'Вы кликнули по координатам: ' + coords
-              }, {
-                preset: 'islands#greenIcon'
-              });
-
-              myMap.geoObjects.add(clickPlacemark);
-
-              // Удаляем старую метку через 5 секунд
-              setTimeout(function () {
-                myMap.geoObjects.remove(clickPlacemark);
-              }, 5000);
-            }
-          });
-
-// ------------------------------------------
-          // Кнопки
-          document.querySelectorAll('.map-btn').forEach(function (btn) {
-            btn.onclick = function () {
-              var type = this.getAttribute('data-type');
-              myMap.setType('yandex#' + type);
-
-              document.querySelectorAll('.map-btn').forEach(function (b) {
-                b.classList.remove('active');
-              });
-              this.classList.add('active');
-            };
-          });
-        });
-      </script> -->
       <script>
+        // Обновленный JavaScript с улучшениями
+          ymaps.ready(function () {
+            // Проверяем наличие контейнера карты
+            const mapContainer = document.getElementById('map');
+            if (!mapContainer) {
+              console.error('Контейнер карты не найден');
+              return;
+            }
 
-        ymaps.ready(function () {
-          // 1. Проверяем наличие контейнера
-          var mapContainer = document.getElementById('map');
-          if (!mapContainer) {
-            console.error('Контейнер карты не найден');
-            return;
-          }
-
-          // 2. Сохраняем размеры контейнера перед очисткой
-          var containerStyles = {
-            width: mapContainer.style.width || '100%',
-            height: mapContainer.style.height || '400px'
-          };
-
-          // 3. Полная очистка контейнера
-          mapContainer.innerHTML = '';
-
-          // Восстанавливаем размеры
-          mapContainer.style.width = containerStyles.width;
-          mapContainer.style.height = containerStyles.height;
-
-          try {
-            // 4. Создаем карту
-            var myMap = new ymaps.Map('map', {
-              center: [55.76, 37.64],
-              zoom: 10,
-              controls: ['zoomControl', 'fullscreenControl', 'typeSelector'] // Добавил typeSelector
-            });
-
-            console.log('Карта создана успешно');
-
-            // 5. Основная метка (используем другое имя переменной)
-            var mainPlacemark = new ymaps.Placemark([55.76, 37.64], {
-              hintContent: 'Москва',
-              balloonContent: 'Столица России'
-            }, {
-              preset: 'islands#redIcon' // Добавил стиль
-            });
-
-            myMap.geoObjects.add(mainPlacemark);
-
-            // 6. Дополнительные метки
-            var additionalPlaces = [
-              {
-                coords: [55.751, 37.618],
-                name: 'Красная площадь',
-                description: 'Главная площадь Москвы'
-              },
-              {
-                coords: [55.709, 37.603],
-                name: 'Парк Горького',
-                description: 'Центральный парк культуры и отдыха'
-              },
-              {
-                coords: [55.715, 37.553],
-                name: 'МГУ',
-                description: 'Московский государственный университет'
-              }
-            ];
-
-            additionalPlaces.forEach(function (place) {
-              var additionalPlacemark = new ymaps.Placemark(place.coords, {
-                hintContent: place.name,
-                balloonContent: place.description
-              }, {
-                preset: 'islands#blueIcon',
-                iconColor: '#1e98ff'
+            try {
+              // Создаем карту
+              const myMap = new ymaps.Map('map', {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: ['zoomControl', 'fullscreenControl', 'typeSelector']
               });
 
-              myMap.geoObjects.add(additionalPlacemark);
-            });
+              // Стили для меток
+              const placemarkStyles = {
+                normal: {
+                  iconLayout: 'default#image',
+                  iconImageHref: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231e98ff"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+                  iconImageSize: [32, 32],
+                  iconImageOffset: [-16, -32]
+                },
+                active: {
+                  iconLayout: 'default#image',
+                  iconImageHref: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4444"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+                  iconImageSize: [40, 40],
+                  iconImageOffset: [-20, -40]
+                }
+              };
 
-            // 7. Поиск по карте
-            var searchControl = new ymaps.control.SearchControl({
-              options: {
-                provider: 'yandex#search',
-                noPlacemark: false,
-                resultsPerPage: 5
-              }
-            });
+              // Данные магазинов
+              const shopsData = [
+                {
+                  id: 'primorsky',
+                  coords: [55.76, 37.64],
+                  title: 'Приморский',
+                  metro: 'Сокол',
+                  address: 'г Москва ул Ясеневая 34',
+                  hours: '9.00 - 20.00',
+                  metroColor: 'green'
+                },
+                {
+                  id: 'admiralteysky',
+                  coords: [55.751, 37.618],
+                  title: 'Адмиралтейский',
+                  metro: 'Кропоткинская',
+                  address: 'г Москва ул Волхонка 15',
+                  hours: '10.00 - 21.00',
+                  metroColor: 'blue'
+                },
+                {
+                  id: 'central',
+                  coords: [55.709, 37.603],
+                  title: 'Центральный',
+                  metro: 'Парк культуры',
+                  address: 'г Москва ул Крымский Вал 9',
+                  hours: '8.00 - 22.00',
+                  metroColor: 'red'
+                }
+              ];
 
-            myMap.controls.add(searchControl);
+              // Коллекция для меток
+              const placemarksCollection = new ymaps.GeoObjectCollection();
 
-            // 8. Координаты при клике
-            myMap.events.add('click', function (event) {
-              var coords = event.get('coords');
+              // Создаем метки для магазинов
+              shopsData.forEach(shop => {
+                const placemark = new ymaps.Placemark(shop.coords, {
+                  balloonContent: `
+          <div class="shop-balloon">
+            <h4>${shop.title}</h4>
+            <div class="shop-metro ${shop.metroColor}">${shop.metro}</div>
+            <div class="shop-address">${shop.address}</div>
+            <div class="shop-hours">${shop.hours}</div>
+          </div>
+        `,
+                  hintContent: shop.title
+                }, placemarkStyles.normal);
 
-              // Если клик по карте (не по метке)
-              if (!event.get('target').properties) {
-                var clickPlacemark = new ymaps.Placemark(coords, {
-                  balloonContent: 'Вы кликнули по координатам: ' +
-                    coords[0].toFixed(6) + ', ' + coords[1].toFixed(6)
-                }, {
-                  preset: 'islands#greenIcon',
-                  iconColor: '#00cc00'
+                // Добавляем данные магазина в свойства метки
+                placemark.properties.set('shopData', shop);
+                placemarksCollection.add(placemark);
+              });
+
+              myMap.geoObjects.add(placemarksCollection);
+
+              // Обработка кликов по элементам магазинов
+              const shopItems = document.querySelectorAll('.shops-content__item');
+              const shopButtons = document.querySelectorAll('.shops-content__btn');
+
+              function activateShop(shopId) {
+                // Находим магазин в данных
+                const shop = shopsData.find(s => s.id === shopId);
+                if (!shop) return;
+
+                // Удаляем активный класс у всех элементов
+                shopItems.forEach(item => item.classList.remove('active'));
+
+                // Добавляем активный класс к выбранному элементу
+                const activeItem = document.querySelector(`.shops-content__item [data-shop="${shopId}"]`);
+                if (activeItem) {
+                  activeItem.closest('.shops-content__item').classList.add('active');
+                }
+
+                // Центрируем карту на магазине
+                myMap.setCenter(shop.coords, 15);
+
+                // Активируем метку
+                placemarksCollection.each(placemark => {
+                  const placemarkData = placemark.properties.get('shopData');
+                  if (placemarkData.id === shopId) {
+                    placemark.options.set(placemarkStyles.active);
+                    placemark.balloon.open();
+                  } else {
+                    placemark.options.set(placemarkStyles.normal);
+                  }
                 });
-
-                myMap.geoObjects.add(clickPlacemark);
-
-                // Удаляем временную метку через 5 секунд
-                setTimeout(function () {
-                  myMap.geoObjects.remove(clickPlacemark);
-                }, 5000);
               }
-            });
 
-            // 9. Обработчики для кнопок
-            var mapButtons = document.querySelectorAll('.map-btn');
-
-            if (mapButtons.length === 0) {
-              console.warn('Кнопки .map-btn не найдены');
-            } else {
-              mapButtons.forEach(function (btn) {
-                // Удаляем старые обработчики если есть
-                btn.replaceWith(btn.cloneNode(true));
+              // Обработчики для кнопок магазинов
+              shopButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                  const shopId = this.getAttribute('data-shop');
+                  activateShop(shopId);
+                });
               });
 
-              // Получаем обновленные кнопки
-              mapButtons = document.querySelectorAll('.map-btn');
-
-              mapButtons.forEach(function (btn) {
-                btn.addEventListener('click', function (e) {
-                  e.preventDefault();
-
-                  var type = this.getAttribute('data-type');
-                  console.log('Смена типа карты на:', type);
-
-                  try {
-                    myMap.setType('yandex#' + type);
-
-                    // Обновляем активную кнопку
-                    mapButtons.forEach(function (b) {
-                      b.classList.remove('active');
-                    });
-                    this.classList.add('active');
-
-                  } catch (error) {
-                    console.error('Ошибка смены типа карты:', error);
+              // Обработчики для кликов по карточкам магазинов
+              shopItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                  if (!e.target.classList.contains('shops-content__btn')) {
+                    const button = this.querySelector('.shops-content__btn');
+                    if (button) {
+                      const shopId = button.getAttribute('data-shop');
+                      activateShop(shopId);
+                    }
                   }
                 });
               });
 
-              // Устанавливаем первую кнопку активной
-              if (mapButtons.length > 0 && !document.querySelector('.map-btn.active')) {
-                mapButtons[0].classList.add('active');
+              // Обработчики для кнопок типов карты
+              const mapButtons = document.querySelectorAll('.map-btn');
+
+              mapButtons.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  const type = this.getAttribute('data-type');
+
+                  myMap.setType('yandex#' + type);
+
+                  mapButtons.forEach(b => b.classList.remove('active'));
+                  this.classList.add('active');
+                });
+              });
+
+              // Поиск по магазинам
+              const searchInput = document.querySelector('.shops-content__input');
+              if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                  const searchTerm = this.value.toLowerCase().trim();
+
+                  shopItems.forEach(item => {
+                    const title = item.querySelector('.shops-content__subtitle').textContent.toLowerCase();
+                    const address = item.querySelector('.shops-content__address').textContent.toLowerCase();
+                    const metro = item.querySelector('.shops-content__metro').textContent.toLowerCase();
+
+                    const isVisible = title.includes(searchTerm) ||
+                      address.includes(searchTerm) ||
+                      metro.includes(searchTerm);
+
+                    item.style.display = isVisible ? 'block' : 'none';
+                  });
+                });
               }
+
+              // Фильтр "Открыт сейчас"
+              const openNowCheckbox = document.querySelector('input[name="Открыт сейчас"]');
+              if (openNowCheckbox) {
+                openNowCheckbox.addEventListener('change', function () {
+                  // Здесь можно добавить логику фильтрации по времени работы
+                  console.log('Фильтр "Открыт сейчас":', this.checked);
+                });
+              }
+
+              // Фильтр "Рядом" (геолокация)
+              const nearbyCheckbox = document.querySelector('input[name="Рядом"]');
+              if (nearbyCheckbox) {
+                nearbyCheckbox.addEventListener('change', function () {
+                  if (this.checked) {
+                    // Запрос геолокации
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(
+                        function (position) {
+                          const userCoords = [position.coords.latitude, position.coords.longitude];
+                          myMap.setCenter(userCoords, 13);
+
+                          // Можно добавить логику фильтрации магазинов по расстоянию
+                          console.log('Пользователь находится в:', userCoords);
+                        },
+                        function (error) {
+                          console.log('Ошибка геолокации:', error);
+                          alert('Не удалось определить ваше местоположение');
+                        }
+                      );
+                    } else {
+                      alert('Геолокация не поддерживается вашим браузером');
+                    }
+                  }
+                });
+              }
+
+              // Добавляем CSS для балуна
+              const style = document.createElement('style');
+              style.textContent = `
+      .shop-balloon {
+        padding: 10px;
+        font-family: Arial, sans-serif;
+      }
+      .shop-balloon h4 {
+        margin: 0 0 10px 0;
+        color: #333;
+      }
+      .shop-metro {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .shop-metro.green { background: #e8f5e9; color: #2e7d32; }
+      .shop-metro.blue { background: #e3f2fd; color: #1565c0; }
+      .shop-metro.red { background: #ffebee; color: #c62828; }
+      .shop-address {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 6px;
+      }
+      .shop-hours {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+      }
+    `;
+              document.head.appendChild(style);
+
+            } catch (error) {
+              console.error('Ошибка создания карты:', error);
+              mapContainer.innerHTML = `
+      <div style="
+        padding: 40px;
+        text-align: center;
+        background: #f8f9fa;
+        border-radius: 12px;
+        color: #666;
+      ">
+        <h3 style="margin: 0 0 10px 0;">Не удалось загрузить карту</h3>
+        <p>Попробуйте обновить страницу</p>
+      </div>
+    `;
             }
+          });
 
-            // 10. Добавляем обработку ошибок карты
-            myMap.events.add('error', function (error) {
-              console.error('Ошибка Яндекс.Карт:', error);
-            });
+        // ymaps.ready(function () {
+        //   // 1. Проверяем наличие контейнера
+        //   var mapContainer = document.getElementById('map');
+        //   if (!mapContainer) {
+        //     console.error('Контейнер карты не найден');
+        //     return;
+        //   }
 
-          } catch (error) {
-            console.error('Критическая ошибка создания карты:', error);
-            mapContainer.innerHTML = '<div style="padding: 20px; color: red; text-align: center;">Ошибка загрузки карты</div>';
-          }
-        });
+        //   // 2. Сохраняем размеры контейнера перед очисткой
+        //   var containerStyles = {
+        //     width: mapContainer.style.width || '100%',
+        //     height: mapContainer.style.height || '400px'
+        //   };
+
+        //   // 3. Полная очистка контейнера
+        //   mapContainer.innerHTML = '';
+
+        //   // Восстанавливаем размеры
+        //   mapContainer.style.width = containerStyles.width;
+        //   mapContainer.style.height = containerStyles.height;
+
+        //   try {
+        //     // 4. Создаем карту
+        //     var myMap = new ymaps.Map('map', {
+        //       center: [55.76, 37.64],
+        //       zoom: 10,
+        //       controls: ['zoomControl', 'fullscreenControl', 'typeSelector'] // Добавил typeSelector
+        //     });
+
+        //     console.log('Карта создана успешно');
+
+        //     // 5. Основная метка (используем другое имя переменной)
+        //     var mainPlacemark = new ymaps.Placemark([55.76, 37.64], {
+        //       hintContent: 'Москва',
+        //       balloonContent: 'Столица России'
+        //     }, {
+        //       preset: 'islands#redIcon' // Добавил стиль
+        //     });
+
+        //     myMap.geoObjects.add(mainPlacemark);
+
+        //     // 6. Дополнительные метки
+        //     var additionalPlaces = [
+        //       {
+        //         coords: [55.751, 37.618],
+        //         name: 'Красная площадь',
+        //         description: 'Главная площадь Москвы'
+        //       },
+        //       {
+        //         coords: [55.709, 37.603],
+        //         name: 'Парк Горького',
+        //         description: 'Центральный парк культуры и отдыха'
+        //       },
+        //       {
+        //         coords: [55.715, 37.553],
+        //         name: 'МГУ',
+        //         description: 'Московский государственный университет'
+        //       }
+        //     ];
+
+        //     additionalPlaces.forEach(function (place) {
+        //       var additionalPlacemark = new ymaps.Placemark(place.coords, {
+        //         hintContent: place.name,
+        //         balloonContent: place.description
+        //       }, {
+        //         preset: 'islands#blueIcon',
+        //         iconColor: '#1e98ff'
+        //       });
+
+        //       myMap.geoObjects.add(additionalPlacemark);
+        //     });
+
+        //     // 7. Поиск по карте
+        //     var searchControl = new ymaps.control.SearchControl({
+        //       options: {
+        //         provider: 'yandex#search',
+        //         noPlacemark: false,
+        //         resultsPerPage: 5
+        //       }
+        //     });
+
+        //     myMap.controls.add(searchControl);
+
+        //     // 8. Координаты при клике
+        //     myMap.events.add('click', function (event) {
+        //       var coords = event.get('coords');
+
+        //       // Если клик по карте (не по метке)
+        //       if (!event.get('target').properties) {
+        //         var clickPlacemark = new ymaps.Placemark(coords, {
+        //           balloonContent: 'Вы кликнули по координатам: ' +
+        //             coords[0].toFixed(6) + ', ' + coords[1].toFixed(6)
+        //         }, {
+        //           preset: 'islands#greenIcon',
+        //           iconColor: '#00cc00'
+        //         });
+
+        //         myMap.geoObjects.add(clickPlacemark);
+
+        //         // Удаляем временную метку через 5 секунд
+        //         setTimeout(function () {
+        //           myMap.geoObjects.remove(clickPlacemark);
+        //         }, 5000);
+        //       }
+        //     });
+
+        //     // 9. Обработчики для кнопок
+        //     var mapButtons = document.querySelectorAll('.map-btn');
+
+        //     if (mapButtons.length === 0) {
+        //       console.warn('Кнопки .map-btn не найдены');
+        //     } else {
+        //       mapButtons.forEach(function (btn) {
+        //         // Удаляем старые обработчики если есть
+        //         btn.replaceWith(btn.cloneNode(true));
+        //       });
+
+        //       // Получаем обновленные кнопки
+        //       mapButtons = document.querySelectorAll('.map-btn');
+
+        //       mapButtons.forEach(function (btn) {
+        //         btn.addEventListener('click', function (e) {
+        //           e.preventDefault();
+
+        //           var type = this.getAttribute('data-type');
+        //           console.log('Смена типа карты на:', type);
+
+        //           try {
+        //             myMap.setType('yandex#' + type);
+
+        //             // Обновляем активную кнопку
+        //             mapButtons.forEach(function (b) {
+        //               b.classList.remove('active');
+        //             });
+        //             this.classList.add('active');
+
+        //           } catch (error) {
+        //             console.error('Ошибка смены типа карты:', error);
+        //           }
+        //         });
+        //       });
+
+        //       // Устанавливаем первую кнопку активной
+        //       if (mapButtons.length > 0 && !document.querySelector('.map-btn.active')) {
+        //         mapButtons[0].classList.add('active');
+        //       }
+        //     }
+
+        //     // 10. Добавляем обработку ошибок карты
+        //     myMap.events.add('error', function (error) {
+        //       console.error('Ошибка Яндекс.Карт:', error);
+        //     });
+
+        //   } catch (error) {
+        //     console.error('Критическая ошибка создания карты:', error);
+        //     mapContainer.innerHTML = '<div style="padding: 20px; color: red; text-align: center;">Ошибка загрузки карты</div>';
+        //   }
+        // });
       </script>
 
 

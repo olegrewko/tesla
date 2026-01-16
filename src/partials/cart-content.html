@@ -1,4 +1,4 @@
-<section class="cart-content">
+<!-- <section class="cart-content">
   <h2 class="visually-hidden">Cart</h2>
   <div class="cart-content__top">
     <div class="container">
@@ -58,3 +58,668 @@
     <div class="cart-content__result">Итого: <span>181 239</span></div>
   </div>
 </section>
+<style>
+ .grid-cart {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr 1fr 3fr;
+}
+
+
+.cart-content {
+  &__top {
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 24px 0;
+  }
+  &__inner {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    text-align: left;
+  }
+  &__image {width: 200px;}
+  &__title {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+
+  }
+  &__price {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: left;
+  }
+  &__sum {
+      font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: left;
+  }
+  &__middle {padding: 24px;}
+  &__stepper {
+display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  background: rgb(226, 224, 224);
+  gap: 8px;
+  &__minus,
+  &__plus {
+  width: 12px;
+  height: 12px;
+  }
+  &__disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  }
+  &__input {
+  width: 20px;
+  height: 12px;
+  background: transparent;
+  font-family: 'Rubik';
+  font-weight: 500;
+  font-style: 'Rubik-Medium';
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #0c0c0c;
+  }
+  }
+  &__bottom {
+    position: relative;
+    width: 100%;
+  }
+  &__btn {
+        font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--light-color);
+    text-align: left;
+  }
+  &__result {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: 100;
+       font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--light-color);
+    text-align: left;
+
+    span {
+        font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--light-color);
+    text-align: left;
+    }
+  }
+
+}
+</style> -->
+<section class="cart">
+  <div class="cart__header">
+    <div class="container">
+      <div class="cart__grid">
+        <div class="cart__col cart__col--image">Товар</div>
+        <div class="cart__col cart__col--name">Название</div>
+        <div class="cart__col cart__col--price">Цена</div>
+        <div class="cart__col cart__col--quantity">Кол-во</div>
+        <div class="cart__col cart__col--total">Сумма</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart__items">
+    <div class="container">
+      <div class="cart__item">
+        <div class="cart__grid">
+          <div class="cart__col cart__col--image">
+            <img src="img/products/2-main.png" alt="Neumann TLM 102 BK" class="cart__image" width="100" height="100">
+          </div>
+
+          <div class="cart__col cart__col--name">
+            <h3 class="cart__name">Neumann TLM 102 BK</h3>
+          </div>
+
+          <div class="cart__col cart__col--price">
+            <div class="cart__price">91 890 ₽</div>
+          </div>
+
+          <div class="cart__col cart__col--quantity">
+            <div class="cart__counter">
+              <button class="cart__counter-btn cart__counter-minus" aria-label="Уменьшить количество"
+                data-action="decrease">
+                <svg width="12" height="2" viewBox="0 0 12 2" fill="none">
+                  <path d="M1 1H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+              <input type="number" class="cart__counter-input" value="1" min="1" max="99" readonly>
+              <button class="cart__counter-btn cart__counter-plus" aria-label="Увеличить количество"
+                data-action="increase">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="cart__col cart__col--total">
+            <div class="cart__total">91 980 ₽</div>
+            <button class="cart__remove" aria-label="Удалить товар">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Можно добавить больше товаров -->
+    </div>
+  </div>
+
+  <div class="cart__footer">
+    <div class="container">
+      <div class="cart__footer-content">
+        <div class="cart__total-sum">
+          <span class="cart__total-label">Итого:</span>
+          <span class="cart__total-amount">181 239 ₽</span>
+        </div>
+        <button class="btn btn--primary cart__order-btn">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Базовые стили */
+  .cart {
+    padding: 40px 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Заголовок таблицы */
+  .cart__header {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+  }
+
+  .cart__grid {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 120px 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .cart__col {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  /* Товары */
+  .cart__items {
+    padding: 30px 0;
+  }
+
+  .cart__item {
+    padding: 25px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cart__item:last-child {
+    border-bottom: none;
+  }
+
+  .cart__image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .cart__name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .cart__price,
+  .cart__total {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Счетчик */
+  .cart__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 8px;
+    width: fit-content;
+  }
+
+  .cart__counter-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+
+  .cart__counter-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+  }
+
+  .cart__counter-btn:active {
+    transform: scale(0.95);
+  }
+
+  .cart__counter-input {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    background: transparent;
+    border: none;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+
+  .cart__counter-input::-webkit-outer-spin-button,
+  .cart__counter-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Удаление товара */
+  .cart__remove {
+    margin-top: 10px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffebee;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #c62828;
+    transition: all 0.2s ease;
+  }
+
+  .cart__remove:hover {
+    background: #ffcdd2;
+  }
+
+  /* Футер */
+  .cart__footer {
+    padding: 30px 0;
+    border-top: 2px solid #333;
+    background: #f8f9fa;
+  }
+
+  .cart__footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cart__total-sum {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .cart__total-label {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .cart__total-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .cart__order-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* Адаптация для планшетов */
+  @media (max-width: 1024px) {
+    .cart__grid {
+      grid-template-columns: 80px 2fr 1fr 100px 1fr;
+      gap: 15px;
+    }
+
+    .cart__image {
+      width: 80px;
+      height: 80px;
+    }
+
+    .cart__name {
+      font-size: 16px;
+    }
+
+    .cart__price,
+    .cart__total {
+      font-size: 16px;
+    }
+  }
+
+  /* Адаптация для мобильных */
+  @media (max-width: 768px) {
+    .cart__header {
+      display: none;
+    }
+
+    .cart__grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      position: relative;
+    }
+
+    .cart__item {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .cart__col {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cart__col::before {
+      content: attr(data-label);
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      min-width: 80px;
+    }
+
+    .cart__col--image::before {
+      content: none;
+    }
+
+    .cart__col--image {
+      justify-content: center;
+    }
+
+    .cart__col--total {
+      justify-content: space-between;
+    }
+
+    .cart__image {
+      width: 120px;
+      height: 120px;
+    }
+
+    .cart__counter {
+      margin-left: auto;
+    }
+
+    .cart__footer-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .cart__total-sum {
+      justify-content: space-between;
+    }
+
+    .cart__order-btn {
+      width: 100%;
+    }
+  }
+
+  /* Очень маленькие экраны */
+  @media (max-width: 480px) {
+    .cart {
+      padding: 20px 0;
+    }
+
+    .container {
+      padding: 0 15px;
+    }
+
+    .cart__item {
+      padding: 15px;
+    }
+
+    .cart__image {
+      width: 100px;
+      height: 100px;
+    }
+
+    .cart__col::before {
+      min-width: 70px;
+      font-size: 13px;
+    }
+
+    .cart__total-label {
+      font-size: 16px;
+    }
+
+    .cart__total-amount {
+      font-size: 20px;
+    }
+  }
+
+  /* Темная тема */
+  @media (prefers-color-scheme: dark) {
+    .cart__header {
+      background: #1a1a1a;
+      border-bottom-color: #333;
+    }
+
+    .cart__col {
+      color: #aaa;
+    }
+
+    .cart__item {
+      border-bottom-color: #333;
+    }
+
+    .cart__name {
+      color: #fff;
+    }
+
+    .cart__price,
+    .cart__total {
+      color: #fff;
+    }
+
+    .cart__counter {
+      background: #2a2a2a;
+    }
+
+    .cart__counter-btn {
+      background: #333;
+      border-color: #444;
+      color: #fff;
+    }
+
+    .cart__counter-btn:hover {
+      background: #3a3a3a;
+      border-color: #555;
+    }
+
+    .cart__counter-input {
+      color: #fff;
+    }
+
+    .cart__remove {
+      background: #3a2323;
+      color: #ff6b6b;
+    }
+
+    .cart__remove:hover {
+      background: #4a2b2b;
+    }
+
+    .cart__footer {
+      background: #1a1a1a;
+      border-top-color: #444;
+    }
+
+    .cart__total-label {
+      color: #aaa;
+    }
+
+    .cart__total-amount {
+      color: #fff;
+    }
+  }
+</style>
+
+<script>
+  // Функционал корзины
+  document.addEventListener('DOMContentLoaded', function () {
+    const cartItems = document.querySelectorAll('.cart__item');
+
+    if (cartItems.length) {
+      // Обработчики для счетчиков
+      document.querySelectorAll('.cart__counter-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const action = this.dataset.action;
+          const input = this.closest('.cart__counter').querySelector('.cart__counter-input');
+          let value = parseInt(input.value);
+
+          if (action === 'increase') {
+            value = Math.min(99, value + 1);
+          } else if (action === 'decrease') {
+            value = Math.max(1, value - 1);
+          }
+
+          input.value = value;
+          updateCartItem(this.closest('.cart__item'));
+          updateCartTotal();
+        });
+      });
+
+      // Обработчики для удаления товаров
+      document.querySelectorAll('.cart__remove').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const item = this.closest('.cart__item');
+          if (confirm('Удалить товар из корзины?')) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+
+            setTimeout(() => {
+              item.remove();
+              updateCartTotal();
+
+              // Если корзина пуста
+              if (!document.querySelector('.cart__item')) {
+                document.querySelector('.cart__items').innerHTML = `
+                <div class="cart__empty">
+                  <p>Корзина пуста</p>
+                  <a href="/catalog.html" class="btn">Вернуться к покупкам</a>
+                </div>
+              `;
+              }
+            }, 300);
+          }
+        });
+      });
+
+      // Добавляем data-label для мобильной версии
+      const labels = ['Товар', 'Название', 'Цена', 'Количество', 'Сумма'];
+      document.querySelectorAll('.cart__col').forEach((col, index) => {
+        if (index < labels.length) {
+          col.dataset.label = labels[index];
+        }
+      });
+    }
+
+    // Обновление стоимости товара
+    function updateCartItem(item) {
+      const priceElement = item.querySelector('.cart__price');
+      const quantityInput = item.querySelector('.cart__counter-input');
+      const totalElement = item.querySelector('.cart__total');
+
+      const price = parseInt(priceElement.textContent.replace(/[^\d]/g, ''));
+      const quantity = parseInt(quantityInput.value);
+      const total = price * quantity;
+
+      totalElement.textContent = total.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    // Обновление общей суммы
+    function updateCartTotal() {
+      const totalElements = document.querySelectorAll('.cart__total');
+      let totalSum = 0;
+
+      totalElements.forEach(element => {
+        const value = parseInt(element.textContent.replace(/[^\d]/g, ''));
+        totalSum += value;
+      });
+
+      const totalAmountElement = document.querySelector('.cart__total-amount');
+      if (totalAmountElement) {
+        totalAmountElement.textContent = totalSum.toLocaleString('ru-RU') + ' ₽';
+      }
+    }
+
+    // Обработка кнопки оформления заказа
+    const orderBtn = document.querySelector('.cart__order-btn');
+    if (orderBtn) {
+      orderBtn.addEventListener('click', function () {
+        // Можно добавить проверку на пустую корзину
+        const items = document.querySelectorAll('.cart__item');
+        if (items.length === 0) {
+          alert('Корзина пуста');
+          return;
+        }
+
+        // Переход на страницу оформления заказа
+        window.location.href = '/order.html';
+      });
+    }
+
+    // Инициализация обновления сумм
+    updateCartTotal();
+  });
+</script>
