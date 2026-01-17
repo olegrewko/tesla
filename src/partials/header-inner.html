@@ -1,4 +1,4 @@
-<header class="header" id="header">
+<!-- <header class="header" id="header">
   <div class="container">
     <div class="header__top">
       <div class="container header__container">
@@ -69,9 +69,7 @@
     <div class="header__bottom">
       <div class="container header__container">
         <button class="btn-reset header__btn header__catalog">
-          <!-- <svg class="header-btn__icon">
-  <use xlink:href="img/sprite.svg#burger"></use>
-</svg> -->
+
           <svg class="header-btn__icon" width="16" height="11" viewBox="0 0 16 11" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <line y1="0.5" x2="16" y2="0.5" stroke="maroon" />
@@ -80,9 +78,7 @@
           </svg>
           Каталог
 
-          <!-- <svg class="header-btn__angle">
-  <use xlink:href="img/sprite.svg#angle"></use>
-</svg> -->
+
           <svg class="header-btn__angle" width="16" height="16" viewBox="0 0 16 16" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -120,3 +116,957 @@
     </div>
   </div>
 </header>
+<style>
+
+.header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__top {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: 25px;
+}
+
+.nav__link {
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav__link:hover {
+  color: #000;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.header__enter {
+  padding: 8px 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* Нижняя часть хедера */
+.header__bottom {
+  padding: 15px 0;
+}
+
+.header__btn {
+  padding: 10px 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+  position: relative;
+}
+
+.header-search__input {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.header-search__label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__phone {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Адаптация для 940px и меньше */
+@media (max-width: 940px) {
+
+  /* Верхняя часть - скрываем меню, показываем бургер */
+  .nav {
+    display: none;
+  }
+
+  .header__actions {
+    gap: 15px;
+  }
+
+  .header__enter {
+    display: none;
+  }
+
+  /* Бургер-меню кнопка */
+  .header__burger {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header__burger span {
+    display: block;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: 0.3s;
+  }
+
+  .header__burger span:nth-child(1) {
+    top: 0;
+  }
+
+  .header__burger span:nth-child(2) {
+    top: 9px;
+  }
+
+  .header__burger span:nth-child(3) {
+    top: 18px;
+  }
+
+  /* Нижняя часть - адаптация */
+  .header__bottom {
+    padding: 10px 0;
+  }
+
+  .header__container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .header__catalog,
+  .header__collections {
+    order: 1;
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .header-search {
+    order: 3;
+    flex: 100%;
+    max-width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .header__phone {
+    order: 2;
+    margin-left: auto;
+    font-size: 14px;
+  }
+}
+
+/* Адаптация для 768px и меньше */
+@media (max-width: 768px) {
+  .header__top {
+    padding: 12px 0;
+  }
+
+  .header__actions {
+    gap: 10px;
+  }
+
+  .header__action img,
+  .header__action svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header__logo {
+    font-size: 20px;
+  }
+
+  .header__btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .header__phone {
+    font-size: 13px;
+  }
+}
+
+/* Адаптация для 480px и меньше */
+@media (max-width: 480px) {
+
+  .header__catalog,
+  .header__collections {
+    min-width: 120px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header-search__input {
+    padding: 10px 15px 10px 40px;
+    font-size: 14px;
+  }
+
+  .header__actions {
+    gap: 8px;
+  }
+}
+
+/* Мобильное меню (появляется при клике на бургер) */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  padding: 20px;
+  transition: left 0.3s;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu__list {
+  margin-top: 50px;
+}
+
+.mobile-menu__item {
+  margin-bottom: 20px;
+}
+
+.mobile-menu__link {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+/* JavaScript для бургер-меню */
+// <script>document.addEventListener('DOMContentLoaded', function() {
+//     // Создаем бургер-кнопку
+//     const burgerBtn=document.createElement('button');
+//     burgerBtn.className='btn-reset header__burger';
+//     burgerBtn.innerHTML='<span></span><span></span><span></span>';
+//     burgerBtn.setAttribute('aria-label', 'Открыть меню');
+
+//     // Создаем мобильное меню
+//     const mobileMenu=document.createElement('div');
+//     mobileMenu.className='mobile-menu';
+
+//     const closeBtn=document.createElement('button');
+//     closeBtn.className='btn-reset mobile-menu__close';
+//     closeBtn.innerHTML='×';
+//     closeBtn.setAttribute('aria-label', 'Закрыть меню');
+
+//     const menuList=document.createElement('ul');
+//     menuList.className='list-reset mobile-menu__list';
+
+//     // Копируем пункты меню из десктопной версии
+//     const navItems=document.querySelectorAll('.nav__item');
+
+//     navItems.forEach(item=> {
+//         const clone=item.cloneNode(true);
+//         clone.classList.add('mobile-menu__item');
+//         clone.querySelector('.nav__link').classList.add('mobile-menu__link');
+//         menuList.appendChild(clone);
+//       });
+
+//     mobileMenu.appendChild(closeBtn);
+//     mobileMenu.appendChild(menuList);
+//     document.body.appendChild(mobileMenu);
+
+//     // Добавляем бургер в хедер
+//     const headerTop=document.querySelector('.header__top .header__container');
+
+//     if (headerTop) {
+//       headerTop.insertBefore(burgerBtn, headerTop.children[1]);
+//     }
+
+//     // Обработчики событий
+//     burgerBtn.addEventListener('click', function() {
+//         mobileMenu.classList.add('active');
+//         document.body.style.overflow='hidden';
+//       });
+
+//     closeBtn.addEventListener('click', function() {
+//         mobileMenu.classList.remove('active');
+//         document.body.style.overflow='';
+//       });
+
+//     // Закрытие при клике на ссылку
+//     mobileMenu.querySelectorAll('.mobile-menu__link').forEach(link=> {
+//         link.addEventListener('click', function() {
+//             mobileMenu.classList.remove('active');
+//             document.body.style.overflow='';
+//           });
+//       });
+
+//     // Закрытие при клике вне меню
+//     mobileMenu.addEventListener('click', function(e) {
+//         if (e.target===mobileMenu) {
+//           mobileMenu.classList.remove('active');
+//           document.body.style.overflow='';
+//         }
+//       });
+
+//     // Обработка ресайза окна
+//     window.addEventListener('resize', function() {
+//         if (window.innerWidth > 940) {
+//           mobileMenu.classList.remove('active');
+//           document.body.style.overflow='';
+//         }
+//       });
+//   });
+// </script>
+</style> -->
+<!-- ----------------------------------------------------------------- -->
+ <header class="header" id="header">
+  <div class="container">
+    <!-- Верхняя часть -->
+    <div class="header__top">
+      <div class="header__top-inner">
+        <!-- Логотип -->
+        <a href="#" class="header__logo">
+          <span>TESLA</span>
+        </a>
+
+        <!-- Навигация -->
+        <nav class="nav header__nav">
+          <ul class="list-reset nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+            <li class="nav__item"><a href="shops.html" class="nav__link">Магазины</a></li>
+            <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <!-- Действия -->
+        <div class="header__actions">
+          <!-- Поиск -->
+          <button class="btn-reset header__action header__action--search" aria-label="Поиск">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 13L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <!-- Избранное -->
+          <a href="#" class="btn-reset header__action header__action--fav" aria-label="Избранное">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M9 15.6562L8.15625 14.9531C4.59375 11.7656 2.25 9.5625 2.25 6.9375C2.25 4.78125 3.9375 3 6 3C7.3125 3 8.57812 3.65625 9.375 4.6875C10.1719 3.65625 11.4375 3 12.75 3C14.8125 3 16.5 4.78125 16.5 6.9375C16.5 9.5625 14.1562 11.7656 10.5938 14.9531L9.75 15.6562L9 15.6562Z"
+                fill="none" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span class="header__badge">2</span>
+          </a>
+
+          <!-- Корзина -->
+          <a href="cart.html" class="btn-reset header__action header__action--cart" aria-label="Корзина">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M5.25 13.5H14.25C14.6478 13.5 15.0294 13.342 15.3107 13.0607C15.592 12.7794 15.75 12.3978 15.75 12V5.25C15.75 4.85218 15.592 4.47064 15.3107 4.18934C15.0294 3.90804 14.6478 3.75 14.25 3.75H5.25C4.85218 3.75 4.47064 3.90804 4.18934 4.18934C3.90804 4.47064 3.75 4.85218 3.75 5.25V12C3.75 12.3978 3.90804 12.7794 4.18934 13.0607C4.47064 13.342 4.85218 13.5 5.25 13.5Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M3.75 5.25L6 2.25H12L14.25 5.25" stroke="currentColor" stroke-width="1.5"
+                stroke-linejoin="round" />
+              <circle cx="7.5" cy="10.5" r="0.75" fill="currentColor" />
+              <circle cx="12" cy="10.5" r="0.75" fill="currentColor" />
+            </svg>
+            <span class="header__badge">4</span>
+          </a>
+
+          <!-- Кабинет (уменьшенная версия) -->
+          <a href="#" class="btn-reset header__action header__action--user" aria-label="Личный кабинет">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="5.25" r="2.25" stroke="currentColor" stroke-width="1.5" />
+              <path d="M14.25 15.75C14.25 13.5938 11.9062 11.25 9 11.25C6.09375 11.25 3.75 13.5938 3.75 15.75"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+
+          <!-- Бургер для мобилок -->
+          <button class="btn-reset header__burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижняя часть -->
+    <div class="header__bottom">
+      <div class="header__bottom-inner">
+        <!-- Каталог -->
+        <button class="btn-reset header__category">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          <span>Каталог</span>
+        </button>
+
+        <!-- Форма поиска (для десктопа) -->
+        <form class="header__search-form" action="#">
+          <input type="text" class="header__search-input" placeholder="Найти винил или аппаратуру..." />
+          <button type="submit" class="btn-reset header__search-btn" aria-label="Найти">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 13L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Контакты -->
+        <div class="header__contacts">
+          <a href="tel:89998525821" class="header__phone">8 999 852-58-21</a>
+          <span class="header__schedule">Ежедневно с 10:00 до 22:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+ <style>
+  /* Базовые стили */
+  /* :root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #666;
+    --color-accent: #4a90e2;
+    --color-light: #f5f5f5;
+    --color-border: #eee;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition: all 0.2s ease;
+  } */
+
+  /* Общие стили хедера */
+  .header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header__top,
+  .header__bottom {
+    padding: 0;
+  }
+
+  .header__top-inner,
+  .header__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 24px;
+  }
+
+  /* Логотип */
+  .header__logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: var(--transition);
+  }
+
+  .header__logo:hover {
+    color: var(--color-accent);
+  }
+
+  /* Навигация */
+  .header__nav {
+    margin: 0 auto;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 0;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .nav__link:hover,
+  .nav__link.active {
+    color: var(--color-primary);
+  }
+
+  .nav__link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  /* Действия */
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header__action {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    background: transparent;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .header__action:hover {
+    background: var(--color-light);
+    color: var(--color-accent);
+  }
+
+  .header__badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--color-accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+  }
+
+  /* Кабинет - компактная версия */
+  .header__action--user {
+    /* Только иконка, без текста */
+  }
+
+  /* Бургер меню */
+  .header__burger {
+    display: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    background: transparent;
+  }
+
+  .header__burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    transition: var(--transition);
+  }
+
+  /* Нижняя часть */
+  .header__bottom {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .header__category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--color-light);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .header__category:hover {
+    background: var(--color-border);
+  }
+
+  /* Форма поиска */
+  .header__search-form {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .header__search-input {
+    width: 100%;
+    padding: 12px 48px 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    color: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  .header__search-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+
+  .header__search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: var(--color-secondary);
+  }
+
+  .header__search-btn:hover {
+    color: var(--color-primary);
+  }
+
+  /* Контакты */
+  .header__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+  }
+
+  .header__phone {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .header__phone:hover {
+    color: var(--color-accent);
+  }
+
+  .header__schedule {
+    font-size: 12px;
+    color: var(--color-secondary);
+    margin-top: 2px;
+  }
+
+  /* Адаптивность */
+  @media (max-width: 1024px) {
+    .header__nav {
+      display: none;
+    }
+
+    .header__search-form {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .header__top-inner,
+    .header__bottom-inner {
+      padding: 12px 0;
+      gap: 16px;
+    }
+
+    .header__actions {
+      gap: 12px;
+    }
+
+    .header__action {
+      width: 32px;
+      height: 32px;
+    }
+
+    .header__category {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .header__contacts {
+      display: none;
+    }
+
+    .header__burger {
+      display: flex;
+    }
+
+    .header__search-form {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header__logo {
+      font-size: 18px;
+    }
+
+    .header__actions {
+      gap: 8px;
+    }
+
+    .header__category span {
+      display: none;
+    }
+
+    .header__category {
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+    }
+  }
+
+  /* Мобильное меню */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1001;
+    padding: 80px 20px 40px;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  .mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .mobile-menu__close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--color-primary);
+  }
+
+  .mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-menu__link {
+    font-size: 18px;
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 12px 0;
+    display: block;
+    font-weight: 500;
+  }
+
+  .mobile-menu__search {
+    margin: 30px 0;
+  }
+
+  .mobile-menu__contacts {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Оверлей для мобильного меню */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Класс для блокировки скролла */
+  .no-scroll {
+    overflow: hidden;
+  }
+</style>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.header');
+    const burger = document.querySelector('.header__burger');
+    const mobileMenu = document.createElement('div');
+    const overlay = document.createElement('div');
+
+    // Создаем мобильное меню
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = `
+    <div class="mobile-menu__header">
+      <a href="#" class="header__logo">TESLA</a>
+      <button class="btn-reset mobile-menu__close" aria-label="Закрыть меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="list-reset mobile-menu__list">
+        <li><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li><a href="catalog.html" class="mobile-menu__link">Каталог</a></li>
+        <li><a href="shops.html" class="mobile-menu__link">Магазины</a></li>
+        <li><a href="contacts.html" class="mobile-menu__link">Контакты</a></li>
+        <li><a href="cart.html" class="mobile-menu__link">Корзина</a></li>
+        <li><a href="#" class="mobile-menu__link">Личный кабинет</a></li>
+      </ul>
+    </nav>
+    <form class="mobile-menu__search">
+      <input type="text" class="header__search-input" placeholder="Поиск..." />
+    </form>
+    <div class="mobile-menu__contacts">
+      <a href="tel:89998525821" class="header__phone">8 999 852-58-21</a>
+      <p class="header__schedule">Ежедневно с 10:00 до 22:00</p>
+    </div>
+  `;
+
+    // Создаем оверлей
+    overlay.className = 'menu-overlay';
+
+    // Добавляем элементы в DOM
+    document.body.appendChild(mobileMenu);
+    document.body.appendChild(overlay);
+
+    // Функции для управления меню
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Обработчики событий
+    burger.addEventListener('click', openMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelector('.mobile-menu__close').addEventListener('click', closeMenu);
+
+    // Закрытие по ESC
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    // Адаптация при ресайзе
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+
+    // Поиск на мобильных
+    const searchBtn = document.querySelector('.header__action--search');
+    if (searchBtn && window.innerWidth <= 768) {
+      searchBtn.addEventListener('click', function () {
+        const searchInput = mobileMenu.querySelector('.header__search-input');
+        openMenu();
+        setTimeout(() => {
+          searchInput.focus();
+        }, 300);
+      });
+    }
+  });
+</script>

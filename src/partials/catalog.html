@@ -1,7 +1,7 @@
 <section class="catalog">
   <!-- <h2 class="visually_hidden">Вокальные</h2> -->
   <!-- В index.html перед другими стилями -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"> -->
   <div class="catalog__top">
     <div class="container">
       <div class="catalog__inner grid">
@@ -497,39 +497,6 @@
   </div>
   </div>
 </section>
-  <!-- <script>
-    const priceRange = document.querySelector('.price-range');
 
-    if (priceRange) {
-      console.log('Элемент найден, создаю слайдер...');
-
-      noUiSlider.create(priceRange, {
-        start: [0, 50000],
-        connect: true,
-        range: {
-          'min': 0,
-          'max': 50000
-        },
-        step: 1000, // Шаг для удобства
-        tooltips: true, // Показать значения
-        format: {
-          to: function (value) {
-            return Math.round(value).toLocaleString('ru-RU') + ' ₽';
-          },
-          from: function (value) {
-            return Number(value.replace(/\s/g, '').replace('₽', ''));
-          }
-        }
-      });
-
-      // Для отладки: красим слайдер
-      priceRange.style.backgroundColor = '#f0f0f0';
-      priceRange.style.padding = '20px';
-      priceRange.style.borderRadius = '8px';
-
-    } else {
-      console.error('Элемент .price-range не найден!');
-    }
-  </script> -->
 
 
