@@ -1,7 +1,6 @@
 <section class="catalog">
-  <!-- <h2 class="visually_hidden">Вокальные</h2> -->
-  <!-- В index.html перед другими стилями -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"> -->
+  <h2 class="visually_hidden">Вокальные</h2>
+
   <div class="catalog__top">
     <div class="container">
       <div class="catalog__inner grid">
@@ -149,8 +148,7 @@
               <h4 class="catalog-filter__title">Бренды</h4>
               <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
-                <ul class="list-reset catalog-filter__items">
+                       <ul class="list-reset catalog-filter__items">
                                     <li class="catalog-filter__item">
                                       <label class="custom-checkbox">
                                         <input class="custom-checkbox__field" type="checkbox" name="Бренды[]">
@@ -179,7 +177,7 @@
               <h4 class="catalog-filter__title">Цена</h4>
               <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
+
                 <ul class="list-reset catalog-filter__items">
                   <li class="catalog-filter__item">
                     <label class="custom-radio">
@@ -224,7 +222,7 @@
               <h4 class="catalog-filter__title">Направленность</h4>
               <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
+
                 <ul class="list-reset catalog-filter__items">
                   <li class="catalog-filter__item">
                     <label class="custom-checkbox">
@@ -248,7 +246,7 @@
               <h4 class="catalog-filter__title">Цвет</h4>
               <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button>
               <div class="catalog-filter__inner">
-                <!-- <button class="btn-reset catalog-filter__btn" aria-label="Открыть блок"></button> -->
+              
                 <ul class="list-reset catalog-filter__items">
                   <li class="catalog-filter__item">
                     <label class="custom-checkbox">
@@ -497,6 +495,996 @@
   </div>
   </div>
 </section>
+<style>
 
+.catalog {
+  &__filtered {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 40px;
+
+
+    transition: opacity 0.3s ease;
+
+    &:empty {
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &__reset {
+    padding: 8px 16px;
+    background-color: var(--color-orange);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.catalog-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: var(--color-olive);
+  border-radius: 0px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  max-height: 40px;
+  overflow: hidden;
+  animation: badgeAppear 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-sage);
+  }
+
+  &__text {
+    color: #333;
+    font-weight: 500;
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      transition: fill 0.2s ease;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+
+      svg path {
+        fill: #ff4444;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      border-radius: 50%;
+    }
+  }
+}
+/* Дополнительные улучшения UX */
+.catalog-filter-badge__close:hover svg {
+  transform: scale(1.1);
+  fill: #333;
+}
+
+.catalog__reset:hover {
+  background: #f8f9fa;
+  border-color: #999;
+}
+
+.custom-select__btn:hover {
+  border-color: #999;
+}
+
+.custom-select:hover .custom-select__dropdown {
+  display: block;
+}
+
+.product__btn {
+  transition: all 0.3s ease;
+}
+
+.product__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pagination__btn:hover:not(.pagination__btn--active) {
+  background: #f8f9fa;
+  border-color: #999;
+}
+
+/* Плавные переходы */
+.catalog__products-item {
+  transition: transform 0.3s ease;
+}
+
+.catalog__products-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.catalog__products-item {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.catalog__products-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.catalog__products-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.catalog__products-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.catalog__products-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Базовые стили для каталога */
+.catalog__inner.grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 474px) 1fr;
+  gap: 2px;
+  align-items: start;
+}
+
+.catalog__left {
+      max-width: 474px;
+        width: 100%;
+        border-right: 1px solid gainsboro;
+}
+
+.catalog__right {
+  /* Стили для правой колонки (товаров) */
+}
+
+/* Блок с выбранными фильтрами */
+.catalog__filtered {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.catalog-filter-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.catalog-filter-badge__close {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.catalog__reset {
+  color: #666;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Мета-информация и сортировка */
+.catalog__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.catalog__shows {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-select {
+  position: relative;
+  min-width: 200px;
+}
+
+.custom-select__btn {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-select__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  z-index: 10;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select__list {
+  padding: 5px 0;
+}
+
+.custom-select__choose {
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-select__choose:hover {
+  background: #f8f9fa;
+}
+
+.custom-select__choose--active {
+  background: #f8f9fa;
+  font-weight: 500;
+}
+
+/* Сетка товаров */
+.catalog__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.catalog__products-item {
+  list-style: none;
+}
+
+.product {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product__btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination__btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  min-width: 40px;
+  text-align: center;
+}
+
+.pagination__btn--active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+.pagination__prev,
+.pagination__next {
+  padding: 8px 20px;
+}
+
+/* Адаптация для планшетов (1024px и меньше) */
+@media (max-width: 1024px) {
+  .catalog__inner.grid {
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+  }
+
+  .catalog__products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .catalog__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+}
+
+/* Адаптация для планшетов (768px и меньше) */
+@media (max-width: 768px) {
+  .catalog__inner.grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .catalog__left {
+    order: 2;
+  }
+
+  .catalog__right {
+    order: 1;
+  }
+
+  .catalog__filtered {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .catalog-filter-badge {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .catalog__reset {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .catalog__products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Адаптация для мобильных (576px и меньше) */
+@media (max-width: 576px) {
+  .catalog__products {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .catalog__filtered {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catalog__reset {
+    margin-left: 0;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+
+  .pagination {
+    gap: 8px;
+  }
+
+  .pagination__btn {
+    padding: 6px 12px;
+    min-width: 36px;
+    font-size: 14px;
+  }
+
+  .pagination__prev,
+  .pagination__next {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Очень маленькие экраны (до 400px) */
+@media (max-width: 400px) {
+  .catalog__products {
+    gap: 15px;
+  }
+
+  .catalog__meta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .catalog__shows {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination__item {
+    margin: 2px;
+  }
+}
+
+@keyframes badgeAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes badgeDisappear {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 40px;
+    margin: 0;
+    padding: 6px 12px;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+.catalog-filter-badge--removing {
+  animation: badgeDisappear 0.3s ease forwards !important;
+}
+</style>
+<script>
+   import vars from "../_vars.js";
+
+
+    // Защита от двойного выполнения
+    if (window.catalogFilterInitialized) {
+      console.log('Фильтр уже инициализирован');
+    } else {
+      window.catalogFilterInitialized = true;
+
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('=== ИНИЦИАЛИЗАЦИЯ ФИЛЬТРА ===');
+
+        if (!vars?.catalogFilterBlocks?.length) {
+          console.warn('Блоки фильтра не найдены');
+          return;
+        }
+
+        console.log('Блоков найдено:', vars.catalogFilterBlocks.length);
+
+        vars.catalogFilterBlocks.forEach((block, index) => {
+          const btn = block.querySelector('.catalog-filter__btn');
+          const inner = block.querySelector('.catalog-filter__inner');
+
+          if (!btn || !inner) {
+            console.error(`Не найдены элементы в блоке ${index}`);
+            return;
+          }
+
+          console.log(`Блок ${index}: inner.scrollHeight = ${inner.scrollHeight}px`);
+
+          // Инициализация состояний
+          if (block.classList.contains('catalog-filter__block--open')) {
+            // Блок открыт
+            inner.style.maxHeight = inner.scrollHeight + 'px';
+            inner.style.opacity = '1';
+            btn.setAttribute('aria-expanded', 'true');
+            btn.setAttribute('aria-label', 'Закрыть блок');
+          } else {
+            // Блок закрыт
+            inner.style.maxHeight = '0';
+            inner.style.opacity = '0';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Открыть блок');
+          }
+
+          // Обработчик клика
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = block.classList.contains('catalog-filter__block--open');
+            const willBeOpen = !isOpen;
+
+            console.log(`Клик по блоку ${index}: ${isOpen ? 'закрываем' : 'открываем'}`);
+
+            // Переключаем класс
+            block.classList.toggle('catalog-filter__block--open');
+
+            // Обновляем ARIA
+            btn.setAttribute('aria-expanded', willBeOpen);
+            btn.setAttribute('aria-label', willBeOpen ? 'Закрыть блок' : 'Открыть блок');
+
+            // Анимация
+            if (willBeOpen) {
+              // Открываем
+              inner.style.maxHeight = inner.scrollHeight + 'px';
+              inner.style.opacity = '1';
+            } else {
+              // Закрываем
+              inner.style.maxHeight = '0';
+              inner.style.opacity = '0';
+            }
+          });
+
+          // Обработчик клавиатуры
+          btn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              btn.click();
+            }
+          });
+        });
+
+        console.log('=== ФИЛЬТР ИНИЦИАЛИЗИРОВАН ===');
+      });
+    }
+    // import vars from "../_vars.js";
+    // .catalog-filter-badge
+    //
+    //
+    document.addEventListener('DOMContentLoaded', function () {
+      // Инициализация бейджей фильтра
+      initFilterBadges();
+
+      // Если есть кнопка "Очистить все"
+      initClearAllButton();
+    });
+
+    /**
+     * Инициализация бейджей фильтра
+     */
+    function initFilterBadges() {
+      // Находим все бейджи
+      const badges = document.querySelectorAll('.catalog-filter-badge');
+
+      if (!badges.length) {
+        console.log('Бейджи фильтра не найдены');
+        return;
+      }
+
+      console.log(`Найдено ${badges.length} бейдж(ей)`);
+
+      badges.forEach((badge, index) => {
+        // Находим кнопку закрытия внутри бейджа
+        const closeBtn = badge.querySelector('.catalog-filter-badge__close');
+
+        if (!closeBtn) {
+          console.warn(`Бейдж ${index}: не найдена кнопка закрытия`);
+          return;
+        }
+
+        // Находим текст бейджа для логов
+        const badgeText = badge.querySelector('.catalog-filter-badge__text');
+        const textContent = badgeText ? badgeText.textContent.trim() : 'без текста';
+
+        console.log(`Настройка бейджа ${index}: "${textContent}"`);
+
+        // Добавляем обработчик клика на кнопку закрытия
+        closeBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          console.log(`Закрытие бейджа: "${textContent}"`);
+
+          // Удаляем бейдж с анимацией
+          removeBadgeWithAnimation(badge);
+
+          // Обновляем состояние фильтров (если нужно)
+          updateFilterState(textContent);
+        });
+
+        // Добавляем обработчик клавиатуры для доступности
+        closeBtn.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeBtn.click();
+          }
+        });
+
+        // Добавляем title для доступности
+        closeBtn.setAttribute('title', `Удалить фильтр: ${textContent}`);
+        closeBtn.setAttribute('aria-label', `Удалить фильтр: ${textContent}`);
+      });
+    }
+
+    /**
+     * Инициализация кнопки "Очистить все"
+     */
+    function initClearAllButton() {
+      const clearAllBtn = document.querySelector('.catalog__reset');
+
+      if (!clearAllBtn) {
+        console.log('Кнопка "Очистить все" не найдена');
+        return;
+      }
+
+      console.log('Найдена кнопка "Очистить все"');
+
+      clearAllBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        console.log('Очистка всех фильтров');
+
+        // Находим все бейджи
+        const badges = document.querySelectorAll('.catalog-filter-badge');
+
+        if (!badges.length) {
+          console.log('Нет бейджей для очистки');
+          return;
+        }
+
+        // Подтверждение (опционально)
+        if (!confirm('Вы уверены, что хотите очистить все фильтры?')) {
+          return;
+        }
+
+        // Удаляем все бейджи с анимацией
+        removeAllBadgesWithAnimation(badges);
+
+        // Сбрасываем все фильтры в форме
+        resetAllFilters();
+      });
+
+      // Обработчик клавиатуры
+      clearAllBtn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          clearAllBtn.click();
+        }
+      });
+    }
+
+    /**
+     * Удаление бейджа с анимацией
+     */
+    function removeBadgeWithAnimation(badge) {
+      // Добавляем класс для анимации исчезновения
+      badge.style.transition = 'all 0.3s ease';
+      badge.style.opacity = '0';
+      badge.style.transform = 'scale(0.8)';
+      badge.style.maxHeight = '0';
+      badge.style.margin = '0';
+      badge.style.padding = '0';
+      badge.style.overflow = 'hidden';
+
+      // Удаляем через время анимации
+      setTimeout(() => {
+        badge.remove();
+        console.log('Бейдж удален из DOM');
+
+        // Проверяем, остались ли бейджи
+        const remainingBadges = document.querySelectorAll('.catalog-filter-badge');
+        console.log(`Осталось бейджей: ${remainingBadges.length}`);
+
+        // Если бейджей не осталось, можно скрыть контейнер
+        if (remainingBadges.length === 0) {
+          const container = document.querySelector('.catalog__filtered');
+          if (container) {
+            container.style.display = 'none';
+          }
+        }
+      }, 300);
+    }
+
+    /**
+     * Удаление всех бейджей с анимацией
+     */
+    function removeAllBadgesWithAnimation(badges) {
+      const badgesArray = Array.from(badges);
+
+      // Удаляем каждый бейдж с задержкой для каскадного эффекта
+      badgesArray.forEach((badge, index) => {
+        setTimeout(() => {
+          removeBadgeWithAnimation(badge);
+        }, index * 100); // Задержка для каскадного эффекта
+      });
+    }
+
+    /**
+     * Обновление состояния фильтров при удалении бейджа
+     */
+    function updateFilterState(filterValue) {
+      // Здесь должна быть логика обновления состояния фильтров
+      // Например, снятие чекбокса в фильтре
+
+      console.log(`Обновление фильтра для значения: ${filterValue}`);
+
+      // Пример: снимаем соответствующий чекбокс
+      const checkboxes = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+      checkboxes.forEach(checkbox => {
+        // Проверяем, соответствует ли чекбокс удаленному бейджу
+        // Это зависит от вашей структуры данных
+        // Например, можно сравнивать значения или labels
+        if (checkbox.checked) {
+          // Ваша логика определения соответствия
+          // checkbox.checked = false;
+        }
+      });
+    }
+
+    /**
+     * Сброс всех фильтров в форме
+     */
+    function resetAllFilters() {
+      // Сбрасываем все чекбоксы и радиокнопки
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => {
+        radio.checked = false;
+      });
+
+      // Сбрасываем поля ввода цены
+      const priceInputs = document.querySelectorAll('.catalog-filter__price-input');
+      priceInputs.forEach(input => {
+        input.value = '';
+      });
+
+      // Сбрасываем range слайдер (если есть)
+      const rangeSlider = document.getElementById('price-range');
+      if (rangeSlider) {
+        // Логика сброса слайдера зависит от реализации
+        console.log('Сброс range слайдера');
+      }
+
+      // Обновляем URL или делаем AJAX запрос (если нужно)
+      updateCatalogAfterFilterReset();
+    }
+
+    /**
+     * Обновление каталога после сброса фильтров
+     */
+    function updateCatalogAfterFilterReset() {
+      console.log('Обновление каталога...');
+
+      // Здесь может быть:
+      // 1. AJAX запрос для обновления товаров
+      // 2. Редирект на страницу без фильтров
+      // 3. Обновление счетчика товаров
+
+      // Пример AJAX запроса:
+      /*
+      fetch('/catalog/reset-filters', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Обновляем список товаров
+        updateProductList(data.products);
+      })
+      .catch(error => console.error('Ошибка:', error));
+      */
+    }
+
+    /**
+     * Динамическое добавление нового бейджа
+     */
+    export function addFilterBadge(text, value, type = 'checkbox') {
+      const container = document.querySelector('.catalog__filtered');
+
+      if (!container) {
+        console.error('Контейнер для бейджей не найден');
+        return;
+      }
+
+      // Показываем контейнер, если он был скрыт
+      container.style.display = 'flex';
+
+      // Создаем HTML бейджа
+      const badgeHTML = `
+    <div class="catalog-filter-badge" data-filter-type="${type}" data-filter-value="${value}">
+      <span class="catalog-filter-badge__text">${text}</span>
+      <button class="btn-reset catalog-filter-badge__close" aria-label="Удалить фильтр: ${text}">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.9998 4.99985C14.8436 4.84362 14.6317 4.75586 14.4107 4.75586C14.1897 4.75586 13.9778 4.84362 13.8215 4.99985L9.99985 8.82152L6.17818 4.99985C6.02191 4.84362 5.80998 4.75586 5.58901 4.75586C5.36804 4.75586 5.15612 4.84362 4.99985 4.99985C4.84362 5.15612 4.75586 5.36804 4.75586 5.58901C4.75586 5.80998 4.84362 6.02191 4.99985 6.17818L8.82152 9.99985L4.99985 13.8215C4.84362 13.9778 4.75586 14.1897 4.75586 14.4107C4.75586 14.6317 4.84362 14.8436 4.99985 14.9998C5.15612 15.1561 5.36804 15.2438 5.58901 15.2438C5.80998 15.2438 6.02191 15.1561 6.17818 14.9998L9.99985 11.1782L13.8215 14.9998C13.9778 15.1561 14.1897 15.2438 14.4107 15.2438C14.6317 15.2438 14.8436 15.1561 14.9998 14.9998C15.1561 14.8436 15.2438 14.6317 15.2438 14.4107C15.2438 14.1897 15.1561 13.9778 14.9998 13.8215L11.1782 9.99985L14.9998 6.17818C15.1561 6.02191 15.2438 5.80998 15.2438 5.58901C15.2438 5.36804 15.1561 5.15612 14.9998 4.99985Z" fill="#666666" />
+        </svg>
+      </button>
+    </div>
+  `;
+
+      // Добавляем бейдж перед кнопкой "Очистить"
+      const clearBtn = container.querySelector('.catalog__reset');
+      if (clearBtn) {
+        clearBtn.insertAdjacentHTML('beforebegin', badgeHTML);
+      } else {
+        container.insertAdjacentHTML('beforeend', badgeHTML);
+      }
+
+      // Инициализируем новый бейдж
+      const newBadge = container.querySelector('.catalog-filter-badge:last-child');
+      initSingleBadge(newBadge);
+
+      console.log(`Добавлен бейдж: "${text}"`);
+    }
+
+    /**
+     * Инициализация одного бейджа
+     */
+    function initSingleBadge(badge) {
+      const closeBtn = badge.querySelector('.catalog-filter-badge__close');
+      const badgeText = badge.querySelector('.catalog-filter-badge__text').textContent.trim();
+
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        removeBadgeWithAnimation(badge);
+        updateFilterState(badgeText);
+      });
+
+      closeBtn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          closeBtn.click();
+        }
+      });
+    }
+    /**
+     * Если нужно связать бейджи с чекбоксами фильтров
+     */
+
+    // В обработчиках чекбоксов фильтра:
+    document.querySelectorAll('.custom-checkbox__field, .custom-radio__field').forEach(input => {
+      input.addEventListener('change', function () {
+        const label = this.closest('label');
+        const text = label.querySelector('.custom-checkbox__content, .custom-radio__content').textContent.trim();
+
+        if (this.checked) {
+          // Добавляем бейдж при выборе фильтра
+          addFilterBadge(text, this.value || text, this.type);
+        } else {
+          // Удаляем соответствующий бейдж при снятии фильтра
+          removeBadgeByText(text);
+        }
+      });
+    });
+
+    /**
+     * Удаление бейджа по тексту
+     */
+    function removeBadgeByText(text) {
+      const badges = document.querySelectorAll('.catalog-filter-badge__text');
+      badges.forEach(badgeText => {
+        if (badgeText.textContent.trim() === text) {
+          const badge = badgeText.closest('.catalog-filter-badge');
+          if (badge) {
+            removeBadgeWithAnimation(badge);
+          }
+        }
+      });
+    }
+    // Простой JS для улучшения UX---------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+      // Удаление фильтров
+      document.querySelectorAll('.catalog-filter-badge__close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function () {
+          this.closest('.catalog-filter-badge').remove();
+        });
+      });
+
+      // Очистка всех фильтров
+      const resetBtn = document.querySelector('.catalog__reset');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          document.querySelectorAll('.catalog-filter-badge').forEach(badge => {
+            badge.remove();
+          });
+        });
+      }
+
+      // Селект сортировки
+      const selectBtn = document.querySelector('.custom-select__btn');
+      const selectDropdown = document.querySelector('.custom-select__dropdown');
+      const selectOptions = document.querySelectorAll('.custom-select__choose');
+
+      if (selectBtn && selectDropdown) {
+        selectBtn.addEventListener('click', function () {
+          selectDropdown.style.display = selectDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Закрытие при клике вне селекта
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.custom-select')) {
+            selectDropdown.style.display = 'none';
+          }
+        });
+
+        // Выбор опции
+        selectOptions.forEach(option => {
+          option.addEventListener('click', function () {
+            selectBtn.querySelector('span').textContent = this.textContent;
+            selectOptions.forEach(opt => opt.classList.remove('custom-select__choose--active'));
+            this.classList.add('custom-select__choose--active');
+            selectDropdown.style.display = 'none';
+          });
+        });
+      }
+
+      // Закрытие dropdown по ESC
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && selectDropdown) {
+          selectDropdown.style.display = 'none';
+        }
+      });
+    });
+</script>
 
 

@@ -355,7 +355,18 @@ gap: 24px;
         <span class="contacts__error"></span>
       </label>
 
-      <button type="submit" class="btn btn--primary contacts__submit">Отправить сообщение</button>
+      <button type="submit" class="btn btn--primary contacts__submit">
+            <span class="btn-text">Отправить сообщение</span> <!-- ДОБАВЬТЕ этот класс -->
+            <span class="btn-loader" style="display: none;"> <!-- ДОБАВЬТЕ -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.25" />
+                <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s"
+                    repeatCount="indefinite" />
+                </path>
+              </svg>
+            </span>
+      </button>
 
       <div class="contacts__success" style="display: none;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -761,7 +772,7 @@ gap: 24px;
   }
 </style>
 
-<script>
+<!-- <script>
   // Простая валидация формы
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm');
@@ -888,4 +899,4 @@ gap: 24px;
       }
     }
   });
-</script>
+</script> -->

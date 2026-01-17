@@ -477,3 +477,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+// ---------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const filterBlocks = document.querySelectorAll('.catalog-filter__block');
+
+  filterBlocks.forEach(block => {
+    // Ищем кнопку ТОЛЬКО в блоке, а не внутри inner
+    const btn = block.querySelector('> .catalog-filter__btn'); // > означает прямой потомок
+    const inner = block.querySelector('.catalog-filter__inner');
+
+    if (!btn || !inner) return;
+
+    // Инициализация состояния
+    if (block.classList.contains('catalog-filter__block--open')) {
+      inner.style.maxHeight = inner.scrollHeight + 'px';
+      inner.style.opacity = '1';
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      inner.style.maxHeight = '0';
+      inner.style.opacity = '0';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    // Обработчик клика
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = block.classList.contains('catalog-filter__block--open');
+
+      // Переключаем класс
+      block.classList.toggle('catalog-filter__block--open');
+      btn.setAttribute('aria-expanded', !isOpen);
+
+      // Анимация
+      if (!isOpen) {
+        // Открываем
+        inner.style.maxHeight = inner.scrollHeight + 'px';
+        inner.style.opacity = '1';
+      } else {
+        // Закрываем
+        inner.style.maxHeight = '0';
+        inner.style.opacity = '0';
+      }
+    });
+  });
+});

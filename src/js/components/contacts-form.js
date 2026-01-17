@@ -1,3 +1,5 @@
+
+
 // form-handler.js
 class FormHandler {
     constructor(formId) {
@@ -248,9 +250,19 @@ class FormHandler {
 }
 
 // Инициализация формы при загрузке страницы
+// document.addEventListener('DOMContentLoaded', () => {
+//     const formHandler = new FormHandler('contactForm');
+// });
 document.addEventListener('DOMContentLoaded', () => {
-    const formHandler = new FormHandler('contactForm');
+  // Проверяем, есть ли форма на странице
+  const form = document.querySelector('#contactForm');
+  if (form) {
+    new FormHandler('contactForm');
+  } else {
+    console.log('FormHandler: форма не найдена, инициализация пропущена');
+  }
 });
+
 
 // CSS для анимаций уведомлений
 const style = document.createElement('style');

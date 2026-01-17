@@ -5,8 +5,8 @@ export default {
   bodyEl: document.body,
   enterModalSteps: document.querySelectorAll(".enter-modal__step"),
 
-  
-  mainProductsInner:document.querySelectorAll(".products__inner"),
+
+
 mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btn"),
 
 
@@ -14,9 +14,13 @@ mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btn"),
   cookieBlock: document.querySelector(".cookie-block"),
   cookieBlockBtn: document.querySelector(".cookie-block__btn"),
   catalogFilterBlocks: document.querySelectorAll(".catalog-filter__block"),
+
+  // productSlider: document.querySelector('.product__slider'),
+  mainProductsInner: document.querySelectorAll('.products__inner'),
   // filterPrice: document.querySelectorAll(""),
+  productSlider: document.querySelector('.product__slider'),
   heroSlider: document.querySelector(".hero__slider"),
-  productSlider: document.querySelector(".product-hero__slider"),
+  // productSlider: document.querySelector(".product-hero__slider"),
   // priceRange: document.querySelector('.price-range'),
   priceMin: document.getElementById('price-min'),
   priceMax: document.getElementById('price-max'),

@@ -1,8 +1,3 @@
-
-import './_components.js';
-import { getHeaderHeight } from "./functions/header-height.js";
-getHeaderHeight();
-
 // price-slider.js или добавьте в main.js
 function initPriceSlider() {
   const priceSlider = document.querySelector('.price-range');
@@ -56,15 +51,3 @@ function initPriceSlider() {
     console.error('Ошибка инициализации слайдера:', error);
   }
 }
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Инициализируем слайдер
-  initPriceSlider();
-
-  // Можно подписаться на событие изменения цены
-  document.addEventListener('price:change', function (e) {
-    console.log('Цена изменена:', e.detail);
-    // Здесь можно обновлять товары, делать AJAX запрос и т.д.
-  });
-});
