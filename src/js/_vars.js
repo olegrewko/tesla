@@ -5,8 +5,13 @@ export default {
   bodyEl: document.body,
   enterModalSteps: document.querySelectorAll(".enter-modal__step"),
 
+<<<<<<< HEAD
 
 
+=======
+  
+  mainProductsInner:document.querySelectorAll(".products__inner"),
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
 mainProductsTabsBtns:document.querySelectorAll(".products-tabs__btn"),
 
 
