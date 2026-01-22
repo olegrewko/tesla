@@ -3,6 +3,29 @@ import './_components.js';
 import { getHeaderHeight } from "./functions/header-height.js";
 getHeaderHeight();
 
+// main.js - добавьте в начало
+// if (typeof initPriceSlider === 'undefined') {
+//   window.initPriceSlider = function () {
+//     console.log('Функция initPriceSlider вызвана, но не реализована');
+//     // Или простую реализацию
+//     const slider = document.querySelector('.price-range');
+//     if (slider && typeof noUiSlider !== 'undefined') {
+//       noUiSlider.create(slider, {
+//         start: [0, 50000],
+//         connect: true,
+//         range: { 'min': 0, 'max': 50000 }
+//       });
+//     }
+//   };
+// }
+
+// Затем ваш существующий код
+// document.addEventListener('DOMContentLoaded', function () {
+//   // ...
+//   initPriceSlider(); // Теперь функция существует
+// });
+
+
 // price-slider.js или добавьте в main.js
 function initPriceSlider() {
   const priceSlider = document.querySelector('.price-range');

@@ -477,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+<<<<<<< HEAD
 // ---------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const filterBlocks = document.querySelectorAll('.catalog-filter__block');
@@ -523,3 +524,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+=======
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8

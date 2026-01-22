@@ -1,4 +1,95 @@
+<<<<<<< HEAD
 
+=======
+// .catalog {
+//   &__products {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 10px;
+//     padding-bottom: 40px;
+//   }
+
+//   &__meta {
+
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     padding: 4px;
+//   }
+
+//   &__shows {
+//     // position: absolute;
+//     // top: 0;
+//     // left: 0;
+//     padding: 4px;
+//   }
+
+//   &__set {
+//     margin-left: -5px;
+
+//   }
+
+//   &__top {
+//     border: 1px solid gainsboro;
+//   }
+
+//   &__subtitle {
+//     margin: 0;
+//     padding: 24px 0;
+//     font-family: 'Rubik';
+//     font-weight: 600;
+
+//     font-size: 16px;
+//     color: var(--color-primary);
+//     line-height: 120%;
+//     letter-spacing: 0%;
+//     text-transform: uppercase;
+
+//   }
+
+//   &__reset {
+//     margin-left: 10px;
+//     font-family: "Rubik";
+//     font-weight: 400;
+
+//     font-size: 16px;
+//     color: var(--color-secondary);
+//     line-height: 140%;
+//     letter-spacing: 0%;
+//   }
+
+//   &__filtered {
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     justify-content: flex-start;
+//     gap: 2px;
+//     padding: 2px;
+//     // padding-left: 0;
+//   }
+
+//   &__left {
+//     max-width: 474px;
+//     width: 100%;
+//     border-right: 1px solid gainsboro;
+//   }
+
+//   &__inner {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: space-between;
+
+//   }
+// }
+
+// .grid {
+//   display: grid;
+//   grid-template-columns: 3fr 9fr;
+//  gap: 4px;
+// }
+// Анимация удаления баджей
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
 .catalog {
   &__filtered {
     display: flex;
@@ -313,13 +404,22 @@
 }
 
 .product:hover {
+<<<<<<< HEAD
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+=======
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
 }
 
 .product__btn {
   width: 100%;
+<<<<<<< HEAD
   margin-top: 2px;
   padding: 2px;
+=======
+  margin-top: 15px;
+  padding: 12px;
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
 }
 
 /* Пагинация */

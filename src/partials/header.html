@@ -1,4 +1,649 @@
+<<<<<<< HEAD
 
+<header class="header" id="header">
+=======
+<!-- <header class="header" id="header">
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
+  <div class="container">
+    <!-- Верхняя часть -->
+    <div class="header__top">
+      <div class="header__top-inner">
+        <!-- Логотип -->
+        <a href="#" class="header__logo">TESLA</a>
+
+        <!-- Навигация -->
+        <nav class="nav header__nav">
+          <ul class="list-reset nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+            <li class="nav__item"><a href="shops.html" class="nav__link">Магазины</a></li>
+            <li class="nav__item"><a href="product.html" class="nav__link">Товары</a></li>
+            <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <!-- Действия пользователя -->
+        <div class="header__actions">
+          <!-- Избранное -->
+          <button class="btn-reset header__action header__action--fav" aria-label="Избранное">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M9 15.6562L8.15625 14.9531C4.59375 11.7656 2.25 9.5625 2.25 6.9375C2.25 4.78125 3.9375 3 6 3C7.3125 3 8.57812 3.65625 9.375 4.6875C10.1719 3.65625 11.4375 3 12.75 3C14.8125 3 16.5 4.78125 16.5 6.9375C16.5 9.5625 14.1562 11.7656 10.5938 14.9531L9.75 15.6562L9 15.6562Z"
+                fill="none" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
+          </button>
+
+          <!-- Корзина -->
+          <a href="cart.html" class="btn-reset header__action header__action--cart" aria-label="Корзина">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M5.25 13.5H14.25C14.6478 13.5 15.0294 13.342 15.3107 13.0607C15.592 12.7794 15.75 12.3978 15.75 12V5.25C15.75 4.85218 15.592 4.47064 15.3107 4.18934C15.0294 3.90804 14.6478 3.75 14.25 3.75H5.25C4.85218 3.75 4.47064 3.90804 4.18934 4.18934C3.90804 4.47064 3.75 4.85218 3.75 5.25V12C3.75 12.3978 3.90804 12.7794 4.18934 13.0607C4.47064 13.342 4.85218 13.5 5.25 13.5Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+              <path d="M3.75 5.25L6 2.25H12L14.25 5.25" stroke="currentColor" stroke-width="1.5"
+                stroke-linejoin="round" />
+              <circle cx="7.5" cy="10.5" r="0.75" fill="currentColor" />
+              <circle cx="12" cy="10.5" r="0.75" fill="currentColor" />
+            </svg>
+          </a>
+
+          <!-- Войти (текстовая кнопка) -->
+          <button class="btn-reset header__enter" data-graph-path="enter-modal">
+            Войти
+          </button>
+
+          <!-- Бургер меню для мобильных -->
+          <button class="btn-reset header__burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижняя часть -->
+    <div class="header__bottom">
+<<<<<<< HEAD
+      <div class="header__bottom-inner">
+        <!-- Каталог -->
+        <button class="btn-reset header__category">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+            <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+=======
+      <div class="container header__container">
+        <button class="btn-reset header__btn header__catalog">
+
+          <svg class="header-btn__icon" width="16" height="11" viewBox="0 0 16 11" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line y1="0.5" x2="16" y2="0.5" stroke="maroon" />
+            <line y1="5.5" x2="16" y2="5.5" stroke="#1A1A1A" />
+            <line y1="10.5" x2="16" y2="10.5" stroke="#1A1A1A" />
+          </svg>
+          Каталог
+
+
+          <svg class="header-btn__angle" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.4735 5.47357C12.4116 5.41108 12.3378 5.36148 12.2566 5.32764C12.1753 5.29379 12.0882 5.27637 12.0002 5.27637C11.9122 5.27637 11.8251 5.29379 11.7438 5.32764C11.6626 5.36148 11.5888 5.41108 11.5269 5.47357L8.47354 8.5269C8.41156 8.58939 8.33783 8.63898 8.25659 8.67283C8.17535 8.70667 8.08821 8.7241 8.0002 8.7241C7.9122 8.7241 7.82506 8.70667 7.74382 8.67283C7.66258 8.63898 7.58884 8.58939 7.52687 8.5269L4.47354 5.47357C4.41156 5.41108 4.33783 5.36148 4.25659 5.32764C4.17535 5.29379 4.08821 5.27637 4.0002 5.27637C3.91219 5.27637 3.82506 5.29379 3.74382 5.32764C3.66258 5.36148 3.58884 5.41108 3.52687 5.47357C3.4027 5.59847 3.33301 5.76744 3.33301 5.94357C3.33301 6.11969 3.4027 6.28866 3.52687 6.41357L6.58687 9.47357C6.96187 9.8481 7.4702 10.0585 8.0002 10.0585C8.5302 10.0585 9.03854 9.8481 9.41354 9.47357L12.4735 6.41357C12.5977 6.28866 12.6674 6.11969 12.6674 5.94357C12.6674 5.76744 12.5977 5.59847 12.4735 5.47357Z"
+              fill="#1A1A1A" />
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
+          </svg>
+          <span>Каталог</span>
+        </button>
+
+        <!-- Коллекции -->
+        <button class="btn-reset header__category">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3L10.5 5.5L8 8L5.5 5.5L8 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M3 8L5.5 10.5L8 8L10.5 10.5L13 8" stroke="currentColor" stroke-width="1.5"
+              stroke-linejoin="round" />
+            <path d="M8 13L10.5 10.5L8 8L5.5 10.5L8 13Z" stroke="currentColor" stroke-width="1.5"
+              stroke-linejoin="round" />
+          </svg>
+          <span>Коллекции</span>
+        </button>
+
+        <!-- Поиск -->
+        <form class="header__search-form" action="#">
+          <input type="text" class="header__search-input" placeholder="Найти винил или аппаратуру..." />
+          <button type="submit" class="btn-reset header__search-btn" aria-label="Найти">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 13L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Телефон -->
+        <a href="tel:89998525821" class="header__phone">8 999 852-58-21</a>
+      </div>
+    </div>
+  </div>
+</header>
+<<<<<<< HEAD
+=======
+
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+      // Создаем бургер-кнопку
+      const burgerBtn=document.createElement('button');
+      burgerBtn.className='btn-reset header__burger';
+      burgerBtn.innerHTML='<span></span><span></span><span></span>';
+      burgerBtn.setAttribute('aria-label', 'Открыть меню');
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
+
+ <style>
+  /* Базовые переменные (одинаковые с предыдущими компонентами) */
+  /* :root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #666;
+    --color-accent: #4a90e2;
+    --color-light: #f5f5f5;
+    --color-border: #eee;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition: all 0.2s ease;
+  } */
+
+  /* Общие стили хедера */
+  .header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header__top,
+  .header__bottom {
+    padding: 0;
+  }
+
+  .header__top-inner,
+  .header__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 24px;
+  }
+
+  /* Логотип */
+  .header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .header__logo:hover {
+    color: var(--color-accent);
+  }
+
+  /* Навигация */
+  .header__nav {
+    margin: 0 auto;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 0;
+    position: relative;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .nav__link:hover,
+  .nav__link.active {
+    color: var(--color-primary);
+  }
+
+  .nav__link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  /* Действия пользователя */
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header__action {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    background: transparent;
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .header__action:hover {
+    background: var(--color-light);
+    color: var(--color-accent);
+  }
+
+  /* Кнопка "Войти" */
+  .header__enter {
+    padding: 8px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .header__enter:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-light);
+  }
+
+  /* Бургер меню */
+  .header__burger {
+    display: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    background: transparent;
+  }
+
+  .header__burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    transition: var(--transition);
+  }
+
+  /* Нижняя часть хедера */
+  .header__bottom {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .header__category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--color-light);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .header__category:hover {
+    background: var(--color-border);
+  }
+
+  /* Форма поиска */
+  .header__search-form {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .header__search-input {
+    width: 100%;
+    padding: 12px 48px 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    color: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  .header__search-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+
+  .header__search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: var(--color-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header__search-btn:hover {
+    color: var(--color-primary);
+  }
+
+  /* Телефон */
+  .header__phone {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .header__phone:hover {
+    color: var(--color-accent);
+  }
+
+  /* Адаптивность */
+  @media (max-width: 1024px) {
+    .header__nav {
+      display: none;
+    }
+
+    .header__search-form {
+      max-width: 400px;
+    }
+
+    .header__enter {
+      padding: 8px 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .header__top-inner,
+    .header__bottom-inner {
+      padding: 12px 0;
+      gap: 16px;
+    }
+
+    .header__actions {
+      gap: 12px;
+    }
+
+    .header__action {
+      width: 32px;
+      height: 32px;
+    }
+
+    .header__category {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .header__phone {
+      display: none;
+    }
+
+    .header__burger {
+      display: flex;
+    }
+
+    .header__enter {
+      display: none;
+    }
+
+    .header__search-form {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header__logo {
+      font-size: 20px;
+    }
+
+    .header__actions {
+      gap: 8px;
+    }
+
+    .header__category span {
+      display: none;
+    }
+
+    .header__category {
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+    }
+  }
+
+  /* Мобильное меню */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1001;
+    padding: 80px 20px 40px;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  .mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .mobile-menu__close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--color-primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-menu__link {
+    font-size: 18px;
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 12px 0;
+    display: block;
+    font-weight: 500;
+  }
+
+  .mobile-menu__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  .mobile-menu__btn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .mobile-menu__btn--primary {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+
+  .mobile-menu__btn--primary:hover {
+    background: #3a7bc8;
+  }
+
+  .mobile-menu__search {
+    margin: 20px 0 30px;
+  }
+
+  .mobile-menu__contacts {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Оверлей */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Класс для блокировки скролла */
+  .no-scroll {
+    overflow: hidden;
+  }
+</style>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.header');
+    const burger = document.querySelector('.header__burger');
+    const mobileMenu = document.createElement('div');
+    const overlay = document.createElement('div');
+
+    // Создаем мобильное меню
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = `
+    <div class="mobile-menu__header">
+      <a href="#" class="header__logo">TESLA</a>
+      <button class="btn-reset mobile-menu__close" aria-label="Закрыть меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="list-reset mobile-menu__list">
+        <li><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li><a href="catalog.html" class="mobile-menu__link">Каталог</a></li>
+        <li><a href="shops.html" class="mobile-menu__link">Магазины</a></li>
+        <li><a href="product.html" class="mobile-menu__link">Товары</a></li>
+        <li><a href="contacts.html" class="mobile-menu__link">Контакты</a></li>
+        <li><a href="cart.html" class="mobile-menu__link">Корзина</a></li>
+        <li><a href="order.html" class="mobile-menu__link">Заказ товара</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__actions">
+      <button class="btn-reset mobile-menu__btn mobile-menu__btn--primary" data-graph-path="enter-modal">Войти</button>
+      <a href="cart.html" class="mobile-menu__btn">Корзина</a>
+    </div>
+    <form class="mobile-menu__search">
+      <input type="text" class="header__search-input" placeholder="Поиск..." />
+    </form>
+    <div class="mobile-menu__contacts">
+      <a href="tel:89998525821" class="header__phone">8 999 852-58-21</a>
+    </div>
+  `;
+
+    // Создаем оверлей
+    overlay.className = 'menu-overlay';
+
+    // Добавляем элементы в DOM
+    document.body.appendChild(mobileMenu);
+    document.body.appendChild(overlay);
+
+    // Функции для управления меню
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Обработчики событий
+    burger.addEventListener('click', openMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelector('.mobile-menu__close').addEventListener('click', closeMenu);
+
+    // Закрытие по ESC
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+<<<<<<< HEAD
+=======
+  </script> -->
 <header class="header" id="header">
   <div class="container">
     <!-- Верхняя часть -->
@@ -665,6 +1310,7 @@
         closeMenu();
       }
     });
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
 
     // Закрытие при клике на ссылку
     mobileMenu.querySelectorAll('.mobile-menu__link').forEach(link => {

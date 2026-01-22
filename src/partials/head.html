@@ -8,6 +8,7 @@
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ваш_ключ_api" type="text/javascript"></script>
   <!-- Добавьте в head -->
   <style>
+<<<<<<< HEAD
     /* Простые стили для скролла, если Simplebar не загрузится */
     [data-simplebar] {
       position: relative;
@@ -36,6 +37,25 @@
       outline-offset: 2px;
     }
 
+=======
+    /* Анимации для плавности */
+    .shops-content__item {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .map-btn {
+      transition: all 0.2s ease;
+    }
+
+    /* Улучшенный focus для доступности */
+    .shops-content__input:focus,
+    .map-btn:focus,
+    .shops-content__btn:focus {
+      outline: 2px solid #0066ff;
+      outline-offset: 2px;
+    }
+
+>>>>>>> c3922a7ed43933ce3a8688fc1292c29aacdc51a8
     /* Состояние загрузки для карты */
     #map.loading {
       background: #f8f9fa url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path fill="%23666" d="M25,5A20,20,0,1,1,5,25" opacity=".3"/><path fill="%23666" d="M5,25a20,20,0,0,1,20-20V0A25,25,0,1,0,25,50V45A20,20,0,1,1,5,25Z"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.8s" repeatCount="indefinite"/></path></svg>') no-repeat center;
